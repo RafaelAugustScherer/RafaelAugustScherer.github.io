@@ -1,0 +1,132 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+}
+
+.linksDiv {
+  position: absolute;
+  padding-right: 0;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  margin: 30px;
+  padding: 10px 0;
+  transition: all 1s ease-in-out;
+}
+
+.linksDiv:hover {
+  margin-right: 0;
+  padding-right: 30px;
+}
+
+.linksDiv::before {
+  top: 50%;
+  margin-top: -5px;
+  height: 0;
+  width: 0;
+  content: '';
+  position: absolute;
+  border: 4px solid transparent;
+  border-radius: 1px;
+  transition: all 1s ease-in-out;
+  z-index: -1;
+}
+
+.linksDiv:hover::before {
+  top: 0;
+  background-color: #535353;
+  width: 100%;
+  border-left-color: #ff00ea;
+  height: 100%;
+  z-index: -1;
+}
+
+.headerLink {
+  color: #01fbfb;
+  font-size: 3rem;
+  margin: 0 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.headerVideo {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100vw;
+  object-fit: cover;
+}
+
+.headerBioDiv {
+  position: absolute;
+  left: 50%;
+  background-color: #2020202f;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: min(25vw, 380px);
+  max-height: 80%;
+  transform: translate(-50%, 0);
+}
+
+.headerText {
+  font-size: 2em;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .headerBioDiv {
+    top: 30%;
+    flex-direction: row;
+    min-width: 310px;
+    max-width: 90vw;
+    padding: 20px;
+  }
+
+  .headerText {
+    font-size: 1.5em;
+    margin-left: 6vw;
+    max-width: 280px;
+  }
+}
+
+.headerArrowDiv {
+  position: relative;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.headerArrow {
+  color: white;
+  font-size: max(8vw, 70px);
+}
+
+.headerArrowShadow {
+  position: absolute;
+  left: 0;
+  color: #da00c7;
+  font-size: max(8vw, 70px);
+  animation: headerArrowShadow 2s ease-in-out infinite;
+}
+
+@keyframes headerArrowShadow {
+  0% {
+    bottom: -6%;
+  }
+
+  50% {
+    bottom: -12%;
+  }
+
+  100% {
+    bottom: -6%;
+  }
+}

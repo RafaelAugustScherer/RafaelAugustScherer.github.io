@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velozes e Curiosos HTML</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="race-container">
+      <h1>Velozes e Curiosos HTML</h1>
+      <h2>
+        <i
+          >Estreando: DOM Toretto
+          <p>
+            <small
+              >Recomendado tela entre 650px e 800px de largura. Atual:
+              <span class="window-width"></span
+            ></small></p
+        ></i>
+      </h2>
+      <div class="car">
+        <img
+          src="https://imgr.search.brave.com/K1macEH8NbC0GLTemsJ5gZzcZg8ACaNsQuxfV1cLTJA/fit/1200/920/no/1/aHR0cHM6Ly92aWdu/ZXR0ZS53aWtpYS5u/b2Nvb2tpZS5uZXQv/Zm9yemFtb3RvcnNw/b3J0L2ltYWdlcy83/LzcxL0hPUl9YQjFf/Tmlzc2FuX0dULVJf/MDIucG5nL3Jldmlz/aW9uL2xhdGVzdD9j/Yj0yMDE5MDkxNjE4/Mjk0NQ"
+          alt="Nissan Skyline"
+        />
+      </div>
+      <div class="car">
+        <img
+          src="https://imgr.search.brave.com/_UPtdK2brQqPXElVFNR7b9XAMlcrlQ4t9a7EqeMXz-s/fit/1200/920/no/1/aHR0cHM6Ly92aWdu/ZXR0ZS53aWtpYS5u/b2Nvb2tpZS5uZXQv/Zm9yemFtb3RvcnNw/b3J0L2ltYWdlcy8z/LzNlL0hPUl9YQjFf/TWF6ZGFfUlgtN18w/Mi5wbmcvcmV2aXNp/b24vbGF0ZXN0P2Ni/PTIwMTkxMDAzMTg1/MzE2"
+          alt="Mazda RX-7"
+        />
+      </div>
+      <div class="car">
+        <img
+          src="https://imgr.search.brave.com/_2uohjwait6S5Xc07nLjh1Z6mhj9osp45z0b-2dpR9U/fit/1200/920/no/1/aHR0cHM6Ly92aWdu/ZXR0ZS53aWtpYS5u/b2Nvb2tpZS5uZXQv/Zm9yemFtb3RvcnNw/b3J0L2ltYWdlcy85/LzkzL0hPUl9YQjFf/RG9kZ2VfQ2hhcmdl/cl82OS5wbmcvcmV2/aXNpb24vbGF0ZXN0/P2NiPTIwMTkxMjAx/MjMxNzMz"
+          alt="Dodge Charger"
+        />
+      </div>
+      <div class="car">
+        <img
+          src="https://imgr.search.brave.com/J858V7F0vof_I1yJmt8OxyQKxfFAZqIVpvfBxbH0hno/fit/736/505/no/1/aHR0cHM6Ly9ncnVw/b3JlZm9ybWEucmVm/b3JtYS5jb20vaW50/ZXJhY3Rpdm8vZ2Vu/dGUvcmFwaWRvc195/X2Z1cmlvc29zL2lt/YWdlcy9taXRzdWJp/c2hpLWVjbGlwc2Ut/cnMtNDIwYS5wbmc"
+          alt="Mitsubichi Eclipse"
+        />
+      </div>
+      <div id="countdown"></div>
+      <img
+        id="finish-line"
+        src="https://imgr.search.brave.com/VAdhzaDm2cWaa6O3p4bKjAq7CL1yAw2M2KfvE-LTDds/fit/1200/1200/no/1/aHR0cDovL3d3dy53/YWxscXVvdGVzLmNv/bS9zaXRlcy9kZWZh/dWx0L2ZpbGVzL2Fy/dHMwNTg3LTAyXzAu/cG5n"
+        alt="Finish Line"
+      />
+
+      <div class="rev-counter">
+        <h3>Rev Counter</h3>
+        <div class="um">1</div>
+        <div class="dois">2</div>
+        <div class="tres">3</div>
+        <div class="quatro">4</div>
+        <div class="cinco">5</div>
+        <div class="seis">6</div>
+        <div class="sete">7</div>
+      </div>
+      <div class="rev-position"></div>
+      <h3 class="gear-counter">Marcha:</h3>
+      <button id="start-button">Iniciar corrida</button>
+    </div>
+    <div id="custom-keys">
+      <h2>Configs do Usuário</h2>
+      <div class="custom-key-accelerate">
+        <p>Tecla personalizada para Acelerar:</p>
+      </div>
+      <div class="custom-key-change-gear">
+        <p>Tecla personalizada para Trocar de Marcha:</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

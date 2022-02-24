@@ -1,0 +1,57 @@
+.experienceItem {
+  max-width: 1920px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  color: white;
+  background-color: rgba(20, 20, 20, .8);
+  padding: 2vh 3vh;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  list-style-type: none;
+}
+
+.itemArrow {
+  font-size: 2em;
+  transition: transform .5s;
+}
+
+.itemArrow.toggle {
+  transform: rotate(90deg);
+}
+
+.itemIcon {
+  height: 25px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: calc(1vw + 10px);
+}
+
+.itemTitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 20px;
+}
+
+.itemTitle span {
+  font-size: 1.3rem;
+}
+
+.itemTextDiv {
+  max-height: 0;
+  opacity: 0;
+  transition: all ease-in-out .8s;
+  overflow: hidden;
+  flex: 1 1 100%;
+}
+
+.itemTextDiv.toggle {
+  opacity: 1;
+  max-height: 1920px;
+}
+
+.itemText {
+  font-size: 1.25rem;
+}

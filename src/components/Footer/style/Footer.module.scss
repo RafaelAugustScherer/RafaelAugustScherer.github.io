@@ -1,0 +1,88 @@
+@use 'sass:color';
+
+.footer {
+  background-color: #202020;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0 0;
+}
+
+.footer h2 {
+  color: white;
+}
+
+.footer div {
+  margin: 10px;
+}
+
+.footer a {
+  display: flex;
+  color: #747474;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color .5s;
+  padding: 8px;
+  font-size: 1.2rem;
+}
+
+.footer a svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.contactDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin footerLink($div, $position, $color) {
+  .#{$div} a:nth-child(#{$position}) svg {
+    color: $color;
+  }
+
+  .#{$div} a:nth-child(#{$position}):hover {
+    .#{$div} a:nth-child(#{$position}) svg {
+      color: color.adjust($color, $lightness: 30%);
+    }
+  }
+}
+
+@include footerLink('contactDiv', 2, #f0f6fc);
+@include footerLink('contactDiv', 3, #0a66c2);
+@include footerLink('contactDiv', 4, #f0f6fc);
+@include footerLink('madeWithDiv', 2, #99d5e6);
+@include footerLink('madeWithDiv', 4, #cf659b);
+
+.referencesDiv {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.referencesDiv h2 {
+  margin-top: 20px;
+}
+
+.referencesDiv h2 {
+  flex: 1 1 100%;
+}
+
+@media screen and (min-width: 550px) {
+  .footer {
+    justify-content: space-evenly;
+    padding: 20px calc((100% - 1600px) / 2);
+  }
+
+  .referencesDiv a {
+    margin: 0 20px;
+  }
+}

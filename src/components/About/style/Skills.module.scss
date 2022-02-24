@@ -1,0 +1,45 @@
+.skillsDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  max-width: min(90vw, 780px);
+  font-weight: 600;
+}
+
+.skillsDiv h2 {
+  font-size: 2.3rem;
+  flex: 1 1 100%;
+}
+
+.skillsDiv div {
+  width: 5vw;
+  margin: 20px;
+  flex: 1 1 90px;
+  background-color: rgba(32, 32, 32, .75);
+  padding: 15px;
+  padding-bottom: 0;
+  border-radius: 10px;
+  max-width: 100px;
+  max-height: 105px;
+  margin-bottom: 70px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.skillsDiv div:hover {
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.skillsDiv div img {
+  width: 50%;
+}
+
+@media screen and (min-width: 1366px) {
+  .skillsDiv {
+    flex: 1 1 30%;
+    margin: 0 20px;
+  }
+}

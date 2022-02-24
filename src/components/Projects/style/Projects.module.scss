@@ -1,0 +1,15 @@
+.projectsSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('/assets/images/background/projects-background.png');
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding-bottom: 70px;
+}
+
+.projectsSection h1 {
+  font-size: 3em;
+  color: white;
+}

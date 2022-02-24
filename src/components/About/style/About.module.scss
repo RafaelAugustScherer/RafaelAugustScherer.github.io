@@ -1,0 +1,36 @@
+.aboutSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('/assets/images/background/about-experience-background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  padding-bottom: 50px;
+}
+
+.aboutSection h1,
+.aboutSection h2 {
+  color: white;
+  text-align: center;
+  padding: 0 5px;
+  background-color: rgba(20, 20, 20, .5);
+  border-radius: 5px;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+.aboutSection h1 {
+  font-size: 3em;
+  flex: 1 1 100%;
+}
+
+@media screen and (min-width: 1366px) {
+  .aboutSection {
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}

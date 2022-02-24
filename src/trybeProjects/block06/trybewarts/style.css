@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100vw;
+  color: white;
+  background-color: rgb(50, 167, 145);
+}
+
+.trybewarts-header-logo {
+  width: 80px;
+}
+
+.trybewarts-login {
+  display: flex;
+}
+
+.header-form-button {
+  color: white;
+  background-color: rgb( 78, 42, 130);
+}
+
+#evaluation-form {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  min-width: 675px;
+  max-width: 675px;
+}
+
+#trybewarts-forms-logo {
+  height: 500px;
+}
+
+.house-div {
+  align-items: center;
+}
+
+.house-div label {
+  margin: 0;
+}
+
+.family-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.rate-div {
+  display: flex;
+}
+
+.agreement-div {
+  display: flex;
+}
+
+.comment-div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* https://stackoverflow.com/questions/14820952/change-bootstrap-input-focus-blue-glow */
+#textarea:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 1px 1px rgba(158, 88, 88, 0.075) inset, 0 0 8px rgba(78, 42, 130, 0.6);
+}
+
+.comment-div p {
+  margin-top: 10px;
+}
+
+.send-button button {
+  color: white;
+  background-color: rgb( 78, 42, 130);
+  width: 100%;
+}
+
+.send-button button:hover {
+  color: white;
+}
+
+#post-form-info {
+  margin: 10px;
+  flex-basis: 100%;
+}
+
+#footer-div {
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  padding-left: 5px;
+  justify-content: center;
+  background-color: rgb(127, 180, 171);
+  height: 20px;
+  position: fixed;
+}
+
+footer {
+  bottom: 0;
+}

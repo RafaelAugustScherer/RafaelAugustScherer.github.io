@@ -1,0 +1,83 @@
+.projectContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: center;
+  max-width: 90vw;
+}
+
+.titleBar {
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: space-between;
+}
+
+.titleBar div img {
+  width: 3vw;
+  max-width: 50px;
+}
+
+.projectTitle {
+  color: #fff;
+  font-weight: 600;
+  margin-left: 10px;
+  font-size: 2em;
+}
+
+.accessButtons {
+  display: flex;
+}
+
+.accessButtons button {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #fff;
+  padding: 2vh 10vw;
+  margin: 3vh 5vw;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 3px solid #6d2b23;
+  background-color: rgba(24, 24, 24, 0.35);
+  transition: font-size 0.5s, background-color 0.3s;
+}
+
+.accessButtons button:hover {
+  font-size: 1.8rem;
+  background-color: rgba(24, 24, 24, .75);
+}
+
+@media screen and (max-width: 600px) {
+  .projectContainer {
+    max-width: 90vw;
+  }
+  
+  .accessButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .accessButtons button {
+    margin: 1vh 0;
+    margin-top: 3vh
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .projectContainer {
+    max-width: 80vw;
+  }
+
+  .titleBar div {
+    margin-right: 50%;
+  }
+
+  .accessButtons {
+    flex-direction: column;
+    flex: 1 1 40%;
+  }
+
+  .accessButtons button {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,74 @@
+.imageGalleryContainer {
+  display: flex;
+  position: relative;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #290957,#6d2b23);
+  padding: 5px;
+  max-width: 1600px;
+  max-height: min(70vh, 900px);
+}
+
+.galleryImage {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+}
+
+.prevButton, .nextButton {
+  position: absolute;
+  top: 50%;
+  font-size: 6rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color .2s;
+  transform: translate(0, -50%);
+}
+
+@media only screen and (hover: none) {
+    .prevButton, .nextButton {
+      color: #fff;
+    }
+}
+
+.prevButton:hover, .nextButton:hover {
+  color: #fff;
+}
+
+.prevButton {
+  left: 0;
+}
+
+.nextButton {
+  right: 0;
+}
+
+.dotContainer {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(24, 24, 24, 0.75);
+  border-radius: 10px;
+  position: absolute;
+  padding: 0 5px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.galleryDot {
+  display: inline-block;
+  border-radius: 50%;
+  margin: min(7px, 1vw);
+  height: 20px;
+  width: 20px;
+  transition: .5s;
+}
+
+.galleryDot:hover {
+  background-color: #fff;
+}
+
+@media screen and (min-width: 1150px) {
+  .imageGalleryContainer {
+    flex: 1 1 50%;
+  }
+}

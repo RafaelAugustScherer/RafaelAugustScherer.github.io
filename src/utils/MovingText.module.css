@@ -1,0 +1,23 @@
+.movingText {
+  display: inline-flex;
+  height: 2vw;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  color: #01fbfb;
+}
+
+.movingText::after {
+  content: "";
+  width: .5em;
+  height: 1em;
+  background: #01fbfb;
+  display: inline-block;
+  animation: cursor-blink 1s steps(2) infinite;
+}
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
