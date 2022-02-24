@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.912ef3f5.css",
-    "main.js": "/static/js/main.ccc4527c.js",
+    "main.js": "/static/js/main.1a92a6be.js",
     "static/media/outrun.m4v": "/static/media/outrun.0fc3dcb36e3297d76a6f.m4v",
     "static/media/Kingdom in Blue.mp3": "/static/media/Kingdom in Blue.8c2d262e96ef711e62b9.mp3",
     "static/media/still breathing.mp3": "/static/media/still breathing.fa37c2c7b58d714e9ce2.mp3",
     "static/media/controlla.mp3": "/static/media/controlla.dde0ae141fdaf3d6057b.mp3",
-    "static/media/4.png": "/static/media/4.85a7807ccfad755d8501.png",
-    "static/media/3.png": "/static/media/3.5618af469fc7764a8569.png",
-    "static/media/2.png": "/static/media/2.a4574e922289b1154a5e.png",
-    "static/media/1.png": "/static/media/1.05df230f43a130452b02.png",
+    "static/media/p4.png": "/static/media/p4.85a7807ccfad755d8501.png",
+    "static/media/p3.png": "/static/media/p3.5618af469fc7764a8569.png",
+    "static/media/p2.png": "/static/media/p2.a4574e922289b1154a5e.png",
+    "static/media/p1.png": "/static/media/p1.05df230f43a130452b02.png",
     "static/media/about-experience-background.jpg": "/static/media/about-experience-background.bbf27bbf229b3881f0c6.jpg",
-    "static/media/6.png": "/static/media/6.4d53a364aa13bb1a0848.png",
-    "static/media/5.png": "/static/media/5.6e3837c8ea8ff09927cf.png",
+    "static/media/p6.png": "/static/media/p6.4d53a364aa13bb1a0848.png",
+    "static/media/p5.png": "/static/media/p5.6e3837c8ea8ff09927cf.png",
     "static/media/projects-background.png": "/static/media/projects-background.47fce5453200d88a19a2.png",
     "static/media/still_breathing.jpg": "/static/media/still_breathing.eddd815655cff8bfdde7.jpg",
     "static/media/controlla.jpg": "/static/media/controlla.d607f637a2682600abb3.jpg",
@@ -33,10 +33,10 @@
     "static/media/group.webp": "/static/media/group.fc39ea18fa12dac0314f.webp",
     "index.html": "/index.html",
     "main.912ef3f5.css.map": "/static/css/main.912ef3f5.css.map",
-    "main.ccc4527c.js.map": "/static/js/main.ccc4527c.js.map"
+    "main.1a92a6be.js.map": "/static/js/main.1a92a6be.js.map"
   },
   "entrypoints": [
     "static/css/main.912ef3f5.css",
-    "static/js/main.ccc4527c.js"
+    "static/js/main.1a92a6be.js"
   ]
 }
