@@ -1,0 +1,55 @@
+body * {
+    margin-left: 5px;
+}
+
+h2 i {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+div img {
+    height: 70px;
+    width: 100px;
+}
+
+#finish-line {
+    position: fixed;
+    top: 150px;
+    right: -50px;
+    width: 200px;
+    height: 400px;
+    z-index: -1;
+}
+
+button {
+    margin-top: 20px;
+}
+
+#countdown {
+    position: absolute;
+    right: 50vw;
+    top: 20vh;
+    font-size: 50px;
+    text-align: center;
+}
+
+.car {
+    margin-left: 0;
+}
+
+.rev-counter h3 {
+    margin-top: 50px;
+}
+
+.rev-counter div {
+    margin-right: 30px;
+    display: inline-block;
+    color: white;
+    font-weight: 800;
+    background-color: black;
+    border: 5px solid black;
+}
+
+.seis, .sete {
+    color: red !important;
+}

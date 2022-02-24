@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Complete Personal Web Portifolio of Rafael Augusto Scherer hosted at GitHub Pages."
+    />
+    <title>Web Portifolio - Rafael Augusto Scherer</title>
+    <link rel="shortcut icon" href="images/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="bootstrap/icons/font/bootstrap-icons.css"
+    />
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="video-container">
+        <video autoplay muted loop id="outrun-bg-video">
+          <source src="videos/outrun.mp4" type="video/mp4" />
+        </video>
+        <h1 id="title">Rafael Augusto Scherer</h1>
+      </div>
+      <nav class="navbar fixed-top navbar-expand-md navbar-dark">
+        <h2 class="navbar-title">Navigation Bar</h2>
+        <div class="container-fluid">
+          <a class="navbar-brand fs-5" href="https://rafaelaugustscherer.github.io/"
+            >RafaelAugustScherer<em class="fs-6">.github.io</em></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarToggler"
+            aria-controls="navbarToggler"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              class="navbar-toggler-icon bi bi-list"
+              aria-label="Navbar Toggler Icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+          </button>
+          <div class="collapse navbar-collapse flex-row-reverse" id="navbarToggler">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link profile-link" href="#profile"><strong>|</strong> Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link academic-exp-link" href="#academic-exp"
+                  ><strong>|</strong> Academic Exp.</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link professional-exp-link" href="#professional-exp"
+                  ><strong>|</strong> Professional Exp.</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link contact-link" href="#footer"><strong>|</strong> Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <span class="anchor" id="profile"></span>
+      <section id="profile-section">
+        <h2 class="profile-section-title">Profile</h2>
+        <article id="about-article">
+          <h3>About</h3>
+          <img alt="Personal Profile Photo" src="images/profile.photo.jpeg" loading="lazy" />
+          <div>
+            <div class="page-options">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input btn-outline-secondary"
+                  type="checkbox"
+                  id="darkmode"
+                />
+                <label class="form-check-label text-secondary" for="darkmode"
+                  ><i class="bi bi-moon-fill"></i
+                ></label>
+              </div>
+              <div class="btn-group fs-6" role="group" aria-label="Language Selector">
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="language"
+                  id="english"
+                  autocomplete="off"
+                />
+                <label class="btn btn-outline-secondary" for="english">EN</label>
+
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="language"
+                  id="portuguese"
+                  autocomplete="off"
+                />
+                <label class="btn btn-outline-secondary" for="portuguese">PT</label>
+              </div>
+            </div>
+            <div class="about-article-text">
+              <p>
+                I am a passionate <strong>IT Student and Enthusiast</strong> and I love the idea of
+                <strong>DIY</strong> when dealing with hardware and software making. I also live in
+                a small city located in the state of <em>Rio Grande do Sul</em>, <em>Brazil.</em>
+              </p>
+              <p>
+                I've been in contact with technology since forever, as my dad was the owner of a LAN
+                House and there I spent most of my childhood's time, playing videogames and helping
+                when needed.
+              </p>
+            </div>
+          </div>
+        </article>
+        <hr />
+        <article id="lists-article">
+          <h2>Personal Lists</h2>
+          <section id="personal-skills-section">
+            <h2 class="personal-skills-section-title">
+              Personal Skills <i class="bi bi-cpu" aria-label="CPU"></i>
+            </h2>
+            <ul class="personal-skills-section-list">
+              <li><strong>Hardware Mounting & Maintence</strong></li>
+              <li>Advanced English</li>
+              <li>Native Portuguese</li>
+              <li><strong>SQL & NoSQL</strong></li>
+              <li>REST APIs</li>
+              <li>Python</li>
+            </ul>
+          </section>
+          <section id="favorite-websites-section">
+            <h2 class="favorite-websites-section-title">
+              Favorite Websites <i class="bi bi-star" aria-label="Star"></i>
+            </h2>
+            <ol class="favorite-websites-section-list">
+              <li>
+                <a href="https://www.guru3d.com/" target="_blank" rel="noreferrer noopener"
+                  >Guru3D</a
+                >
+              </li>
+              <li>
+                <a href="https://www.techpowerup.com/" target="_blank" rel="noreferrer noopener"
+                  >TechPowerUp</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/" target="_blank" rel="noreferrer noopener">GitHub</a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/c/safesrc/featured"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >safesrc Channel</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/user/LinusTechTips"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Linus Tech Tips Channel</a
+                >
+              </li>
+            </ol>
+          </section>
+          <section id="some-projects-section">
+            <h2 class="some-projects-section-title">
+              Some Projects <i class="bi bi-code-slash" aria-label="Slash"></i>
+            </h2>
+            <ol class="some-projects-section-list">
+              <li>
+                <a
+                  href="https://gitlab.com/rafaelaugustscherer/sharedspace"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >SharedSpace</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/uesleisuptitz/trackandroll"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Track'n Roll*</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/RafaelAugustScherer/pong"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Pong in Python</a
+                >
+              </li>
+            </ol>
+            <p class="contributors-text"><em>* = Made with the help of contributors</em></p>
+          </section>
+        </article>
+      </section>
+      <hr />
+      <span class="anchor" id="academic-exp"></span>
+      <section id="academic-exp-section" class="exp-section fs-5">
+        <h2 class="academic-exp-section-title">Academic Experience</h2>
+        <hr />
+        <article id="trybe-article">
+          <h3>
+            <a
+              href="https://www.betrybe.com/"
+              class="article-title"
+              target="_blank"
+              rel="noreferrer noopener"
+              ><img alt="Trybe Logo" src="images/academic-section/trybe-icon.jpeg" loading="lazy" />
+              Trybe</a
+            >
+            <em>(2021 - 2022)</em>
+          </h3>
+          <div class="trybe-article-text">
+            <p>
+              Trybe is a web development school that has a genuine commitment to the professional
+              success of its students. With the Shared Success Model, those who study at Trybe have
+              the option of
+              <strong>paying only when they are already working.</strong>
+            </p>
+            <p>
+              There are more than <strong>1500 hours</strong> of training that covers the
+              fundamental of web development, development, Front-end, Back-end, computer science,
+              software engineering, agile methodologies and soft skills.
+            </p>
+            <p>
+              I am currently doing this course
+              <strong>to learn how to learn and to code</strong>. At the end of the course I expect
+              to have acquired a lot of experience in the area and also have a professional
+              oportunity in one of the selected Trybe Partners.
+            </p>
+          </div>
+        </article>
+        <hr />
+        <article id="ifsul-article">
+          <h3>
+            <a
+              href="http://www.sapiranga.ifsul.edu.br/"
+              class="article-title"
+              target="_blank"
+              rel="noreferrer noopener"
+              ><img alt="IFSul Logo" src="images/academic-section/ifsul-icon.jpeg" loading="lazy" />
+              IFSul - Câmpus Sapiranga</a
+            >
+            <em>(2017 - 2021)</em>
+          </h3>
+          <div class="ifsul-article-text">
+            <p>
+              Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grande (IFSul) is a
+              federal institution of education in Brazil that offers great quality of education for
+              <strong>high school</strong> students and also includes
+              <strong>Integrated Technical Courses</strong>, such as Information Technology and
+              Electronics Course.
+            </p>
+            <p>
+              There I <strong>graduated in high school</strong> along with the
+              <strong>Information Technology Course</strong>. The Course went through a lot of
+              content about Network, Programming, Operational Systems and Hardware Maintence. It
+              added a lot to my academic experience and there I was inspired to do my
+              <strong>first projects</strong> in the form of Mobile Apps with Bluetooth, Android
+              Studio, Firebase and React Native integrations.
+            </p>
+          </div>
+        </article>
+        <hr />
+        <article id="success-english-article">
+          <h3>
+            <a
+              href="https://www.facebook.com/SuccessDI/"
+              class="article-title"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img
+                alt="Success English Logo"
+                src="images/academic-section/success-english-icon.jpeg"
+                loading="lazy"
+              />
+              Success English</a
+            >
+            <em>(2015 - 2019)</em>
+          </h3>
+          <div class="success-english-article-text">
+            <p>
+              Success English is an English School institution with great
+              <strong>prestige and recognition in my hometown</strong>. It uses the
+              <em>Top Notch Book Series</em> and its tests to teach the students from Fundamentals
+              to Advanced English. The course uses <strong>written and spoken tests</strong> to
+              evaluate each student's performance.
+            </p>
+            <p>
+              The institution is recognized by their
+              <strong>high-achieving students</strong> in the English Language, with a very
+              effective method applied over the years. There I was able to learn most of what I
+              currently know, and with the <strong>constant contact with the language</strong> I am
+              able to keep a good English level overall.
+            </p>
+          </div>
+        </article>
+      </section>
+      <hr />
+      <span class="anchor" id="professional-exp"></span>
+      <section id="professional-exp-section" class="exp-section fs-5">
+        <h2 class="professional-exp-section-title">Professional Experience</h2>
+        <hr />
+        <article id="renovare-article">
+          <h3>
+            <a
+              href="https://www.renovaretelecom.com.br/site/"
+              class="article-title"
+              target="_blank"
+              rel="noreferrer noopener"
+              ><img
+                alt="Renovare Logo"
+                src="images/professional-section/renovare-icon.jpeg"
+                loading="lazy"
+              />
+              Renovare Telecom</a
+            >
+            <em>(2020 - 2021)</em>
+          </h3>
+          <div class="renovare-article-text">
+            <p>
+              Renovare Telecom is an <strong>Telecommunication Company</strong> from my hometown.
+              The owners started the company in 2010 and after
+              <strong>10 years of operation</strong> it is already the <strong>biggest</strong> in
+              town. It also operates in many other countryside cities.
+            </p>
+            <p>
+              I was hired by the company in the middle of the
+              <strong>pandemic</strong> as an <strong>IT Intern</strong>, some months after I'd been
+              dismissed by Kunden. That opportunity was one of the <strong>best</strong> things that
+              happened to me that year.
+            </p>
+            <p>
+              There I learned a lot about
+              <strong
+                >enterprise servers, cloning and fixing corrupted operational systems, file recovery
+                and some Debian commands and processes</strong
+              >. I was responsible for the installation and setup of OSs for each and every
+              employee. Upgrades and replacements were often needed, and all of that was properly
+              registered in a personal sheet. Most of the things I learned
+              <strong>I owe to my colleagues, with years of experience in IT.</strong>
+            </p>
+          </div>
+        </article>
+        <hr />
+        <article id="kunden-article">
+          <h3>
+            <a
+              href="http://kunden.com.br/"
+              class="article-title"
+              target="_blank"
+              rel="noreferrer noopener"
+              ><img
+                alt="Kunden Logo"
+                src="images/professional-section/kunden-icon.jpeg"
+                loading="lazy"
+              />
+              Kunden Systems</a
+            >
+            <em>(2018 - 2020)</em>
+          </h3>
+          <div class="kunden-article-text">
+            <p>
+              Kunden Systems is an Industrial & Comercial Enterprise Resource Planning (ERP)
+              provider. It operates mainly in the
+              <strong>south region of Brazil</strong>, but there are clients spread all over
+              <strong>South America</strong>.
+            </p>
+            <p>
+              There I had my first professional/working experience in the Information Technology
+              area and it was
+              <strong>really important for me and my perception of myself</strong>. My capabilites
+              were put to test and <strong>I learned a lot with the people around me</strong>. From
+              opening notebooks to applying fixes in
+              <strong>PL/SQL Production and Test Databases.</strong>
+            </p>
+          </div>
+        </article>
+      </section>
+      <hr />
+    </main>
+    <footer id="footer">
+      <nav>
+        <h2 class="footer-title">Contact</h2>
+        <hr />
+        <div>
+          <h3>LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/rafael-augusto-scherer/" rel="noreferrer noopener"
+            ><i class="bi bi-linkedin" aria-label="LinkedIn"></i><span>Linkedin</span></a
+          >
+        </div>
+        <div>
+          <h3>GitHub</h3>
+          <a href="https://github.com/RafaelAugustScherer/" rel="noreferrer noopener"
+            ><i class="bi bi-github" aria-label="GitHub"></i><span>GitHub</span></a
+          >
+        </div>
+        <div>
+          <h3>E-mail</h3>
+          <a href="mailto:rafaelaugustscherer@gmail.com" target="_blank"
+            ><i class="bi bi-envelope-fill" aria-label="Mail Envelope"></i
+            ><span>rafaelaugustscherer@gmail.com</span></a
+          >
+        </div>
+      </nav>
+    </footer>
+
+    <!-- Boostrap JS -->
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- Page JS -->
+    <script src="features/darkmode.js"></script>
+    <script src="features/language.js"></script>
+    <script src="features/navbar.js"></script>
+  </body>
+</html>
