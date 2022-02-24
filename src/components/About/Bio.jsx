@@ -20,7 +20,7 @@ const Bio = () => {
         </div>
         <p>
           <span>
-            I'm a passionate <b>IT Student and Enthusiast</b>. I love to use the concept of <b>DIY</b> when dealing with hardware and software making. I live in a small city located in the state of Rio Grande do Sul, Brazil.
+            I'm a passionate <b>IT Student and Tech Enthusiast</b>. I love to use the concept of <b>DIY</b> when dealing with hardware and software making. I also live in a small city located in the state of Rio Grande do Sul, Brazil.
           </span>
           <span>
             I've been in contact with technology since forever, as my dad was the owner of an Arcade / Internet Café and there I spent most of my childhood's time, playing videogames and helping when needed.
