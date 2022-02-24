@@ -1,12 +1,10 @@
-import { useEffect, useState, useCallback } from 'react';
-import { getImages } from '../../utils/images';
-import styles from './style/Project.module.scss';
 import BadgeSet from '../Badge/BadgeSet';
 import ImageGallery from './ImageGallery';
+import styles from './style/Project.module.scss';
 
 const Project = ({ project, nextProject, prevProject }) => {
 
-  const goToPage = (url) => window.location.href = url;
+  const goToPage = (url) => window.open(url, 'blank');
 
   return (
     <div className={styles.projectContainer}>

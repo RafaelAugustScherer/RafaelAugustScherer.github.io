@@ -7,14 +7,17 @@ const Skills = () => {
     <div className={styles.skillsDiv}>
         <h2>Skills</h2>
         {
-          skills.map((skill) => (
-            <div
-              key={`${skill}-about`}
+          skills.map(({ name, website }) => (
+            <a
+              key={`${name}-about`}
               className={styles.skill}
+              href={ website }
+              target="_blank"
+              rel="noreferrer"
             >
-              <Badge badgeName={skill} clickable />
-              <p>{skill}</p>
-            </div>
+              <Badge badgeName={name} />
+              <p>{name}</p>
+            </a>
           ))
         }
       </div>

@@ -7,7 +7,7 @@ import ProfileImage from './ProfileImage';
 import styles from './style/Header.module.scss';
 
 const Header = () => {
-  const goToPage = (url) => window.location.href = url;
+  const goToPage = (url) => window.open(url, 'blank');
 
   return (
     <header className={styles.header}>
