@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.5bee4a70.css",
-    "main.js": "/static/js/main.f630b86c.js",
+    "main.js": "/static/js/main.0721a2b7.js",
     "static/media/outrun.m4v": "/static/media/outrun.0fc3dcb36e3297d76a6f.m4v",
     "static/media/Kingdom in Blue.mp3": "/static/media/Kingdom in Blue.8c2d262e96ef711e62b9.mp3",
     "static/media/still breathing.mp3": "/static/media/still breathing.fa37c2c7b58d714e9ce2.mp3",
@@ -16,10 +16,10 @@
     "static/media/projects-background.png": "/static/media/projects-background.47fce5453200d88a19a2.png",
     "static/media/still_breathing.jpg": "/static/media/still_breathing.eddd815655cff8bfdde7.jpg",
     "static/media/controlla.jpg": "/static/media/controlla.d607f637a2682600abb3.jpg",
-    "static/media/lighthouse-report.png": "/static/media/lighthouse-report.0784f4ab1da5be561501.png",
-    "static/media/profile-photo-cut.png": "/static/media/profile-photo-cut.ddfe8e8f82aa066762d1.png",
+    "static/media/profile-photo-cut.old.png": "/static/media/profile-photo-cut.old.ddfe8e8f82aa066762d1.png",
+    "static/media/profile-photo-cut.png": "/static/media/profile-photo-cut.09f3cc8dddb9e84e1a3e.png",
+    "static/media/profile-photo.jpeg": "/static/media/profile-photo.7850c34826845b073831.jpeg",
     "static/media/kingdom_in_blue.jpg": "/static/media/kingdom_in_blue.8953f074d39e1fbf42f3.jpg",
-    "static/media/profile-photo.jpeg": "/static/media/profile-photo.359e33a796555a31ef27.jpeg",
     "static/media/mysql.webp": "/static/media/mysql.0da7cd18c04ff5295e17.webp",
     "static/media/mongodb.webp": "/static/media/mongodb.7fa5a27fdebca7f75f3a.webp",
     "static/media/favicon.png": "/static/media/favicon.334cf52bf03083fb00d4.png",
@@ -33,10 +33,10 @@
     "static/media/group.webp": "/static/media/group.fc39ea18fa12dac0314f.webp",
     "index.html": "/index.html",
     "main.5bee4a70.css.map": "/static/css/main.5bee4a70.css.map",
-    "main.f630b86c.js.map": "/static/js/main.f630b86c.js.map"
+    "main.0721a2b7.js.map": "/static/js/main.0721a2b7.js.map"
   },
   "entrypoints": [
     "static/css/main.5bee4a70.css",
-    "static/js/main.f630b86c.js"
+    "static/js/main.0721a2b7.js"
   ]
 }
