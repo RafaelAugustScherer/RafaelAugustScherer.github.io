@@ -12,7 +12,10 @@ import Footer from './components/Footer/Footer';
 const App = () => {
 
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({
+      duration: 2000,
+      disable: 'mobile'
+    });
     AOS.refresh();
   }, []);
 

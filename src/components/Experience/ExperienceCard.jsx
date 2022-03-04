@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MdOutlineArrowRight } from 'react-icons/md';
+import { useEffect } from 'react';
 import styles from './style/ExperienceCard.module.scss';
 
 const ExperienceCard = ({ name, date, icon, text, index }) => {
