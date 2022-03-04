@@ -32,7 +32,7 @@ const ImageGallery = ({ project, nextProject, prevProject }) => {
   }, [ curImage ]);
 
   return (
-    <div className={styles.imageGalleryContainer}>
+    <div className={styles.imageGalleryContainer} data-aos="fade-right">
       <img
         className={styles.galleryImage}
         src={images[ curImage ]}

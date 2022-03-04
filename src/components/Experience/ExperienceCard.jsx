@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { MdOutlineArrowRight } from 'react-icons/md';
 import styles from './style/ExperienceCard.module.scss';
 
-const ExperienceCard = ({ name, date, icon, text }) => {
+const ExperienceCard = ({ name, date, icon, text, index }) => {
   const [isToggled, setIsToggled] = useState(false);
 
   const handleBreakline = text => text.split('\n');
@@ -15,7 +15,7 @@ const ExperienceCard = ({ name, date, icon, text }) => {
   const textSplit = (text) => (
     handleBreakline(text)
     .map((str, idx) => (
-    <p 
+    <p
       key={ `${name}-${idx}` }
       className={ styles.itemText }
     >
@@ -26,9 +26,10 @@ const ExperienceCard = ({ name, date, icon, text }) => {
   
   return (
     <li
-      className={styles.experienceItem }
       key={ `${name}-experience` }
+      className={styles.experienceItem }
       onClick={ () => setIsToggled(!isToggled) }
+      data-aos="fade-down" data-aos-duration={ index * 1250 }
     >
       <h3 className={ styles.itemTitle }>
       <MdOutlineArrowRight

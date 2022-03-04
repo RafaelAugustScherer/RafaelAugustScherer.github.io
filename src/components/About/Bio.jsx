@@ -4,7 +4,7 @@ import styles from './style/Bio.module.scss';
 
 const Bio = () => {
   return (
-    <div className={styles.bioDiv}>
+    <div className={styles.bioDiv} data-aos="fade-right" data-aos-duration="1500">
         <div className={styles.aboutPhotoWrapper} >
           <img className={styles.aboutPhoto} src={profilePhoto} alt="profile" />
           <div className={styles.miscDiv}>

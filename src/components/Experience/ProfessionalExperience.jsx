@@ -6,9 +6,10 @@ const ProfessionalExperience = () => {
     <ul>
       <h2>Professional Experience</h2>
       {
-        professionalExperience.map((exp) => (
+        professionalExperience.map((exp, idx) => (
           <ExperienceCard
             key={ `${exp.name}-experience-card` }
+            index={ idx }
             { ...exp }
           />
         ))

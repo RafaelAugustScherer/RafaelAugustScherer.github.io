@@ -4,7 +4,7 @@ import styles from './style/Skills.module.scss';
 
 const Skills = () => {
   return (
-    <div className={styles.skillsDiv}>
+    <div className={styles.skillsDiv} data-aos="fade-right">
         <h2>Skills</h2>
         {
           skills.map(({ name, website }) => (

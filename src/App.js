@@ -1,3 +1,5 @@
+import AOS from 'aos';
+import { useEffect } from 'react';
 import Audio from './components/Audio/Audio';
 import Header from './components/Header/Header';
 import About from './components/About/About';
@@ -8,6 +10,12 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 
 const App = () => {
+
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <AudioProvider>

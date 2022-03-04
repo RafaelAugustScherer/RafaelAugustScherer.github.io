@@ -6,9 +6,10 @@ const AcademicExperience = () => {
     <ul>
       <h2>Academic Experience</h2>
       {
-        academicExperience.map((exp) => (
+        academicExperience.map((exp, idx) => (
           <ExperienceCard
             key={ `${exp.name}-experience-card` }
+            index={ idx }
             { ...exp }
           />
         ))
