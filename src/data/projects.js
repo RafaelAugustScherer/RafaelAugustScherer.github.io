@@ -1,10 +1,10 @@
 const projects = [
   {
-    name: 'Spotrybe',
+    name: 'Spotrybe (Music Platform)',
     dir: 'spotrybe',
     badges: ['JavaScript', 'React.js', 'Group'],
-    repository: 'https://github.com/RafaelAugustScherer/Projeto_Spotrybe/',
-    website: 'https://rafaelaugustscherer.github.io/Projeto_Spotrybe/'
+    repository: 'https://github.com/RafaelAugustScherer/Spotrybe/',
+    website: 'https://rafaelaugustscherer.github.io/Spotrybe/'
   },
   {
     name: 'Recipes App',
