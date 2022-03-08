@@ -22,7 +22,7 @@ const Audio = () => {
   } = AudioProvider;
   const [ isPlaying, setIsPlaying ] = useState(false);
   const [ isExpanded, setIsExpanded ] = useState(false);
-  const [ volume, setVolume ] = useState(.5);
+  const [ volume, setVolume ] = useState(.3);
 
   const isPlayingHandler = () => setIsPlaying(!isPlaying);
 
