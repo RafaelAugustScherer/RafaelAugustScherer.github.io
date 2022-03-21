@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.09d7bffc.css",
-    "main.js": "/static/js/main.edcdf561.js",
+    "main.css": "/static/css/main.666ae055.css",
+    "main.js": "/static/js/main.2b6873a7.js",
     "static/media/outrun.m4v": "/static/media/outrun.0fc3dcb36e3297d76a6f.m4v",
     "static/media/Kingdom in Blue.mp3": "/static/media/Kingdom in Blue.8c2d262e96ef711e62b9.mp3",
     "static/media/still breathing.mp3": "/static/media/still breathing.fa37c2c7b58d714e9ce2.mp3",
@@ -20,6 +20,7 @@
     "static/media/profile-photo-cut.png": "/static/media/profile-photo-cut.09f3cc8dddb9e84e1a3e.png",
     "static/media/profile-photo.jpeg": "/static/media/profile-photo.7850c34826845b073831.jpeg",
     "static/media/kingdom_in_blue.jpg": "/static/media/kingdom_in_blue.8953f074d39e1fbf42f3.jpg",
+    "static/media/brazil.png": "/static/media/brazil.2f12aeed6cab89d1210b.png",
     "static/media/mysql.webp": "/static/media/mysql.0da7cd18c04ff5295e17.webp",
     "static/media/mongodb.webp": "/static/media/mongodb.7fa5a27fdebca7f75f3a.webp",
     "static/media/favicon.png": "/static/media/favicon.334cf52bf03083fb00d4.png",
@@ -32,11 +33,12 @@
     "static/media/git.webp": "/static/media/git.732807098fa5566ba9ff.webp",
     "static/media/group.webp": "/static/media/group.fc39ea18fa12dac0314f.webp",
     "index.html": "/index.html",
-    "main.09d7bffc.css.map": "/static/css/main.09d7bffc.css.map",
-    "main.edcdf561.js.map": "/static/js/main.edcdf561.js.map"
+    "static/media/getFetch.cjs": "/static/media/getFetch.c780682470504fffbd04.cjs",
+    "main.666ae055.css.map": "/static/css/main.666ae055.css.map",
+    "main.2b6873a7.js.map": "/static/js/main.2b6873a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.09d7bffc.css",
-    "static/js/main.edcdf561.js"
+    "static/css/main.666ae055.css",
+    "static/js/main.2b6873a7.js"
   ]
 }
