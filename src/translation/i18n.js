@@ -9,7 +9,6 @@ i18n
   .use(httpApi)
   .init({
     fallbackLng: 'en',
-    lng: 'pt-br',
   });
 
 export default i18n;
