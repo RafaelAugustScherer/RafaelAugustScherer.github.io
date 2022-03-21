@@ -26,10 +26,12 @@
   font-size: 1.2rem;
 }
 
-.footer a svg {
+.footer a svg,
+.footer a img {
   width: 25px;
   height: 25px;
   margin-right: 5px;
+  padding: 0;
 }
 
 .footer a:hover {

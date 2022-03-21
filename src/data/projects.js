@@ -1,24 +1,24 @@
-const projects = [
+const projects = (t) => ([
   {
-    name: 'Spotrybe (Music Platform)',
+    name: t('projects.list.spotrybe'),
     dir: 'spotrybe',
     badges: ['JavaScript', 'React.js', 'Group'],
     repository: 'https://github.com/RafaelAugustScherer/Spotrybe/',
     website: 'https://rafaelaugustscherer.github.io/Spotrybe/'
   },
   {
-    name: 'Recipes App',
+    name: t('projects.list.recipesApp'),
     dir: 'recipes-app',
     badges: ['JavaScript', 'React.js', 'Group'],
     repository: 'https://github.com/RafaelAugustScherer/recipes-app/',
     website: 'https://rafaelaugustscherer.github.io/recipes-app/'
   },
   {
-    name: 'Fallout Timer',
+    name: t('projects.list.falloutTimer'),
     dir: 'timer',
     badges: ['JavaScript', 'React.js'],
     repository: 'https://github.com/RafaelAugustScherer/timer/',
     website: 'https://rafaelaugustscherer.github.io/timer/'
-  }];
+  }]);
 
 export default projects;

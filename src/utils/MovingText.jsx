@@ -10,7 +10,7 @@ const MovingText = ({ words }) => {
   });
 
   const textHandler = () => {
-    let speed = 400;
+    let speed = 150;
     let { value, position, word, direction } = text;
 
     if (direction) {
@@ -25,7 +25,7 @@ const MovingText = ({ words }) => {
     }
     else {
       if (position === 0) {
-        word = word === 2 ? 0 : word + 1;
+        word = word === words.length - 1 ? 0 : word + 1;
         direction = 1;
         speed = 1000;
       }

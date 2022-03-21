@@ -1,10 +1,10 @@
 import ExperienceCard from './ExperienceCard';
 import { academicExperience } from '../../data/experience';
 
-const AcademicExperience = () => {
+const AcademicExperience = ({ t }) => {
   return (
     <ul>
-      <h2>Academic Experience</h2>
+      <h2>{ t('experience.academic.title') }</h2>
       {
         academicExperience.map((exp, idx) => (
           <ExperienceCard

@@ -33,14 +33,18 @@ const madeWithLinks = [
     icon: FaSass,
     url: 'https://sass-lang.com/'
   },
+  {
+    name: 'react-i18next',
+    url: 'https://react.i18next.com/' 
+  }
 ]
 
-const referenceLinks = {
-  'Header Video': 'https://youtu.be/lrf-GAYUOkQ',
-  'Projects Background': 'https://imgur.com/t/outrun/NTB8H1X',
-  'About/Experience Background': 'https://www.wallpaperflare.com/music-stars-planet-space-pyramid-background-neon-synth-wallpaper-unkuq',
-  'Playlist': 'https://music.youtube.com/playlist?list=PLG9hZs0y-_kN0oh7W6PSgE2hpTEoFGkSv'
-};
+const referenceLinks = (t) => ({
+  [t('footer.references.headerVideo')]: 'https://youtu.be/lrf-GAYUOkQ',
+  [t('footer.references.projectsBackground')]: 'https://imgur.com/t/outrun/NTB8H1X',
+  [t('footer.references.aboutExperienceBackground')]: 'https://www.wallpaperflare.com/music-stars-planet-space-pyramid-background-neon-synth-wallpaper-unkuq',
+  [t('footer.references.playlist')]: 'https://music.youtube.com/playlist?list=PLG9hZs0y-_kN0oh7W6PSgE2hpTEoFGkSv'
+});
 
 export {
   contactLinks,

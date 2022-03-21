@@ -7,21 +7,19 @@ import renovareIcon from '../assets/images/experience/professional/renovare-icon
 const academicExperience = [
   {
     name: 'Trybe',
+    tKey: 'academic.trybe', 
     date: '2021 - 2022',
     icon: trybeIcon,
-    text: `Trybe is a web development school that has a genuine commitment to the professional success of its students. With the Shared Success Model, those who study at Trybe have the option of \bpaying only when they are already working.\b
-    There are more than \b1500 hours\b of training that covers the fundamental of web development, development, Front-end, Back-end, computer science, software engineering, agile methodologies and soft skills.
-    I am currently doing this course to \blearn how to learn and to code.\b At the end of the course I expect to have acquired a lot of experience in the area and also have a professional oportunity in one of the selected Trybe Partners.`
   },
   {
     name: 'IFSul - Câmpus Sapiranga',
+    tKey: 'academic.ifsul',
     date: '2017 - 2021',
     icon: ifsulIcon,
-    text: `Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grande (IFSul) is a federal institution of education in Brazil that offers great quality of \beducation for high school\b students and also includes \bIntegrated Technical Courses\b, such as Information Technology and Electronics Course.
-    There \bI graduated in high school\b along with the \bInformation Technology Course\b. The Course went through a lot of content about Network, Programming, Operational Systems and Hardware Maintence. It added a lot to my academic experience and there I was \binspired to do my first projects\b in the form of Mobile Apps with Bluetooth, Android Studio, Firebase and React Native integrations.`
   },
   {
     name: 'Success English',
+    tKey: 'academic.successEnglish',
     date: '2015 - 2019',
     icon: successEnglishIcon,
     text: `Success English is an English School institution with \bgreat prestige and recognition in my hometown.\b It uses the Top Notch Book Series and its tests to teach the students from Fundamentals to Advanced English. The course uses \bwritten and spoken tests\b to evaluate each student's performance.
@@ -32,6 +30,7 @@ const academicExperience = [
 const professionalExperience = [
   {
     name: 'Renovare Telecom',
+    tKey: 'professional.renovareTelecom',
     date: '2020 - 2021',
     icon: renovareIcon,
     text: `Renovare Telecom is a \bTelecommunication Company\b from my hometown. The owners started the company in 2010 and \bafter 10 years of operation it is already the biggest in town.\b It also operates in many other countryside cities.
@@ -40,6 +39,7 @@ const professionalExperience = [
   },
   {
     name: 'Kunden Systems',
+    tKey: 'professional.kundenSystems',
     date: '2018 - 2020',
     icon: kundenIcon,
     text: `Kunden Systems is an \bIndustrial & Comercial Enterprise Resource Planning (ERP) provider\b. It operates mainly in the \bsouth region of Brazil\b, but there are \bclients spread all over South America.\b

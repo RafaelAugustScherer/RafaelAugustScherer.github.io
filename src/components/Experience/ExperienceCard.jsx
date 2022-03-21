@@ -1,9 +1,10 @@
+import { Trans, useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { MdOutlineArrowRight } from 'react-icons/md';
-import { useEffect } from 'react';
 import styles from './style/ExperienceCard.module.scss';
 
-const ExperienceCard = ({ name, date, icon, text, index }) => {
+const ExperienceCard = ({ name, tKey, date, icon, index }) => {
+  const { t } = useTranslation();
   const [isToggled, setIsToggled] = useState(false);
 
   const handleBreakline = text => text.split('\n');
@@ -46,7 +47,14 @@ const ExperienceCard = ({ name, date, icon, text, index }) => {
       <span>({ date })</span>
       </h3>
       <div className={ `${styles.itemTextDiv}  ${ isToggled ? styles.toggle : '' }`  } >
-        { textSplit(text) }
+        { t(`experience.${tKey}`, { returnObjects: true }).map((paragraph, idx) => (
+            <p
+              key={ `${name}-${idx}` }
+              className={ styles.itemText }
+            >
+              <Trans>{ paragraph }</Trans>
+            </p>
+          )) }
       </div>
     </li>
   );

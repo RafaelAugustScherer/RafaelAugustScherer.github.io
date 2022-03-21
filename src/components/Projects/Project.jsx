@@ -1,9 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import BadgeSet from '../Badge/BadgeSet';
 import ImageGallery from './ImageGallery';
 import styles from './style/Project.module.scss';
 
 const Project = ({ project, nextProject, prevProject }) => {
-
+  const { t } = useTranslation();
   const goToPage = (url) => window.open(url, 'blank');
 
   return (
@@ -18,8 +19,8 @@ const Project = ({ project, nextProject, prevProject }) => {
         prevProject = { prevProject }
       />
       <div className={styles.accessButtons} data-aos="fade-left">
-        <button onClick={ () => goToPage(project.website) } >Website</button>
-        <button onClick={ () => goToPage(project.repository) } >Repository</button>
+        <button onClick={ () => goToPage(project.website) } >{ t('projects.websiteBtn') }</button>
+        <button onClick={ () => goToPage(project.repository) } >{ t('projects.repositoryBtn') }</button>
       </div>
     </div>
   )

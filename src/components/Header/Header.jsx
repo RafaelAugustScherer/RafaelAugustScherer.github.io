@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import outrunVideo from '../../assets/videos/outrun.m4v';
 import MovingText from '../../utils/MovingText';
@@ -7,6 +8,7 @@ import ProfileImage from './ProfileImage';
 import styles from './style/Header.module.scss';
 
 const Header = () => {
+  const { t } = useTranslation();
   const goToPage = (url) => window.open(url, 'blank');
 
   return (
@@ -27,9 +29,9 @@ const Header = () => {
       <div className={ styles.headerBioDiv }>
         <ProfileImage />
         <h1 className={ styles.headerText }>
-          Hi, my name is Rafael and I am a
+          { t('header.text') }
           <br />
-          <MovingText words={ [ 'Developer', 'Student', 'Gamer' ] } />
+          <MovingText words={ t('header.movingText', { returnObjects: true }) } />
         </h1>
       </div>
       <NextPageArrow url="#about" />
