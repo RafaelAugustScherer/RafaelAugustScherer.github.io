@@ -10,9 +10,6 @@ i18n
   .init({
     fallbackLng: 'en',
     lng: 'pt-br',
-    backend: {
-      loadPath: '/assets/{{lng}}.json'
-    },
   });
 
 export default i18n;

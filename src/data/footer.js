@@ -1,3 +1,4 @@
+import i18n from '../translation/i18n';
 import { FaGithub, FaLinkedin, FaEnvelope, FaReact, FaSass } from 'react-icons/fa';
 
 const contactLinks = [
@@ -39,12 +40,12 @@ const madeWithLinks = [
   }
 ]
 
-const referenceLinks = (t) => ({
-  [t('footer.references.headerVideo')]: 'https://youtu.be/lrf-GAYUOkQ',
-  [t('footer.references.projectsBackground')]: 'https://imgur.com/t/outrun/NTB8H1X',
-  [t('footer.references.aboutExperienceBackground')]: 'https://www.wallpaperflare.com/music-stars-planet-space-pyramid-background-neon-synth-wallpaper-unkuq',
-  [t('footer.references.playlist')]: 'https://music.youtube.com/playlist?list=PLG9hZs0y-_kN0oh7W6PSgE2hpTEoFGkSv'
-});
+const referenceLinks = {
+  [i18n.t('footer.references.headerVideo')]: 'https://youtu.be/lrf-GAYUOkQ',
+  [i18n.t('footer.references.projectsBackground')]: 'https://imgur.com/t/outrun/NTB8H1X',
+  [i18n.t('footer.references.aboutExperienceBackground')]: 'https://www.wallpaperflare.com/music-stars-planet-space-pyramid-background-neon-synth-wallpaper-unkuq',
+  [i18n.t('footer.references.playlist')]: 'https://music.youtube.com/playlist?list=PLG9hZs0y-_kN0oh7W6PSgE2hpTEoFGkSv'
+};
 
 export {
   contactLinks,
