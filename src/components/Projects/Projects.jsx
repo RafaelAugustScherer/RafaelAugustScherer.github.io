@@ -14,7 +14,7 @@ const Projects = () => {
 
   useEffect(() => {
     setCurProject(tProjects[curIndex]);
-  }, [curIndex]);
+  }, [curIndex, t]);
 
   const nextProject = () => {
     const nextIndex = curIndex === tProjects.length - 1 ? 0 : curIndex + 1;

@@ -40,7 +40,7 @@ const Footer = () => {
       <div className={ styles.referencesDiv } >
         <h2>{ t('footer.references.title') }</h2>
         {
-          Object.entries(referenceLinks).map(([name, url]) => (
+          Object.entries(referenceLinks(t)).map(([name, url]) => (
             <a key={ name } href={ url } target="_blank" rel="noreferrer">{ name }</a>
           ))
         }
