@@ -18,7 +18,7 @@ const SelectLanguage = ({ setLanguage }) => {
       </div>
       <div
         className={ styles.languageDiv }
-        onClick={ () => setLanguage('pt-br') }
+        onClick={ () => setLanguage('pt-BR') }
       >
         <img
         className={ styles.flag }

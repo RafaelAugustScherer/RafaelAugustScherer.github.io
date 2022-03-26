@@ -10,7 +10,7 @@ const languages = [
   },
   {
     name: 'PT-BR',
-    value: 'pt-br',
+    value: 'pt-BR',
     flag: BRFlag,
   },
   {
