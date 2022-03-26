@@ -15,7 +15,7 @@ const languages = [
   },
   {
     name: 'LR-IP',
-    value: 'lr-ip',
+    value: 'lr-IP',
     flag: IPFlag,
   }
 ];
