@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b0dc4773.css",
-    "main.js": "/static/js/main.3eca8579.js",
+    "main.css": "/static/css/main.4d3062a9.css",
+    "main.js": "/static/js/main.25494383.js",
     "static/media/outrun.m4v": "/static/media/outrun.0fc3dcb36e3297d76a6f.m4v",
     "static/media/Kingdom in Blue.mp3": "/static/media/Kingdom in Blue.8c2d262e96ef711e62b9.mp3",
     "static/media/Midnight Snack.mp3": "/static/media/Midnight Snack.8cdf7e32affd8d381098.mp3",
@@ -36,11 +36,11 @@
     "static/media/group.webp": "/static/media/group.fc39ea18fa12dac0314f.webp",
     "index.html": "/index.html",
     "static/media/getFetch.cjs": "/static/media/getFetch.c780682470504fffbd04.cjs",
-    "main.b0dc4773.css.map": "/static/css/main.b0dc4773.css.map",
-    "main.3eca8579.js.map": "/static/js/main.3eca8579.js.map"
+    "main.4d3062a9.css.map": "/static/css/main.4d3062a9.css.map",
+    "main.25494383.js.map": "/static/js/main.25494383.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0dc4773.css",
-    "static/js/main.3eca8579.js"
+    "static/css/main.4d3062a9.css",
+    "static/js/main.25494383.js"
   ]
 }
