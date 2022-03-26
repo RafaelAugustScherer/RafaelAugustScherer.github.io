@@ -1,0 +1,39 @@
+.languageSelectorWrapper {
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  padding: 20px 0;
+  margin: 30px;
+}
+
+.languageSelectorWrapper select {
+  position: absolute;
+  height: 70px;
+  width: 130px;
+  background-color: rgba(0, 0, 0, 0.534);
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 20px 0;
+  padding-left: 60px;
+}
+
+.languageSelectorWrapper select:focus,
+.languageSelectorWrapper select:active {
+  border: none;
+  outline: none;
+}
+
+.languageSelectorWrapper select option {
+  background-color: #272727;
+}
+
+.languageSelectorFlag {
+  width: 45px;
+  height: 30px;
+  z-index: 1;
+  margin-left: 10px;
+}

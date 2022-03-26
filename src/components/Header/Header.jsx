@@ -4,6 +4,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import outrunVideo from '../../assets/videos/outrun.m4v';
 import MovingText from '../../utils/MovingText';
 import NextPageArrow from '../NextPageArrow';
+import LanguageSelector from './LanguageSelector';
 import ProfileImage from './ProfileImage';
 import styles from './style/Header.module.scss';
 
@@ -14,6 +15,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <video className={styles.headerVideo} src={outrunVideo} autoPlay loop muted />
+      <LanguageSelector />
       <div className={styles.linksDiv}>
         <FaLinkedin
           onClick={() => goToPage("https://www.linkedin.com/in/rafael-augusto-scherer/")}
