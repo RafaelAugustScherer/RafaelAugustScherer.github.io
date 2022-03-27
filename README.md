@@ -15,4 +15,4 @@ This page contains a brief description of myself, some of the projects I have do
 - [X] Projects Section with Gallery
 - [X] Experience Section
 - [X] Footer
-- [ ] Portuguese Translation
+- [X] Portuguese Translation
