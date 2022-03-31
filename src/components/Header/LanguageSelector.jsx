@@ -19,7 +19,8 @@ const LanguageSelector = () => {
     }
   }, [selectedLanguage]);
 
-  const getLanguageByValue = (value) => languages.find((lng) => lng.value === value);
+  const getLanguageByValue = (value) =>
+    languages.find((lng) => value.startsWith(lng.value));
 
   return (
     <div className={ styles.languageSelectorWrapper }>
