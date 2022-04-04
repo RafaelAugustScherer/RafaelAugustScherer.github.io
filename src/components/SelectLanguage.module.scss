@@ -34,8 +34,8 @@
   height: 20vw;
   max-width: 900px;
   max-height: 450px;
-  min-width: 250px;
-  min-height: 150px;
+  min-width: 150px;
+  min-height: 80px;
   border: 8px solid white;
   border-radius: 5px;
 }
@@ -43,5 +43,6 @@
 @media screen and (max-width: 1100px) {
   .languageSelectorWrapper {
     flex-direction: column;
+    justify-content: space-evenly;
   }
 }
