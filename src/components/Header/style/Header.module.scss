@@ -118,6 +118,12 @@
   animation: headerArrowShadow 2s ease-in-out infinite;
 }
 
+@media screen and (max-width: 1000px) {
+  .linksDiv {
+    margin: 30px 20px;
+  }
+}
+
 @keyframes headerArrowShadow {
   0% {
     bottom: -6%;
