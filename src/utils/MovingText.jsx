@@ -16,7 +16,14 @@ const MovingText = ({ words }) => {
     setText(initialValue);
   }, [words]);
 
-  useEffect(() => textHandler(), [text]);
+  useEffect(() => {
+    clearTimeout && clearTimeout();
+    textHandler()
+  }, [text]);
+
+  useEffect(() => () => {
+    clearTimeout && clearTimeout();
+  }, []);
 
   const textHandler = () => {
     let speed = 150;
