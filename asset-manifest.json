@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.08a51a85.css",
-    "main.js": "/static/js/main.b2cf99fe.js",
+    "main.js": "/static/js/main.fda7be06.js",
     "static/media/outrun.m4v": "/static/media/outrun.0fc3dcb36e3297d76a6f.m4v",
     "static/media/Kingdom in Blue.mp3": "/static/media/Kingdom in Blue.8c2d262e96ef711e62b9.mp3",
     "static/media/Midnight Snack.mp3": "/static/media/Midnight Snack.8cdf7e32affd8d381098.mp3",
@@ -37,10 +37,10 @@
     "index.html": "/index.html",
     "static/media/getFetch.cjs": "/static/media/getFetch.c780682470504fffbd04.cjs",
     "main.08a51a85.css.map": "/static/css/main.08a51a85.css.map",
-    "main.b2cf99fe.js.map": "/static/js/main.b2cf99fe.js.map"
+    "main.fda7be06.js.map": "/static/js/main.fda7be06.js.map"
   },
   "entrypoints": [
     "static/css/main.08a51a85.css",
-    "static/js/main.b2cf99fe.js"
+    "static/js/main.fda7be06.js"
   ]
 }
