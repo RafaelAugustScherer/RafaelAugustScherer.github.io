@@ -1,4 +1,4 @@
-# RafaelAugustScherer.github.io
+# [RafaelAugustScherer.github.io](https://rafaelaugustscherer.github.io/)
 Welcome to my Web Portfolio!
 
 This page contains a brief description of myself, some of the projects I have done so far and my academic and professional experience. I will be constantly updating the page and adding new features as well.
