@@ -14,7 +14,9 @@ jobs:
         with:
           node-version: 17
       - name: Deploy
-        run: |
-          npm install
-          npm run predeploy
-          npm run deploy
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: gh-pages
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
