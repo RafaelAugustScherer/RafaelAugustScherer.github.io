@@ -5,11 +5,23 @@ import { IoGameController } from 'react-icons/io5';
 const skills = [
   {
     name: 'JavaScript',
-    website: 'https://www.javascript.com/'
+    website: 'https://www.javascript.com/',
+  },
+  {
+    name: 'TypeScript',
+    website: 'https://www.typescriptlang.org/',
+  },
+  {
+    name: 'Python',
+    website: 'https://www.python.org/',
   },
   {
     name: 'Git',
     website: 'https://git-scm.com/'
+  },
+  {
+    name: 'Docker',
+    website: 'https://www.docker.com/',
   },
   {
     name: 'Node.js',
@@ -28,7 +40,6 @@ const skills = [
     website: 'https://www.mysql.com/'
   },
 ];
-
 
 const misc = [
   {

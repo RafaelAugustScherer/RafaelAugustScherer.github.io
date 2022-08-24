@@ -1,5 +1,8 @@
 import JSLogo from './badgeData/javascript.webp';
+import TSLogo from './badgeData/typescript.webp';
+import PythonLogo from './badgeData/python.webp';
 import GitLogo from './badgeData/git.webp';
+import DockerLogo from './badgeData/docker.webp';
 import NodeLogo from './badgeData/nodejs.webp';
 import ReactLogo from './badgeData/reactjs.webp';
 import MongoDBLogo from './badgeData/mongodb.webp';
@@ -12,8 +15,20 @@ const badges = [
     src: JSLogo,
   },
   {
+    name: 'TypeScript',
+    src: TSLogo,
+  },
+  {
+    name: 'Python',
+    src: PythonLogo,
+  },
+  {
     name: 'Git',
     src: GitLogo,
+  },
+  {
+    name: 'Docker',
+    src: DockerLogo,
   },
   {
     name: 'Node.js',

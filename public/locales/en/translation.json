@@ -6,7 +6,8 @@
   "about": {
     "title": "About",
     "firstParagraph": "I'm a passionate <strong>IT Student and Tech Enthusiast</strong>. I love to use the concept of <i>Do It Yourself</i> (DIY) when dealing with hardware and software making. I live in a small countryside city in the state of Rio Grande do Sul, Brazil.",
-    "secondParagraph": "I've been in contact with technology since forever, as my dad was the owner of an Arcade / Internet Café and there I spent most of my childhood's time, playing videogames and helping when needed."
+    "secondParagraph": "I've been in contact with technology since forever, as my dad was the owner of an Arcade / Internet Café and there I spent most of my childhood's time, playing videogames and helping when needed.",
+    "thirdParagraph": "At the moment I am looking for a job opportunity as a Full-stack, Back-end or Front-end Developer."
   },
   "skills": {
     "title": "Skills"

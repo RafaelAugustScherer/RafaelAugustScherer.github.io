@@ -6,7 +6,8 @@
   "about": {
     "title": "Sobre",
     "firstParagraph": "Sou um <strong>Estudante e Entusiasta de TI</strong>. Gosto de usar o conceito de <i>Faça você mesmo</i> (DIY) em aplicações que envolvam hardware e software. Moro em uma pequena cidade localizada no interior do Rio Grande do Sul, Brasil.",
-    "secondParagraph": "Estive em contato com a tecnologia desde sempre! Meu pai era dono de um Fliperama / Lan House e lá eu passei boa parte da minha infância, jogando videogames e ajudando quando necessário."
+    "secondParagraph": "Estive em contato com a tecnologia desde sempre! Meu pai era dono de um Fliperama / Lan House e lá eu passei boa parte da minha infância, jogando videogames e ajudando quando necessário.",
+    "thirdParagraph": "Hoje estou em busca de uma oportunidade para atuar com Desenvolvimento Full-stack, Back-end ou Front-end."
   },
   "skills": {
     "title": "Habilidades"

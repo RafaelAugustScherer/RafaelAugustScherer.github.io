@@ -6,7 +6,8 @@
   "about": {
     "title": "Lorem",
     "firstParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et turpis dictum, tristique lectus eget, condimentum dui. Aenean et tellus elementum, sodales risus non, molestie neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos",
-    "secondParagraph": "In suscipit orci dui, et tempor massa eleifend id. Duis porttitor sem in egestas pretium. Donec nulla neque, sollicitudin ac sem nec, ornare condimentum metus."
+    "secondParagraph": "In suscipit orci dui, et tempor massa eleifend id. Duis porttitor sem in egestas pretium. Donec nulla neque, sollicitudin ac sem nec, ornare condimentum metus.",
+    "thirdParagraph": "Cras sit amet ante condimentum, semper massa eget, imperdiet tellus. Maecenas pellentesque id odio non."
   },
   "skills": {
     "title": "Ipsum"

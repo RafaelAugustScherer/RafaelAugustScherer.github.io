@@ -24,7 +24,10 @@ const Bio = () => {
             <Trans i18nKey="about.firstParagraph" />
           </span>
           <span>
-          <Trans i18nKey="about.secondParagraph" />
+            <Trans i18nKey="about.secondParagraph" />
+          </span>
+          <span>
+            <Trans i18nKey="about.thirdParagraph" />
           </span>
         </p>
       </div>
