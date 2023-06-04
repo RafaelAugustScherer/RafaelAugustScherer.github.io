@@ -3,11 +3,12 @@ import ifsulIcon from '../assets/images/experience/academic/ifsul-icon.jpeg';
 import successEnglishIcon from '../assets/images/experience/academic/success-english-icon.jpeg';
 import kundenIcon from '../assets/images/experience/professional/kunden-icon.jpeg';
 import renovareIcon from '../assets/images/experience/professional/renovare-icon.jpeg';
+import madeiraMadeiraIcon from '../assets/images/experience/professional/madeiramadeira-icon.jpeg';
 
 const academicExperience = [
   {
     name: 'Trybe',
-    tKey: 'academic.trybe', 
+    tKey: 'academic.trybe',
     date: '2021 - 2022',
     icon: trybeIcon,
   },
@@ -28,6 +29,12 @@ const academicExperience = [
 ];
 
 const professionalExperience = [
+  {
+    name: 'MadeiraMadeira',
+    tKey: 'professional.madeiraMadeira',
+    date: '2022 - present',
+    icon: madeiraMadeiraIcon,
+  },
   {
     name: 'Renovare Telecom',
     tKey: 'professional.renovareTelecom',
@@ -50,4 +57,4 @@ const professionalExperience = [
 export {
   academicExperience,
   professionalExperience,
-}
+};

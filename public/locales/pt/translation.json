@@ -42,6 +42,11 @@
     },
     "professional": {
       "title": "Experiência Profissional",
+      "madeiraMadeira": [
+        "MadeiraMadeira é uma das <strong>maiores varejistas online no Brasil.</strong> Ela é uma de 19 empresas unicórnios no Brasil, com rodadas de investimento ultrapassando a marca do <strong>bilhão</strong>. Fundada em 2009, teve um grande crescimento em vendas durante os tempos de pandemia.",
+        "Comecei a trabalhar na empresa após terminar o Curso da Trybe. É minha primeira oportunidade de trabalhar com desenvolvimento web, usando tecnologias como React, Python e Go. Tem sido uma ótima experiência até agora, especialmente considerando o modelo de trabalho remoto usado, com muitos <strong>feedbacks e alinhamentos constantes de entregas.</strong>",
+        "Sou muito grato a um colega e amigo meu que me indicou para a vaga, Guilherme Zobel."
+      ],
       "renovareTelecom": [
         "Renovare Telecom é uma <strong>Empresa de Telecomunicações</strong> da minha cidade natal. Os donos iniciaram a operação em 2010 e <strong>após 10 anos ela é considerada a maior da cidade na área.</strong> Ela também opera em muitas outras cidades do interior do estado.",
         "Eu fui contratado pela empresa no meio da pandemia como um <strong>Estagiário de TI</strong>. A oportunidade foi <strong>uma das melhores coisas que me aconteceram naquele ano.</strong>",
