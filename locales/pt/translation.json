@@ -1,0 +1,72 @@
+{
+  "header": {
+    "text": "Olá, meu nome é Rafael e eu sou um",
+    "movingText": ["Desenvolvedor", "Estudante", "Gamer", "Entusiasta"]
+  },
+  "about": {
+    "title": "Sobre",
+    "firstParagraph": "Sou um <strong>Estudante e Entusiasta de TI</strong>. Gosto de usar o conceito de <i>Faça você mesmo</i> (DIY) em aplicações que envolvam hardware e software. Moro em uma pequena cidade localizada no interior do Rio Grande do Sul, Brasil.",
+    "secondParagraph": "Estive em contato com a tecnologia desde sempre! Meu pai era dono de um Fliperama / Lan House e lá eu passei boa parte da minha infância, jogando videogames e ajudando quando necessário.",
+    "thirdParagraph": "Hoje estou em busca de uma oportunidade para atuar com Desenvolvimento Full-stack, Back-end ou Front-end."
+  },
+  "skills": {
+    "title": "Habilidades"
+  },
+  "projects": {
+    "title": "Projetos",
+    "list": {
+      "spotrybe": "Spotrybe (Plataforma de música)",
+      "recipesApp": "App de Receitas",
+      "falloutTimer": "Temporizador Temático Fallout"
+    },
+    "websiteBtn": "Website",
+    "repositoryBtn": "Repositório"
+  },
+  "experience": {
+    "title": "Experiência",
+    "academic": {
+      "title": "Experiência Acadêmica",
+      "trybe": [
+        "Trybe é uma escola de desenvolvimento web que têm comprometimento genuíno com o sucesso profissional de seus estudantes. Com o modelo de sucesso compartilhado, aqueles que estudam na Trybe tem a opção de <strong>pagar apenas quando estiver trabalhando.</strong>",
+        "O curso conta com mais de <strong>1500 horas</strong> de treinamento que cobre o fundamental de desenvolvimento web, desenvolvimento, Front-end, Back-end, Ciência Computacional, Engenharia de Software, Metodologias Ágeis e Soft Skills.",
+        "Eu estou atualmente fazendo o curso para <strong>aprender a aprender e a codar.</strong> Ao fim do curso eu espero ter adquirido muita experiência na área e ter uma oportunidade em uma das empresas parceiras da Trybe."
+      ],
+      "ifsul": [
+        "Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grande (IFSul) é uma instituição federal de educação no Brasil que oferece uma qualidade elevada para estudantes de ensino médio além de Cursos Técnicos Integrados, sendo eles <strong>Tecnologia da Informação e Eletroeletrônica.</strong>",
+        "Na instituição <strong>me graduei no ensino médio</strong> junto do <strong>Curso de Tecnologia da Informação.</strong> O curso conta com muito conteúdo a respeito de Redes, Programação, Sistemas Operacionais e Manutenção de Hardware. O curso foi muito benéfico para minha experiência acadêmica, lá <strong>fui inspirado a fazer meus primeiros projetos</strong> na forma de Aplicativos Mobile com o uso de <strong>Bluetooth, Android Studio, Firebase e integrações com React Native.</strong>"
+      ],
+      "successEnglish": [
+        "Success English é uma Escola de Ensino da Língua Inglesa com <strong>grande prestígio e reconhecimento na minha cidade natal.</strong> O curso usa da Top Notch Book Series e seus testes para ensinar os estudantes dos Fundamentos ao Inglês Avançado. O curso usa de <strong>testes escritos e orais</strong> para avaliar o desempenho de cada estudante.",
+        "A instituição é reconhecida por seus <strong>estudantes e conquistas na Língua Inglesa</strong>, com o uso de um método efetivo ao longo dos anos. Durante o período que estive na instituição, fui capaz de aprender a maior parte do que sei, e com <strong>o contato constante com a língua</strong> fui capaz de manter um bom nível de inglês no geral."
+      ]
+    },
+    "professional": {
+      "title": "Experiência Profissional",
+      "madeiraMadeira": [
+        "MadeiraMadeira é uma das <strong>maiores varejistas online no Brasil.</strong> Ela é uma de 19 empresas unicórnios no Brasil, com rodadas de investimento ultrapassando a marca do <strong>bilhão</strong>. Fundada em 2009, teve um grande crescimento em vendas durante os tempos de pandemia.",
+        "Comecei a trabalhar na empresa após terminar o Curso da Trybe. É minha primeira oportunidade de trabalhar com desenvolvimento web, usando tecnologias como React, Python e Go. Tem sido uma ótima experiência até agora, especialmente considerando o modelo de trabalho remoto usado, com muitos <strong>feedbacks e alinhamentos constantes de entregas.</strong>",
+        "Sou muito grato a um colega e amigo meu que me indicou para a vaga, Guilherme Zobel."
+      ],
+      "renovareTelecom": [
+        "Renovare Telecom é uma <strong>Empresa de Telecomunicações</strong> da minha cidade natal. Os donos iniciaram a operação em 2010 e <strong>após 10 anos ela é considerada a maior da cidade na área.</strong> Ela também opera em muitas outras cidades do interior do estado.",
+        "Eu fui contratado pela empresa no meio da pandemia como um <strong>Estagiário de TI</strong>. A oportunidade foi <strong>uma das melhores coisas que me aconteceram naquele ano.</strong>",
+        "Lá eu aprendi a respeito de <strong>servidores empresariais, clonagem e reparo de sistemas operacionais corrompidos, recuperação de arquivos e alguns comandos e processos de Linux.</strong> Eu fui responsável pela instalação e configuração de sistemas operacionais de todos os novos colaboradores. Upgrades e reposições eram frequentemente necessários. A maioria das coisas que aprendi <strong>devo aos meus colegas de trabalho, com anos de experiência em TI.</strong>"
+      ],
+      "kundenSystems": [
+        "Kunden Systems é um <strong>fornecedor de Sistemas Enterprise Resource Planning (ERP).</strong> Ela opera principalmente na <strong>região sul do Brasil</strong>, mas conta com <strong>clientes em toda a América do Sul.</strong>",
+        "Na empresa tive <strong>minha primeira experiência profissional</strong> na área de Tecnologia da Informação e foi muito <strong>importante para mim e minha percepção de mim mesmo.</strong> Minhas capacidades foram postas a teste e eu <strong>aprendi muito com as pessoas à minha volta.</strong> Desde abrir notebooks até aplicar correções em <strong>Banco de Dados de Teste e Produção PL/SQL.</strong>"
+      ]
+    }
+  },
+  "footer": {
+    "contact": "Contato",
+    "madeWith": "Feito Com",
+    "references": {
+      "title": "Referências",
+      "headerVideo": "Vídeo do Cabeçalho",
+      "projectsBackground": "Background de Projetos",
+      "aboutExperienceBackground": "Background de Sobre/Experiência",
+      "playlist": "Playlist"
+    }
+  }
+}

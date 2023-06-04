@@ -1,0 +1,72 @@
+{
+  "header": {
+    "text": "Hi, my name is Rafael and I am a",
+    "movingText": [ "Developer", "Student", "Gamer", "Enthusiast" ]
+  },
+  "about": {
+    "title": "About",
+    "firstParagraph": "I'm a passionate <strong>IT Student and Tech Enthusiast</strong>. I love to use the concept of <i>Do It Yourself</i> (DIY) when dealing with hardware and software making. I live in a small countryside city in the state of Rio Grande do Sul, Brazil.",
+    "secondParagraph": "I've been in contact with technology since forever, as my dad was the owner of an Arcade / Internet Cafe and there I spent most of my childhood's time, playing videogames and helping when needed.",
+    "thirdParagraph": "I am currently working as Systems Analyst using stacks such as React, Python, Golang and even PHP. Always looking to learn new stuff and improve myself."
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "projects": {
+    "title": "Projects",
+    "list": {
+      "spotrybe": "Spotrybe (Music Platform)",
+      "recipesApp": "Recipes App",
+      "falloutTimer": "Fallout Themed Timer"
+    },
+    "websiteBtn": "Website",
+    "repositoryBtn": "Repository"
+  },
+  "experience": {
+    "title": "Experience",
+    "academic": {
+      "title": "Academic Experience",
+      "trybe": [
+        "Trybe is a web development school that has a genuine commitment to the professional success of its students. With the Shared Success Model, those who study at Trybe have the option of <strong>paying only when they are already working.</strong>",
+        "There are more than <strong>1500 hours</strong> of training that covers the fundamental of web development, development, Front-end, Back-end, computer science, software engineering, agile methodologies and soft skills.",
+        "I am currently doing this course to <strong>learn how to learn and to code.</strong> At the end of the course I expect to have acquired a lot of experience in the area and also have a professional oportunity in one of the selected Trybe Partners."
+      ],
+      "ifsul": [
+        "Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grande (IFSul) is a federal institution of education in Brazil that offers great quality of education for high school students and also includes Integrated Technical Courses, such as <strong>Information Technology and Electronics Course.</strong>",
+        "There <strong>I graduated in high school</strong> along with the <strong>Information Technology Course.</strong> The Course went through a lot of content about Network, Programming, Operational Systems and Hardware Maintence. It added a lot to my academic experience and there <strong>I was inspired to do my first projects</strong> in the form of Mobile Apps with <strong>Bluetooth, Android Studio, Firebase and React Native integrations.</strong>"
+      ],
+      "successEnglish": [
+        "Success English is an English School institution with <strong>great prestige and recognition in my hometown.</strong> It uses the Top Notch Book Series and its tests to teach the students from Fundamentals to Advanced English. The course uses <strong>written and spoken tests</strong> to evaluate each student's performance.",
+        "The institution is recognized by their <strong>high-achieving students in the English Language</strong>, with a very effective method applied over the years. There I was able to learn most of what I currently know, and with the <strong>constant contact with the language</strong> I am able to keep a good English level overall."
+      ]
+    },
+    "professional": {
+      "title": "Professional Experience",
+      "madeiraMadeira": [
+        "MadeiraMadeira is one of the <strong>biggest retail online stores in Brazil.</strong> It is 1 out of 19 unicorn companies in Brazil, with outsource investments treaspassing the <strong>billion</strong> mark. Created in 2009, it has seen a huge growth in sales during pandemic times",
+        "I started working there after I finished Trybe's Course and it is my first opportunity to work professionally with web development, using technologies such as React, Python and Go. It has been a great experience so far, considering the way the company deals with the remote working model with <strong>lots of feedbacks and team alignments</strong>",
+        "I am very thankful for a classmate and friend of mine who referred me to this opening, Guilherme Zobel."
+      ],
+      "renovareTelecom": [
+        "Renovare Telecom is a <strong>Telecommunication Company</strong> from my hometown. The owners started the company in 2010 as a garage company and it grew very quickly as the biggest in town.</strong> It also operates in many other countryside cities.",
+        "I was hired by the company in the middle of the pandemic as an <strong>IT Intern</strong>. That opportunity was <strong>one of the best things that happened to me that year.</strong>",
+        "There I learned a lot about <strong>enterprise servers, cloning and fixing corrupted operational systems, file recovery and some Linux commands and processes.</strong> I was responsible for the installation and setup of OSs for each and every employee. Upgrades and replacements were often needed as well. Most of the things I learned <strong>I owe to my colleagues, with years of experience in IT.</strong>"
+      ],
+      "kundenSystems": [
+        "Kunden Systems is an <strong>Industrial & Comercial Enterprise Resource Planning (ERP) provider.</strong> It operates mainly in the <strong>south region of Brazil</strong>, but there are <strong>clients spread all over South America.</strong>",
+        "There I had <strong>my first professional experience</strong> in the Information Technology area and it was really <strong>important for me and my perception of myself.</strong> My capabilites were put to test and I <strong>learned a lot with the people around me.</strong> My work had a wide range: from opening notebooks to applying fixes in <strong>PL/SQL Production and Test Databases.</strong>"
+      ]
+    }
+  },
+  "footer": {
+    "contact": "Contact",
+    "madeWith": "Made With",
+    "references": {
+      "title": "References",
+      "headerVideo": "Header Video",
+      "projectsBackground": "Projects Background",
+      "aboutExperienceBackground": "About/Experience Background",
+      "playlist": "Playlist"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "header": {
+    "text": "Lorem, ipsum lorem ipsum lorem ",
+    "movingText": [ "Lorem", "Ipsum" ]
+  },
+  "about": {
+    "title": "Lorem",
+    "firstParagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et turpis dictum, tristique lectus eget, condimentum dui. Aenean et tellus elementum, sodales risus non, molestie neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos",
+    "secondParagraph": "In suscipit orci dui, et tempor massa eleifend id. Duis porttitor sem in egestas pretium. Donec nulla neque, sollicitudin ac sem nec, ornare condimentum metus.",
+    "thirdParagraph": "Cras sit amet ante condimentum, semper massa eget, imperdiet tellus. Maecenas pellentesque id odio non."
+  },
+  "skills": {
+    "title": "Ipsum"
+  },
+  "projects": {
+    "title": "Lorem",
+    "list": {
+      "spotrybe": "Lorem (ipsum dolor)",
+      "recipesApp": "Lorem Ipsum",
+      "falloutTimer": "Lorem Ipsum dolor"
+    },
+    "websiteBtn": "Lorem",
+    "repositoryBtn": "Ipsum"
+  },
+  "experience": {
+    "title": "Ipsum",
+    "academic": {
+      "title": "Dolor Sit",
+      "trybe": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel elit sem. Praesent viverra tempor mattis. Pellentesque porttitor, nisi ac hendrerit condimentum, nibh dolor congue libero, et maximus tellus leo porttitor sapien.",
+        "Sed mollis nisl vel tristique tincidunt. Aenean ac diam et lectus maximus pellentesque. Maecenas id dictum diam. Aenean lectus velit, aliquam sed libero eget, dictum vestibulum sapien.",
+        "Sed scelerisque feugiat euismod. Nam at congue lacus. Quisque at mauris et metus feugiat tempus. Maecenas eget iaculis turpis, at volutpat eros. Proin volutpat lacinia blandit. Aenean vel consequat nisl, id vehicula urna. Nam cursus a justo nec finibus."
+      ],
+      "ifsul": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl nisl, dictum vel tempus at, aliquam eget lectus. Proin sagittis dolor in arcu mollis tempus. Nulla quis ultricies orci. Cras condimentum mauris enim, quis cursus nisi efficitur nec. Mauris nec maximus sem. Etiam suscipit semper aliquet.",
+        "Praesent mi arcu, bibendum a rhoncus quis, dictum sed diam. Mauris a ligula tincidunt, suscipit nunc id, congue tortor. Praesent mollis quis mauris a egestas. Morbi eget consectetur elit, in dapibus sapien. Curabitur volutpat odio sed dolor consequat vehicula. Nullam venenatis, justo quis facilisis finibus, dui lectus imperdiet tortor, sed ultricies felis dolor sit amet ligula."
+      ],
+      "successEnglish": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec lacinia tortor. Sed arcu lacus, pharetra eu auctor quis, tempor ut tellus. Duis mattis massa justo, id pulvinar justo congue id. Nunc ullamcorper convallis lobortis. Vestibulum eget nibh suscipit nisl ultricies interdum. Fusce eu pretium tortor.",
+        "Mauris facilisis, arcu nec suscipit convallis, odio justo mattis risus, mollis ornare ipsum sapien commodo velit. Maecenas hendrerit venenatis nibh, vel ornare leo maximus in. Curabitur congue odio velit, eget aliquam lectus imperdiet et. Aliquam erat volutpat. Sed blandit augue urna, sed suscipit ipsum rutrum sed."
+      ]
+    },
+    "professional": {
+      "title": "Amet, consecteur",
+      "madeiraMadeira": [
+        "Vestibulum molestie varius purus a dapibus. Donec vitae nisi sit amet velit condimentum vestibulum. Quisque commodo elit non aliquam consequat. Maecenas molestie velit a augue maximus sodales. Maecenas posuere ornare purus, eget euismod velit gravida nec. Donec lacinia, eros luctus semper.",
+        "Integer ut velit vitae risus euismod luctus in at mauris. Aenean fringilla non elit ac blandit. Cras euismod luctus lacus, ac sagittis nisl volutpat ac. Integer justo lectus, auctor at tincidunt in, aliquet et nisl. Nunc sit amet urna nec eros commodo semper.",
+        "Fusce efficitur, velit eget egestas rutrum, enim mauris posuere justo, vel ornare nisi massa vitae ex. Nulla."
+      ],
+      "renovareTelecom": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis elit at orci ultrices pellentesque sit amet ut ex. Vestibulum vitae varius nulla. Aenean suscipit risus ut lacus interdum laoreet. Duis vestibulum suscipit dignissim. Nunc luctus faucibus faucibus. Ut nec massa erat. Donec ipsum mauris, tincidunt vitae ante a, pellentesque sodales leo.",
+        "Cras vulputate orci massa, sollicitudin volutpat orci maximus et. Vivamus et molestie ante. Donec laoreet fringilla vulputate. Pellentesque hendrerit sem sed pretium mollis. Aenean vestibulum sit amet libero ac euismod.",
+        "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et mauris at massa tincidunt congue sit amet eu risus. Ut facilisis rutrum viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum quis nibh condimentum, congue risus ut, sollicitudin neque. Donec leo urna, commodo ac efficitur sit amet, ornare vel augue."
+      ],
+      "kundenSystems": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis pretium ex. Nam ornare porttitor neque, quis consequat lacus tincidunt a. Nullam ut dolor libero. Fusce porttitor massa ac eros placerat, sit amet convallis enim varius. Suspendisse at ante id arcu tristique consequat ut eget justo.",
+        "In congue feugiat posuere. Pellentesque eu urna quis ligula sagittis egestas ac vel ex. Etiam et mauris ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a maximus enim. Nulla faucibus volutpat eleifend. Etiam auctor placerat diam, ac auctor justo sodales at."
+      ]
+    }
+  },
+  "footer": {
+    "contact": "Lorem",
+    "madeWith": "Ipsum dolor",
+    "references": {
+      "title": "Sit amet",
+      "headerVideo": "Fusce Quis",
+      "projectsBackground": "Bibendum Quam",
+      "aboutExperienceBackground": "Maecenas Id/massa Libero",
+      "playlist": "Nulla"
+    }
+  }
+}
