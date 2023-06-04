@@ -1,4 +1,4 @@
-import { RiCodeSSlashFill } from 'react-icons/ri' ;
+import { RiCodeSSlashFill } from 'react-icons/ri';
 import { MdPedalBike } from 'react-icons/md';
 import { IoGameController } from 'react-icons/io5';
 
@@ -36,6 +36,10 @@ const skills = [
     website: 'https://www.mongodb.com/'
   },
   {
+    name: 'Go',
+    website: 'https://www.go.dev/'
+  },
+  {
     name: 'MySQL',
     website: 'https://www.mysql.com/'
   },
@@ -59,4 +63,4 @@ const misc = [
 export {
   skills,
   misc
-}
+};

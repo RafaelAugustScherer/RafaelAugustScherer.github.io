@@ -7,6 +7,7 @@ import NodeLogo from './badgeData/nodejs.webp';
 import ReactLogo from './badgeData/reactjs.webp';
 import MongoDBLogo from './badgeData/mongodb.webp';
 import MySQLLogo from './badgeData/mysql.webp';
+import GoLogo from './badgeData/go.webp';
 import GroupLogo from './badgeData/group.webp';
 
 const badges = [
@@ -45,6 +46,10 @@ const badges = [
   {
     name: 'MySQL',
     src: MySQLLogo,
+  },
+  {
+    name: 'Go',
+    src: GoLogo,
   },
   {
     name: 'Group',
