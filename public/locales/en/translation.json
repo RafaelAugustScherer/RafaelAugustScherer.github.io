@@ -42,10 +42,14 @@
     },
     "professional": {
       "title": "Professional Experience",
+      "gupy": [
+        "Gupy is the <strong>biggest HRTech company in Brazil</strong> comfortably leading the market in HR solutions. The company started in 2015 with only 3 people. Now in 2024, it reached the milestone of <strong>2 million people hired by the platform.</strong>",
+        "Its flagship product has always been <strong>Recruitment & Selection</strong>, making available online to a wide range of candidates many job opportunities while making the process easy both for the company and the candidate. As of now, Gupy offers a lineup including: Admission (Hiring Process), Corporate Education (Specialization for employees), Mood and Engagement (Employee feedback) and Performance Management.",
+        "Starting at Gupy marked a very welcome change of pace in my career, and to me it means a lot to continue maturing my Web Development knowledge, especially while applying consolidated design patterns like <strong>DDD in aggregation with Unit Tests and Integration Tests</strong>"
+      ],
       "madeiraMadeira": [
         "MadeiraMadeira is one of the <strong>biggest retail online stores in Brazil.</strong> It is 1 out of 19 unicorn companies in Brazil, with outsource investments treaspassing the <strong>billion</strong> mark. Created in 2009, it has seen a huge growth in sales during pandemic times",
-        "I started working there after I finished Trybe's Course and it is my first opportunity to work professionally with web development, using technologies such as React, Python and Go. It has been a great experience so far, considering the way the company deals with the remote working model with <strong>lots of feedbacks and team alignments</strong>",
-        "I am very thankful for a classmate and friend of mine who referred me to this opening, Guilherme Zobel."
+        "I started working there after I finished Trybe's Course and it is my first opportunity to work professionally with web development, using technologies such as React, Python and Go. It has been a great experience, especially considering the maturity of the company in dealing with the remote working model with <strong>lots of feedbacks and team alignments</strong>"
       ],
       "renovareTelecom": [
         "Renovare Telecom is a <strong>Telecommunication Company</strong> from my hometown. The owners started the company in 2010 as a garage company and it grew very quickly as the biggest in town.</strong> It also operates in many other countryside cities.",
