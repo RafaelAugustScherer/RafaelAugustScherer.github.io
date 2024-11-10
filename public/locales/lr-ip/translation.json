@@ -26,6 +26,10 @@
     "title": "Ipsum",
     "academic": {
       "title": "Dolor Sit",
+      "feevale": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula lacus eget convallis tempor. Sed vitae velit lacinia, luctus urna finibus, egestas turpis. Sed egestas molestie rhoncus. Nunc varius viverra elit nec volutpat.",
+        "Vestibulum vitae ante vel orci finibus volutpat. Aliquam laoreet, neque vel posuere faucibus, turpis lectus molestie risus, id ullamcorper odio augue eu neque. Duis ac convallis ipsum. Praesent magna dolor, luctus ac ultrices eget, tempus quis nibh. Donec sed elit et lacus vestibulum pharetra. Suspendisse potenti."
+      ],
       "trybe": [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel elit sem. Praesent viverra tempor mattis. Pellentesque porttitor, nisi ac hendrerit condimentum, nibh dolor congue libero, et maximus tellus leo porttitor sapien.",
         "Sed mollis nisl vel tristique tincidunt. Aenean ac diam et lectus maximus pellentesque. Maecenas id dictum diam. Aenean lectus velit, aliquam sed libero eget, dictum vestibulum sapien.",

@@ -1,3 +1,4 @@
+import feevaleIcon from '../assets/images/experience/academic/feevale-icon.jpeg';
 import trybeIcon from '../assets/images/experience/academic/trybe-icon.jpeg';
 import ifsulIcon from '../assets/images/experience/academic/ifsul-icon.jpeg';
 import successEnglishIcon from '../assets/images/experience/academic/success-english-icon.jpeg';
@@ -7,6 +8,12 @@ import madeiraMadeiraIcon from '../assets/images/experience/professional/madeira
 import gupyIcon from '../assets/images/experience/professional/gupy-icon.jpeg'
 
 const academicExperience = [
+  {
+    name: 'Feevale',
+    tKey: 'academic.feevale',
+    date: '2023 - present',
+    icon: feevaleIcon,
+  },
   {
     name: 'Trybe',
     tKey: 'academic.trybe',
@@ -24,8 +31,6 @@ const academicExperience = [
     tKey: 'academic.successEnglish',
     date: '2015 - 2019',
     icon: successEnglishIcon,
-    text: `Success English is an English School institution with \bgreat prestige and recognition in my hometown.\b It uses the Top Notch Book Series and its tests to teach the students from Fundamentals to Advanced English. The course uses \bwritten and spoken tests\b to evaluate each student's performance.
-    The institution is recognized by their \bhigh-achieving students in the English Language\b, with a very effective method applied over the years. There I was able to learn most of what I currently know, and with the \bconstant contact with the language\b I am able to keep a good English level overall.`
   },
 ];
 
