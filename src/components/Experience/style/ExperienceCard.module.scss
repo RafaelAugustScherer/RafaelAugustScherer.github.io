@@ -7,7 +7,6 @@
   position: relative;
   color: white;
   background-color: rgba(20, 20, 20, .8);
-  padding: 2vh 3vh;
   border-radius: 10px;
   margin-bottom: 30px;
   list-style-type: none;
@@ -51,8 +50,13 @@
 .itemTextDiv.toggle {
   opacity: 1;
   max-height: 1920px;
+  padding: 2vh 3vh;
 }
 
 .itemText {
   font-size: 1.25rem;
+}
+
+.itemTextScrambled {
+  color: rgba(20, 20, 20, .5)
 }

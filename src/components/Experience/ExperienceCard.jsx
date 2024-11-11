@@ -1,5 +1,5 @@
 import { Trans, useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MdOutlineArrowRight } from 'react-icons/md';
 import styles from './style/ExperienceCard.module.scss';
 
@@ -7,25 +7,34 @@ const ExperienceCard = ({ name, tKey, date, icon, index }) => {
   const { t } = useTranslation();
   const [isToggled, setIsToggled] = useState(false);
 
-  const handleBreakline = text => text.split('\n');
-  const handleBold = text => text
-  .split('\b')
-  .reduce((acc, str, idx) => (
-    idx % 2 === 1 ? <>{ acc }<b>{ str }</b></> : <>{ acc }{str}</>
-  ));
+  const [paragraphs, setParagraphs] = useState([]);
 
-  const textSplit = (text) => (
-    handleBreakline(text)
-    .map((str, idx) => (
-    <p
-      key={ `${name}-${idx}` }
-      className={ styles.itemText }
-    >
-      { handleBold(str) }
-    </p>
+  useEffect(() => {
+    const newParagraphs = [];
+    t(`experience.${tKey}`, { returnObjects: true }).map((p) => {
+      newParagraphs.push(p);
+    })
+    setParagraphs(newParagraphs);
+  }, [t]);
+
+  useEffect(() => {
+    if (isToggled) {
+      const originalParagraphs = [...paragraphs];
+
+      const scrambleInterval = setInterval(scrambleParagraphs, 100);
+      setTimeout(() => {
+        clearInterval(scrambleInterval);
+        setParagraphs(originalParagraphs);
+      }, 750);
+    }
+  }, [isToggled]);
+
+  const scrambleParagraphs = async () => {
+    setParagraphs(paragraphs.map((p) =>
+      p.split('').map(char => char === ' ' ? ' ' : Math.random() > 0.5 ? char : Math.random() > 0.5 ? '0' : '1').join('')
     ))
-  );
-  
+  }
+
   return (
     <li
       key={ `${name}-experience` }
@@ -47,14 +56,16 @@ const ExperienceCard = ({ name, tKey, date, icon, index }) => {
       <span>({ date })</span>
       </h3>
       <div className={ `${styles.itemTextDiv}  ${ isToggled ? styles.toggle : '' }`  } >
-        { t(`experience.${tKey}`, { returnObjects: true }).map((paragraph, idx) => (
+        {
+          paragraphs.map((p, idx) => (
             <p
               key={ `${name}-${idx}` }
               className={ styles.itemText }
             >
-              <Trans>{ paragraph }</Trans>
+              <Trans>{ p }</Trans>
             </p>
-          )) }
+          ))
+        }
       </div>
     </li>
   );
