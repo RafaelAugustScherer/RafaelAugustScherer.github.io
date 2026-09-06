@@ -228,7 +228,7 @@ const BrowserApp = ({ win }: { win: WindowInstance }) => {
       <Screen>
         {current === HOME ? (
           <Start>
-            <StartTitle>RAS/OS BROWSER</StartTitle>
+            <StartTitle>BROWSER</StartTitle>
             <Grid>
               {bookmarks.map((b) => (
                 <Tile key={b.label} onClick={() => go(b.url)}>

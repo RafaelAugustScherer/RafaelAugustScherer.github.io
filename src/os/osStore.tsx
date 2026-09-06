@@ -31,7 +31,7 @@ const seedNodes = (): FsNode[] => {
       type: 'file',
       parentId: null,
       content:
-        'Welcome to RAS/OS.\n\n' +
+        'Welcome.\n\n' +
         'This is a public desktop. Anything you create here is saved and visible\n' +
         'to anyone who signs in with the same name.\n\n' +
         'Right-click the desktop to make a new file or folder.\n' +

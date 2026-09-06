@@ -61,16 +61,16 @@ const TerminalApp = () => {
   return (
     <Screen>
       <Line>
-        <Prompt>{user}@ras-os:~$</Prompt> whoami
+        <Prompt>{user}@arcade:~$</Prompt> whoami
       </Line>
       <Line>
         <Ok>{user}</Ok>  (no password, public home)
       </Line>
       <Line>
-        <Prompt>{user}@ras-os:~$</Prompt> sysinfo
+        <Prompt>{user}@arcade:~$</Prompt> sysinfo
       </Line>
       <Line>
-        <Key>os .....</Key> <Value>RAS/OS 2.0</Value>
+        <Key>os .....</Key> <Value>web desktop</Value>
       </Line>
       <Line>
         <Key>host ...</Key> <Value>GitHub Pages, static</Value>
@@ -79,14 +79,14 @@ const TerminalApp = () => {
         <Key>store ..</Key> <Value>Worker + Durable Object</Value>
       </Line>
       <Line>
-        <Key>shell ..</Key> <Value>ras-sh 1.0</Value>
+        <Key>shell ..</Key> <Value>sh</Value>
       </Line>
       <Line>
-        <Prompt>{user}@ras-os:~$</Prompt> cat /etc/motd
+        <Prompt>{user}@arcade:~$</Prompt> cat /etc/motd
       </Line>
       <Motd>Dad ran an arcade. This is what I remember of it.</Motd>
       <Line>
-        <Prompt>{user}@ras-os:~$</Prompt> <Cursor />
+        <Prompt>{user}@arcade:~$</Prompt> <Cursor />
       </Line>
     </Screen>
   );

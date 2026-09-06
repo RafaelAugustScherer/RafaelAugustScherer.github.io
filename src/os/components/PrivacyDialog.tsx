@@ -92,7 +92,7 @@ const PrivacyDialog = () => {
         <Inner>
           <h1 id="privacy-title">A quick note before you start</h1>
           <p>
-            RAS/OS works like a shared desktop. Anything you create is saved <strong>publicly</strong> and shown to
+            This is a shared desktop. Anything you create is saved <strong>publicly</strong> and shown to
             anyone who signs in with the same name, so keep it to things you would post in the open.
           </p>
           <p>

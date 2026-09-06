@@ -104,7 +104,7 @@ const MenuBar = () => {
 
   return (
     <Bar>
-      <Logo>RAS/OS</Logo>
+      <Logo>Rafael Scherer</Logo>
       <AppName>{top ? top.title : 'Desktop'}</AppName>
       <Right>
         <Lang>
