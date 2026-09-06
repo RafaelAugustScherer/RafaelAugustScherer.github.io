@@ -1,0 +1,13 @@
+{
+  "name": "ras-os-worker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260906.1",
+    "wrangler": "^4.129.0"
+  }
+}
