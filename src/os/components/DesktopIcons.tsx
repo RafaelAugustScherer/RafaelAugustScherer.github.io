@@ -151,7 +151,9 @@ const DesktopIcons = ({
 
   const layerRef = useRef<HTMLDivElement>(null);
   const [geom, setGeom] = useState(initialGeom);
-  const [slots, setSlots] = useState<Record<string, number>>({});
+  const [slots, setSlots] = useState<Record<string, number>>(() =>
+    Object.fromEntries(items.map((item, i) => [item.key, i]))
+  );
   const [selected, setSelected] = useState<Set<string>>(() => new Set());
   const [marquee, setMarquee] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
   const marqueeRef = useRef<{ sx: number; sy: number; active: boolean } | null>(null);
