@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { User, UserRound } from 'lucide-react';
 import { useOS } from '../osStore';
 
@@ -216,6 +217,7 @@ const Btn = styled.button<{ $primary?: boolean }>`
 `;
 
 const LoginScreen = () => {
+  const { t } = useTranslation();
   const { signIn } = useOS();
   const [logon, setLogon] = useState(false);
   const [username, setUsername] = useState('');
@@ -229,41 +231,38 @@ const LoginScreen = () => {
     <Overlay>
       <Scrim />
       <Panel>
-        <ScanBar>session</ScanBar>
+        <ScanBar>{t('os.login.session')}</ScanBar>
         <Inner>
           <Host>Rafael Augusto Scherer</Host>
           <Rule />
-          <Sub>select a user to sign in</Sub>
+          <Sub>{t('os.login.prompt')}</Sub>
           <Accounts>
             <Account onClick={() => void signIn('guest')}>
               <span className="tile">
                 <UserRound size={26} />
               </span>
-              <span className="name">Guest</span>
-              <span className="role">no password</span>
+              <span className="name">{t('os.login.guest')}</span>
+              <span className="role">{t('os.login.guestRole')}</span>
             </Account>
             <Account onClick={() => setLogon(true)}>
               <span className="tile">
                 <User size={26} />
               </span>
-              <span className="name">User</span>
-              <span className="role">sign in</span>
+              <span className="name">{t('os.login.user')}</span>
+              <span className="role">{t('os.login.userRole')}</span>
             </Account>
           </Accounts>
         </Inner>
-        <Fine>
-          Files are shared by name. Anyone who signs in with the same name sees and can change those files, so keep it
-          to things you would post in the open. Close this tab any time to leave.
-        </Fine>
+        <Fine>{t('os.login.fine')}</Fine>
       </Panel>
 
       {logon && (
         <DlgScrim onClick={() => setLogon(false)}>
           <Dialog onClick={(e) => e.stopPropagation()}>
-            <ScanBar>log on</ScanBar>
+            <ScanBar>{t('os.login.logon')}</ScanBar>
             <DlgHead>
-              <div className="mark">Sign in</div>
-              <div className="hint">Your files live under the name you choose.</div>
+              <div className="mark">{t('os.login.signIn')}</div>
+              <div className="hint">{t('os.login.signInHint')}</div>
             </DlgHead>
             <Body
               onSubmit={(e) => {
@@ -272,7 +271,7 @@ const LoginScreen = () => {
               }}
             >
               <Row>
-                user name
+                {t('os.login.username')}
                 <input
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
@@ -282,7 +281,7 @@ const LoginScreen = () => {
                 />
               </Row>
               <Row>
-                password
+                {t('os.login.password')}
                 <input
                   type="password"
                   value={password}
@@ -292,10 +291,10 @@ const LoginScreen = () => {
               </Row>
               <Buttons>
                 <Btn type="submit" $primary>
-                  Sign in
+                  {t('os.login.signIn')}
                 </Btn>
                 <Btn type="button" onClick={() => setLogon(false)}>
-                  Cancel
+                  {t('os.login.cancel')}
                 </Btn>
               </Buttons>
             </Body>

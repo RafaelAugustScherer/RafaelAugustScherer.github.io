@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { Globe } from 'lucide-react';
 import type { WindowInstance } from '../types';
 import { useOS } from '../osStore';
@@ -55,11 +56,12 @@ const Missing = styled.div`
 `;
 
 const TextApp = ({ win }: { win: WindowInstance }) => {
+  const { t } = useTranslation();
   const { nodeById, writeNode } = useOS();
   const fileId = win.props.fileId as string;
   const node = nodeById(fileId);
 
-  if (!node) return <Missing>This file no longer exists.</Missing>;
+  if (!node) return <Missing>{t('os.text.missing')}</Missing>;
 
   return (
     <Wrap>
@@ -67,13 +69,13 @@ const TextApp = ({ win }: { win: WindowInstance }) => {
         <span className="name">{node.name}</span>
         <span className="spacer" />
         <span className="public">
-          <Globe size={11} /> public
+          <Globe size={11} /> {t('os.text.public')}
         </span>
       </Head>
       <Area
         value={node.content}
         spellCheck={false}
-        placeholder="Type here. Everything you write is public."
+        placeholder={t('os.text.placeholder')}
         onChange={(e) => writeNode(fileId, e.target.value)}
       />
     </Wrap>

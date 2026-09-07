@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { useOS } from '../osStore';
 
 const Overlay = styled.div`
@@ -83,26 +84,24 @@ const Fine = styled.div`
 `;
 
 const PrivacyDialog = () => {
+  const { t } = useTranslation();
   const { setScreen } = useOS();
   return (
     <Overlay>
       <Scrim />
       <Dialog role="dialog" aria-modal="true" aria-labelledby="privacy-title">
-        <TitleBar>welcome</TitleBar>
+        <TitleBar>{t('os.privacy.title')}</TitleBar>
         <Inner>
-          <h1 id="privacy-title">A quick note before you start</h1>
+          <h1 id="privacy-title">{t('os.privacy.heading')}</h1>
+          <p dangerouslySetInnerHTML={{ __html: t('os.privacy.body') }} />
           <p>
-            This is a shared desktop. Anything you create is saved <strong>publicly</strong> and shown to
-            anyone who signs in with the same name, so keep it to things you would post in the open.
-          </p>
-          <p>
-            <strong>No tracking, no cookies, no passwords kept.</strong>
+            <strong>{t('os.privacy.noKeep')}</strong>
           </p>
         </Inner>
         <Actions>
-          <OkBtn onClick={() => setScreen('login')}>OK</OkBtn>
+          <OkBtn onClick={() => setScreen('login')}>{t('os.privacy.ok')}</OkBtn>
         </Actions>
-        <Fine>You can close this tab any time to leave.</Fine>
+        <Fine>{t('os.privacy.leave')}</Fine>
       </Dialog>
     </Overlay>
   );

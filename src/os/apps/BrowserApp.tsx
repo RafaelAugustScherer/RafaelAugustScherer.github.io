@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { ArrowLeft, ArrowRight, Compass, ExternalLink, Globe, Lock, RotateCw } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Compass, ExternalLink, Frown, Globe, Lock, RotateCw } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { WindowInstance } from '../types';
 import projectsData from '../../data/projects';
@@ -67,21 +67,61 @@ const Screen = styled.div`
   iframe { width: 100%; height: 100%; border: 0; display: block; }
 `;
 
-const Notice = styled.div`
+const Oops = styled.div`
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 7px 12px;
-  background: rgba(11, 9, 18, 0.92);
-  border-top: 1px solid var(--line);
-  font-family: var(--mono);
-  font-size: 10.5px;
-  color: var(--text-faint);
-  a { color: var(--cyan); }
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  padding: 32px;
+  background: radial-gradient(120% 90% at 50% 0%, #1a1136 0%, var(--ground) 70%);
+  h2 {
+    font-family: var(--ui);
+    font-size: 30px;
+    letter-spacing: 0.04em;
+    color: var(--magenta);
+    text-shadow: 0 0 18px rgba(255, 0, 234, 0.4);
+    margin: 0;
+  }
+  p {
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    max-width: 46ch;
+    margin: 0;
+  }
+  .host {
+    color: var(--cyan);
+  }
+`;
+
+const OopsBtns = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const OBtn = styled.button<{ $primary?: boolean }>`
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--ui);
+  font-weight: 600;
+  font-size: 12.5px;
+  padding: 9px 16px;
+  border: 1px solid ${({ $primary }) => ($primary ? 'var(--cyan-dim)' : 'var(--line)')};
+  background: ${({ $primary }) => ($primary ? 'rgba(1, 251, 251, 0.1)' : 'var(--surface-2)')};
+  color: ${({ $primary }) => ($primary ? 'var(--cyan)' : 'var(--text-dim)')};
+  &:hover {
+    ${({ $primary }) =>
+      $primary ? 'background: var(--cyan); color: #04121a;' : 'border-color: var(--cyan-dim); color: var(--text);'}
+  }
 `;
 
 const Start = styled.div`
@@ -142,6 +182,61 @@ const hostOf = (url: string): string => {
   }
 };
 
+const NO_EMBED = ['github.com', 'linkedin.com', 'google.com', 'youtube.com', 'twitter.com', 'x.com', 'facebook.com', 'instagram.com', 'reddit.com'];
+
+const blocksEmbed = (url: string): boolean => {
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, '');
+    return NO_EMBED.some((b) => host === b || host.endsWith(`.${b}`));
+  } catch {
+    return false;
+  }
+};
+
+const EmbedView = ({ url, title, onHome }: { url: string; title: string; onHome: () => void }) => {
+  const { t } = useTranslation();
+  const [status, setStatus] = useState<'loading' | 'ok' | 'blocked'>(() =>
+    blocksEmbed(url) ? 'blocked' : 'loading'
+  );
+
+  useEffect(() => {
+    if (status !== 'loading') return;
+    const timer = window.setTimeout(() => {
+      setStatus((s) => (s === 'loading' ? 'blocked' : s));
+    }, 4000);
+    return () => window.clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (status === 'blocked') {
+    return (
+      <Oops>
+        <Frown size={44} color="var(--magenta)" strokeWidth={1.5} />
+        <h2>{t('os.browser.oopsTitle')}</h2>
+        <p>
+          <span className="host">{hostOf(url)}</span> {t('os.browser.oopsBody')}
+        </p>
+        <OopsBtns>
+          <OBtn as="a" $primary href={url} target="_blank" rel="noopener noreferrer">
+            <ExternalLink size={14} /> {t('os.browser.oopsOpen', { host: hostOf(url) })}
+          </OBtn>
+          <OBtn onClick={onHome}>{t('os.browser.oopsBack')}</OBtn>
+        </OopsBtns>
+      </Oops>
+    );
+  }
+
+  return (
+    <iframe
+      src={url}
+      title={title}
+      sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+      referrerPolicy="no-referrer"
+      onLoad={() => setStatus('ok')}
+    />
+  );
+};
+
 const BrowserApp = ({ win }: { win: WindowInstance }) => {
   const { t } = useTranslation();
   const projects = useMemo(() => projectsData(t), [t]);
@@ -192,16 +287,16 @@ const BrowserApp = ({ win }: { win: WindowInstance }) => {
   return (
     <Wrap>
       <Toolbar>
-        <NavBtn aria-label="Back" disabled={index === 0} onClick={back}>
+        <NavBtn aria-label={t('os.browser.back')} disabled={index === 0} onClick={back}>
           <ArrowLeft size={15} />
         </NavBtn>
-        <NavBtn aria-label="Forward" disabled={index >= history.length - 1} onClick={forward}>
+        <NavBtn aria-label={t('os.browser.forward')} disabled={index >= history.length - 1} onClick={forward}>
           <ArrowRight size={15} />
         </NavBtn>
-        <NavBtn aria-label="Reload" onClick={() => setReloadKey((k) => k + 1)}>
+        <NavBtn aria-label={t('os.browser.reload')} onClick={() => setReloadKey((k) => k + 1)}>
           <RotateCw size={14} />
         </NavBtn>
-        <NavBtn aria-label="Start page" onClick={() => go(HOME)}>
+        <NavBtn aria-label={t('os.browser.start')} onClick={() => go(HOME)}>
           <Compass size={15} />
         </NavBtn>
         <Address
@@ -214,13 +309,19 @@ const BrowserApp = ({ win }: { win: WindowInstance }) => {
           <input
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
-            placeholder="Search or type a URL"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                go(draft);
+              }
+            }}
+            placeholder={t('os.browser.address')}
             spellCheck={false}
-            aria-label="Address"
+            aria-label={t('os.browser.address')}
           />
         </Address>
         {current !== HOME && (
-          <NavBtn as="a" aria-label="Open in new tab" href={current} target="_blank" rel="noopener noreferrer">
+          <NavBtn as="a" aria-label={t('os.browser.newtab')} href={current} target="_blank" rel="noopener noreferrer">
             <ExternalLink size={14} />
           </NavBtn>
         )}
@@ -228,7 +329,7 @@ const BrowserApp = ({ win }: { win: WindowInstance }) => {
       <Screen>
         {current === HOME ? (
           <Start>
-            <StartTitle>BROWSER</StartTitle>
+            <StartTitle>{t('os.browser.title')}</StartTitle>
             <Grid>
               {bookmarks.map((b) => (
                 <Tile key={b.label} onClick={() => go(b.url)}>
@@ -239,21 +340,7 @@ const BrowserApp = ({ win }: { win: WindowInstance }) => {
             </Grid>
           </Start>
         ) : (
-          <>
-            <iframe
-              key={`${current}-${reloadKey}`}
-              src={current}
-              title={win.title}
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-              referrerPolicy="no-referrer"
-            />
-            <Notice>
-              Blank page? The site blocked embedding.{' '}
-              <a href={current} target="_blank" rel="noopener noreferrer">
-                Open {hostOf(current)} in a new tab
-              </a>
-            </Notice>
-          </>
+          <EmbedView key={`${current}-${reloadKey}`} url={current} title={win.title} onHome={() => go(HOME)} />
         )}
       </Screen>
     </Wrap>

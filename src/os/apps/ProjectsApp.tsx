@@ -82,7 +82,7 @@ const ProjectsApp = () => {
 
   return (
     <AppScroll>
-      <Eyebrow>~/projects — double-click Run to launch in the Browser</Eyebrow>
+      <Eyebrow>~/projects — {t('os.projects.hint')}</Eyebrow>
       <Grid>
         {projects.map((p) => (
           <Card key={p.dir}>
@@ -96,13 +96,13 @@ const ProjectsApp = () => {
             </Tags>
             <Actions>
               <Run onClick={() => openBrowser(p.website)}>
-                <Play size={13} /> Run
+                <Play size={13} /> {t('os.projects.run')}
               </Run>
               <Link href={p.repository} target="_blank" rel="noopener noreferrer">
-                <FaGithub size={13} /> Source
+                <FaGithub size={13} /> {t('os.projects.source')}
               </Link>
               <Link href={p.website} target="_blank" rel="noopener noreferrer">
-                <ExternalLink size={13} /> Live
+                <ExternalLink size={13} /> {t('os.projects.live')}
               </Link>
             </Actions>
           </Card>

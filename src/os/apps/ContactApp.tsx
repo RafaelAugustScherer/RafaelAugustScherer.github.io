@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Mail, MapPin } from 'lucide-react';
 import { AppScroll, Eyebrow } from './appkit';
@@ -39,7 +40,9 @@ const Anchor = styled.a`
   }
 `;
 
-const ContactApp = () => (
+const ContactApp = () => {
+  const { t } = useTranslation();
+  return (
   <AppScroll>
     <Eyebrow>~/contact</Eyebrow>
     <Grid>
@@ -80,10 +83,11 @@ const ContactApp = () => (
       <IconCell>
         <MapPin size={15} />
       </IconCell>
-      <Label>location</Label>
+      <Label>{t('os.contact.location')}</Label>
       <Value>Rio Grande do Sul, Brazil</Value>
     </Grid>
   </AppScroll>
-);
+  );
+};
 
 export default ContactApp;

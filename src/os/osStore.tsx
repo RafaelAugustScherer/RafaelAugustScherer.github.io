@@ -68,7 +68,7 @@ type Action =
   | { type: 'TOGGLE_MAX'; id: string; bounds: { w: number; h: number } }
   | { type: 'MOVE'; id: string; x: number; y: number }
   | { type: 'RESIZE'; id: string; w: number; h: number }
-  | { type: 'SET_PROPS'; id: string; props: Record<string, unknown> }
+  | { type: 'SET_PROPS'; id: string; props: Record<string, unknown>; title?: string }
   | { type: 'FS_ADD'; node: FsNode }
   | { type: 'FS_RENAME'; id: string; name: string }
   | { type: 'FS_WRITE'; id: string; content: string }
@@ -196,7 +196,9 @@ const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         windows: state.windows.map((w) =>
-          w.id === action.id ? { ...w, props: { ...w.props, ...action.props } } : w
+          w.id === action.id
+            ? { ...w, props: { ...w.props, ...action.props }, title: action.title ?? w.title }
+            : w
         ),
       };
     case 'FS_ADD':
@@ -247,7 +249,7 @@ interface OSContextValue {
   toggleMax: (id: string, bounds: { w: number; h: number }) => void;
   move: (id: string, x: number, y: number) => void;
   resize: (id: string, w: number, h: number) => void;
-  setProps: (id: string, props: Record<string, unknown>) => void;
+  setProps: (id: string, props: Record<string, unknown>, title?: string) => void;
   createNode: (type: FsNode['type'], parentId: string | null, name?: string) => string;
   renameNode: (id: string, name: string) => void;
   writeNode: (id: string, content: string) => void;
@@ -310,7 +312,7 @@ export const OSProvider = ({ children }: { children: ReactNode }) => {
       toggleMax: (id, bounds) => dispatch({ type: 'TOGGLE_MAX', id, bounds }),
       move: (id, x, y) => dispatch({ type: 'MOVE', id, x, y }),
       resize: (id, w, h) => dispatch({ type: 'RESIZE', id, w, h }),
-      setProps: (id, props) => dispatch({ type: 'SET_PROPS', id, props }),
+      setProps: (id, props, title) => dispatch({ type: 'SET_PROPS', id, props, title }),
       createNode: (type, parentId, name) => {
         markDirty();
         const finalName =

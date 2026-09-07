@@ -29,19 +29,19 @@ const AboutApp = () => {
     <AppScroll>
       <Eyebrow>~/about.md</Eyebrow>
       <AppTitle>Rafael Augusto Scherer</AppTitle>
-      <SubMono>Systems Analyst · Rio Grande do Sul, Brazil</SubMono>
+      <SubMono>{t('os.about.subtitle')}</SubMono>
       <Prose>
         <RichText html={t('about.firstParagraph')} />
         <RichText html={t('about.secondParagraph')} />
         <RichText html={t('about.thirdParagraph')} />
       </Prose>
-      <SectionLabel>Stack</SectionLabel>
+      <SectionLabel>{t('os.about.stack')}</SectionLabel>
       <Chips>
         {skills.map((skill) => (
           <Chip key={skill.name}>{skill.name}</Chip>
         ))}
       </Chips>
-      <SectionLabel>Interests</SectionLabel>
+      <SectionLabel>{t('os.about.interests')}</SectionLabel>
       <MiscRow>
         {misc.map((item) => {
           const Icon = item.icon as SizedIcon;

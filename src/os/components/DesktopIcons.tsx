@@ -1,5 +1,6 @@
 import type { MouseEvent } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { FileText, Folder } from 'lucide-react';
 import type { AppId, FsNode } from '../types';
 import { APPS, DESKTOP_APPS } from '../registry';
@@ -82,17 +83,20 @@ const DesktopIcons = ({
   onOpenApp,
   onOpenNode,
   onContextNode,
-}: DesktopIconsProps) => (
+}: DesktopIconsProps) => {
+  const { t } = useTranslation();
+  return (
   <Layer>
     {DESKTOP_APPS.map((appId) => {
       const meta = APPS[appId];
       const Glyph = meta.icon;
+      const label = t(`os.apps.${appId}`);
       return (
-        <Icon className="os-icon" key={appId} onDoubleClick={() => onOpenApp(appId)} title={meta.title}>
+        <Icon className="os-icon" key={appId} onDoubleClick={() => onOpenApp(appId)} title={label}>
           <span className="glyph">
             <Glyph size={19} className="" />
           </span>
-          <span className="label">{meta.title}</span>
+          <span className="label">{label}</span>
         </Icon>
       );
     })}
@@ -129,6 +133,7 @@ const DesktopIcons = ({
       </Icon>
     ))}
   </Layer>
-);
+  );
+};
 
 export default DesktopIcons;

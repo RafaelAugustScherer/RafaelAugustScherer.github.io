@@ -81,9 +81,9 @@ const ExperienceApp: FC = () => {
   return (
     <AppScroll>
       <Eyebrow>~/experience</Eyebrow>
-      <SectionLabel>Professional</SectionLabel>
+      <SectionLabel>{t('os.experience.professional')}</SectionLabel>
       {renderEntries(professionalExperience)}
-      <SectionLabel>Academic</SectionLabel>
+      <SectionLabel>{t('os.experience.academic')}</SectionLabel>
       {renderEntries(academicExperience)}
     </AppScroll>
   );

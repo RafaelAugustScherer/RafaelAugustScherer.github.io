@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { CornerLeftUp, FilePlus2, FileText, Folder, FolderPlus, Pencil, Trash2 } from 'lucide-react';
 import type { WindowInstance } from '../types';
 import { useOS } from '../osStore';
+import { APPS } from '../registry';
 import { storageMode } from '../storage';
 
 const Wrap = styled.div`
@@ -98,7 +100,8 @@ const Status = styled.div`
 `;
 
 const FilesApp = ({ win }: { win: WindowInstance }) => {
-  const { childrenOf, nodeById, createNode, renameNode, deleteNode, open } = useOS();
+  const { t } = useTranslation();
+  const { childrenOf, nodeById, createNode, renameNode, deleteNode, open, setProps } = useOS();
   const dirId = (win.props.dirId as string | undefined) ?? null;
   const dirNode = dirId ? nodeById(dirId) : null;
   const items = childrenOf(dirId);
@@ -114,16 +117,21 @@ const FilesApp = ({ win }: { win: WindowInstance }) => {
     setEditing(null);
   };
 
+  const goToDir = (targetId: string | null) => {
+    const node = targetId ? nodeById(targetId) : null;
+    setProps(win.id, { dirId: targetId }, node ? node.name : APPS.files.title);
+  };
+
   const openItem = (id: string) => {
     const node = nodeById(id);
     if (!node) return;
-    if (node.type === 'dir') open('files', { dirId: id }, node.name);
+    if (node.type === 'dir') goToDir(id);
     else open('text', { fileId: id }, node.name);
   };
 
   const create = (type: 'file' | 'dir') => {
     const id = createNode(type, dirId);
-    startEdit(id, type === 'dir' ? 'New Folder' : 'New File.txt');
+    startEdit(id, type === 'dir' ? t('os.files.newFolder') : t('os.files.newFile'));
   };
 
   return (
@@ -137,15 +145,15 @@ const FilesApp = ({ win }: { win: WindowInstance }) => {
         )}
         <span className="spacer" />
         <ToolBtn onClick={() => create('file')}>
-          <FilePlus2 size={12} /> File
+          <FilePlus2 size={12} /> {t('os.files.file')}
         </ToolBtn>
         <ToolBtn onClick={() => create('dir')}>
-          <FolderPlus size={12} /> Folder
+          <FolderPlus size={12} /> {t('os.files.folder')}
         </ToolBtn>
       </PathBar>
       <List>
         {dirNode && (
-          <Row onDoubleClick={() => open('files', { dirId: dirNode.parentId }, dirNode.parentId ? '' : 'Home')}>
+          <Row onDoubleClick={() => goToDir(dirNode.parentId)}>
             <span className="glyph">
               <CornerLeftUp size={15} color="var(--text-faint)" />
             </span>
@@ -178,10 +186,10 @@ const FilesApp = ({ win }: { win: WindowInstance }) => {
               </span>
             )}
             <span className="actions">
-              <IconBtn aria-label="Rename" onClick={() => startEdit(node.id, node.name)}>
+              <IconBtn aria-label={t('os.context.rename')} onClick={() => startEdit(node.id, node.name)}>
                 <Pencil size={13} />
               </IconBtn>
-              <IconBtn className="danger" aria-label="Delete" onClick={() => deleteNode(node.id)}>
+              <IconBtn className="danger" aria-label={t('os.context.delete')} onClick={() => deleteNode(node.id)}>
                 <Trash2 size={13} />
               </IconBtn>
             </span>
@@ -189,10 +197,10 @@ const FilesApp = ({ win }: { win: WindowInstance }) => {
         ))}
       </List>
       <Status>
-        <span>{items.length} items</span>
-        <span className="pub">public</span>
+        <span>{t('os.files.items', { count: items.length })}</span>
+        <span className="pub">{t('os.files.public')}</span>
         <span className="spacer" />
-        <span>{storageMode() === 'worker' ? 'synced · worker' : 'local · this browser'}</span>
+        <span>{storageMode() === 'worker' ? t('os.files.synced') : t('os.files.local')}</span>
       </Status>
     </Wrap>
   );

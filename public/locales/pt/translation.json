@@ -1,7 +1,12 @@
 {
   "header": {
     "text": "Olá, meu nome é Rafael e eu sou um",
-    "movingText": ["Desenvolvedor", "Estudante", "Gamer", "Entusiasta"]
+    "movingText": [
+      "Desenvolvedor",
+      "Estudante",
+      "Gamer",
+      "Entusiasta"
+    ]
   },
   "about": {
     "title": "Sobre",
@@ -75,6 +80,130 @@
       "projectsBackground": "Background de Projetos",
       "aboutExperienceBackground": "Background de Sobre/Experiência",
       "playlist": "Playlist"
+    }
+  },
+  "os": {
+    "apps": {
+      "about": "Sobre Mim",
+      "projects": "Projetos",
+      "experience": "Experiência",
+      "contact": "Contato",
+      "browser": "Navegador",
+      "terminal": "Terminal",
+      "files": "Início",
+      "music": "Música",
+      "text": "Editor de Texto"
+    },
+    "menu": {
+      "desktop": "Área de Trabalho",
+      "logout": "Sair"
+    },
+    "window": {
+      "minimize": "Minimizar",
+      "maximize": "Maximizar",
+      "close": "Fechar"
+    },
+    "context": {
+      "newFile": "Novo Arquivo",
+      "newFolder": "Nova Pasta",
+      "open": "Abrir",
+      "rename": "Renomear",
+      "delete": "Excluir"
+    },
+    "privacy": {
+      "title": "bem-vindo",
+      "heading": "Uma nota rápida antes de começar",
+      "body": "Esta é uma área de trabalho compartilhada. Tudo o que você criar é salvo <strong>publicamente</strong> e exibido para qualquer pessoa que entre com o mesmo nome, então mantenha apenas coisas que você publicaria abertamente.",
+      "noKeep": "Sem rastreamento, sem cookies, sem senhas guardadas.",
+      "ok": "OK",
+      "leave": "Você pode fechar esta aba a qualquer momento para sair."
+    },
+    "login": {
+      "session": "sessão",
+      "prompt": "selecione um usuário para entrar",
+      "guest": "Convidado",
+      "guestRole": "sem senha",
+      "user": "Usuário",
+      "userRole": "entrar",
+      "logon": "entrar",
+      "signIn": "Entrar",
+      "signInHint": "Seus arquivos ficam sob o nome que você escolher.",
+      "username": "usuário",
+      "password": "senha",
+      "cancel": "Cancelar",
+      "fine": "Os arquivos são compartilhados por nome. Qualquer pessoa que entre com o mesmo nome vê e pode alterar esses arquivos, então mantenha apenas coisas que você publicaria abertamente. Feche esta aba a qualquer momento para sair."
+    },
+    "files": {
+      "file": "Arquivo",
+      "folder": "Pasta",
+      "items_one": "{{count}} item",
+      "items_other": "{{count}} itens",
+      "public": "público",
+      "synced": "sincronizado · worker",
+      "local": "local · este navegador",
+      "newFolder": "Nova Pasta",
+      "newFile": "Novo Arquivo.txt"
+    },
+    "text": {
+      "public": "público",
+      "placeholder": "Digite aqui. Tudo o que você escrever é público.",
+      "missing": "Este arquivo não existe mais."
+    },
+    "browser": {
+      "title": "NAVEGADOR",
+      "address": "Pesquise ou digite uma URL",
+      "back": "Voltar",
+      "forward": "Avançar",
+      "reload": "Recarregar",
+      "start": "Página inicial",
+      "newtab": "Abrir em nova aba",
+      "oopsTitle": "Ops…",
+      "oopsBody": "não pode ser exibido aqui. O site não permite ser incorporado.",
+      "oopsOpen": "Abrir {{host}} em uma nova aba",
+      "oopsBack": "Voltar à página inicial"
+    },
+    "terminal": {
+      "help": {
+        "title": "Comandos disponíveis:",
+        "ls": "lista o conteúdo do diretório",
+        "cd": "muda de diretório",
+        "pwd": "mostra o diretório atual",
+        "cat": "mostra o conteúdo de um arquivo",
+        "mkdir": "cria um diretório",
+        "touch": "cria um arquivo vazio",
+        "rm": "remove um arquivo ou diretório",
+        "echo": "exibe uma linha de texto",
+        "clear": "limpa a tela",
+        "whoami": "mostra o usuário atual",
+        "date": "mostra a data e a hora",
+        "neofetch": "mostra informações do sistema",
+        "help": "mostra esta ajuda"
+      },
+      "notFound": "{{cmd}}: comando não encontrado",
+      "noSuchFile": "{{name}}: arquivo ou diretório não encontrado",
+      "notDir": "{{name}}: não é um diretório",
+      "isDir": "{{name}}: é um diretório",
+      "missingOperand": "{{cmd}}: operando ausente",
+      "exists": "{{name}}: já existe",
+      "motd": "Meu pai tinha um fliperama. Isto é o que eu lembro dele."
+    },
+    "about": {
+      "subtitle": "Analista de Sistemas · Rio Grande do Sul, Brasil",
+      "stack": "Stack",
+      "interests": "Interesses"
+    },
+    "experience": {
+      "professional": "Profissional",
+      "academic": "Acadêmica"
+    },
+    "projects": {
+      "hint": "clique duas vezes em Executar para abrir no Navegador",
+      "run": "Executar",
+      "source": "Código",
+      "live": "Site"
+    },
+    "contact": {
+      "location": "localização"
     }
   }
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { MouseEvent } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { FilePlus2, FolderPlus, Pencil, SquareArrowOutUpRight, Trash2 } from 'lucide-react';
 import type { AppId, FsNode } from '../types';
 import { useOS } from '../osStore';
@@ -43,6 +44,7 @@ interface MenuState {
 }
 
 const Desktop = () => {
+  const { t } = useTranslation();
   const os = useOS();
   const { state, open, createNode, renameNode, deleteNode, nodeById, childrenOf } = os;
   const [menu, setMenu] = useState<MenuState | null>(null);
@@ -81,8 +83,8 @@ const Desktop = () => {
       x: e.clientX,
       y: e.clientY,
       items: [
-        { label: 'New File', icon: FilePlus2, onClick: () => makeNode('file') },
-        { label: 'New Folder', icon: FolderPlus, onClick: () => makeNode('dir') },
+        { label: t('os.context.newFile'), icon: FilePlus2, onClick: () => makeNode('file') },
+        { label: t('os.context.newFolder'), icon: FolderPlus, onClick: () => makeNode('dir') },
       ],
     });
   };
@@ -96,9 +98,9 @@ const Desktop = () => {
       x: e.clientX,
       y: e.clientY,
       items: [
-        { label: 'Open', icon: SquareArrowOutUpRight, onClick: () => openNode(node) },
-        { label: 'Rename', icon: Pencil, onClick: () => beginRename(nodeId) },
-        { label: 'Delete', icon: Trash2, danger: true, onClick: () => deleteNode(nodeId), separator: false },
+        { label: t('os.context.open'), icon: SquareArrowOutUpRight, onClick: () => openNode(node) },
+        { label: t('os.context.rename'), icon: Pencil, onClick: () => beginRename(nodeId) },
+        { label: t('os.context.delete'), icon: Trash2, danger: true, onClick: () => deleteNode(nodeId), separator: false },
       ],
     });
   };

@@ -1,8 +1,10 @@
 import { useRef } from 'react';
 import type { PointerEvent as ReactPointerEvent, ComponentType } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { Minus, Square, X } from 'lucide-react';
 import type { AppId, WindowInstance } from '../types';
+import { APPS } from '../registry';
 import { useOS } from '../osStore';
 import AboutApp from '../apps/AboutApp';
 import ExperienceApp from '../apps/ExperienceApp';
@@ -119,9 +121,11 @@ interface WindowProps {
 }
 
 const Window = ({ win, active }: WindowProps) => {
+  const { t } = useTranslation();
   const { focus, close, minimize, toggleMax, move, resize } = useOS();
   const dragState = useRef({ ox: 0, oy: 0 });
   const View = APP_VIEWS[win.appId];
+  const title = win.title === APPS[win.appId].title ? t(`os.apps.${win.appId}`) : win.title;
 
   const surfaceBounds = () => ({
     w: window.innerWidth,
@@ -187,15 +191,15 @@ const Window = ({ win, active }: WindowProps) => {
         onPointerDown={onDragDown}
         onDoubleClick={() => toggleMax(win.id, surfaceBounds())}
       >
-        <Title $active={active}>{win.title}</Title>
+        <Title $active={active}>{title}</Title>
         <Btns>
-          <WinBtn aria-label="Minimize" onClick={() => minimize(win.id)}>
+          <WinBtn aria-label={t('os.window.minimize')} onClick={() => minimize(win.id)}>
             <Minus size={9} />
           </WinBtn>
-          <WinBtn aria-label="Maximize" onClick={() => toggleMax(win.id, surfaceBounds())}>
+          <WinBtn aria-label={t('os.window.maximize')} onClick={() => toggleMax(win.id, surfaceBounds())}>
             <Square size={8} />
           </WinBtn>
-          <WinBtn $danger aria-label="Close" onClick={() => close(win.id)}>
+          <WinBtn $danger aria-label={t('os.window.close')} onClick={() => close(win.id)}>
             <X size={9} />
           </WinBtn>
         </Btns>

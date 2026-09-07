@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import type { AppId } from '../types';
 import { APPS, DOCK_APPS } from '../registry';
 import { useOS } from '../osStore';
@@ -44,6 +45,7 @@ const Btn = styled.button<{ $open: boolean }>`
 `;
 
 const Dock = () => {
+  const { t } = useTranslation();
   const { state, open, focus, minimize } = useOS();
 
   const windowsFor = (appId: AppId) => state.windows.filter((w) => w.appId === appId);
@@ -73,8 +75,8 @@ const Dock = () => {
           <Btn
             key={appId}
             $open={windowsFor(appId).length > 0}
-            title={APPS[appId].title}
-            aria-label={APPS[appId].title}
+            title={t(`os.apps.${appId}`)}
+            aria-label={t(`os.apps.${appId}`)}
             onClick={() => onClick(appId)}
           >
             <Glyph size={20} className="" />

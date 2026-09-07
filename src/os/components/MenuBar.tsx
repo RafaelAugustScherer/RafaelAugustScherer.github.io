@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Power } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { APPS } from '../registry';
 import { useOS } from '../osStore';
 
 const Bar = styled.div`
@@ -94,18 +95,21 @@ const useClock = () => {
 
 const MenuBar = () => {
   const { state, signOut } = useOS();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const time = useClock();
   const lang = i18n.resolvedLanguage === 'pt' ? 'pt' : 'en';
 
   const top = state.windows
     .filter((w) => !w.minimized)
     .sort((a, b) => b.z - a.z)[0];
+  const titleOf = (w: typeof top) =>
+    w.title === APPS[w.appId].title ? t(`os.apps.${w.appId}`) : w.title;
+  const appName = top ? titleOf(top) : t('os.menu.desktop');
 
   return (
     <Bar>
       <Logo>Rafael Scherer</Logo>
-      <AppName>{top ? top.title : 'Desktop'}</AppName>
+      <AppName>{appName}</AppName>
       <Right>
         <Lang>
           <button aria-pressed={lang === 'en'} onClick={() => i18n.changeLanguage('en')}>
@@ -119,7 +123,7 @@ const MenuBar = () => {
           <Dot /> {state.user}
         </span>
         <span>{time}</span>
-        <PowerBtn aria-label="Log out" title="Log out" onClick={signOut}>
+        <PowerBtn aria-label={t('os.menu.logout')} title={t('os.menu.logout')} onClick={signOut}>
           <Power size={14} />
         </PowerBtn>
       </Right>
