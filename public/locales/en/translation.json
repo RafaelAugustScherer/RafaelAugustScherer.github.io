@@ -11,7 +11,7 @@
   "about": {
     "title": "About",
     "firstParagraph": "I'm a <strong>software engineer</strong> with about four years building web platforms end to end. I work at <strong>Gupy</strong>, Brazil's largest HR-tech, on the Admission product — shipping full-stack features in <strong>Node.js and React</strong>, both in TypeScript.",
-    "secondParagraph": "I care about code that lasts and solutions that pull their weight. I lean on <strong>domain-driven design with unit and integration tests</strong>, and I like bringing a critical eye to a project — weighing alternatives that come out leaner and more efficient than the obvious one.",
+    "secondParagraph": "I care about building maintainable and scalable code, made to last. I lean on <strong>domain-driven design</strong>, and I like bringing a critical eye to a project — weighing alternatives that come out leaner and more efficient than the obvious one.",
     "thirdParagraph": "Before Gupy I worked across the stack at <strong>MadeiraMadeira</strong>, one of Brazil's biggest online retailers, writing <strong>Go</strong> services that processed close to a million events a day and <strong>Python</strong> tooling that replaced manual spreadsheet work. I'm finishing a <strong>Computer Science</strong> degree at Feevale, and I build my own tools on the side — like <strong>Domainbook</strong>, a living-documentation system I use across projects such as <strong>Commander Playtester</strong>."
   },
   "skills": {
@@ -95,7 +95,7 @@
       "eyebrow": "~/welcome",
       "title": "Welcome to my Portfolio!",
       "intro": "You've booted into my portfolio — built as a small synthwave operating system. It's made to be explored: launch the apps in the dock, dig through the files, run my projects in the Browser, or poke around the Terminal.",
-      "meIntro": "Behind all of it: I'm <strong>Rafael</strong>, a software engineer who builds web platforms end to end. Most of my time goes to backend and full-stack work — Node.js, Go and TypeScript — with a soft spot for tools that make the rest of the team faster.",
+      "meIntro": "Behind all of it: I'm <strong>Rafael</strong>, a software engineer who builds web platforms end to end. Most of my time goes to backend and full-stack work — Node.js, Go and TypeScript. That said, as you can see some of my time is also spent with some unusual stuff like this project =D",
       "cta": "More about me",
       "hint": "Tip: everything on the desktop is clickable."
     },

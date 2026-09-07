@@ -11,8 +11,8 @@
   "about": {
     "title": "Sobre",
     "firstParagraph": "Sou <strong>engenheiro de software</strong>, com cerca de quatro anos construindo plataformas web de ponta a ponta. Trabalho na <strong>Gupy</strong>, a maior HR-tech do Brasil, no produto de Admissão — entregando funcionalidades full-stack em <strong>Node.js e React</strong>, ambos em TypeScript.",
-    "secondParagraph": "Me importo com código que dura e com soluções que se pagam. Apoio-me em <strong>domain-driven design com testes de unidade e integração</strong>, e gosto de trazer um olhar crítico ao projeto — pesando alternativas que saem mais enxutas e eficientes que a óbvia.",
-    "thirdParagraph": "Antes da Gupy, atuei full-stack na <strong>MadeiraMadeira</strong>, uma das maiores varejistas online do Brasil, escrevendo serviços em <strong>Go</strong> que processavam perto de um milhão de eventos por dia e ferramentas em <strong>Python</strong> que substituíram trabalho manual em planilhas. Estou concluindo a graduação em <strong>Ciência da Computação</strong> na Feevale e crio minhas próprias ferramentas — como o <strong>Domainbook</strong>, um sistema de documentação viva que uso em projetos como o <strong>Commander Playtester</strong>."
+    "secondParagraph": "Me importo com código de fácil manutenção e escalável, feito para durar. Tendo a usar <strong>domain-driven design</strong> na construção de soluções, e gosto de trazer um olhar crítico ao projeto — pesando alternativas mais enxutas e eficientes que a óbvia.",
+    "thirdParagraph": "Antes da Gupy, atuei como full-stack na <strong>MadeiraMadeira</strong>, uma das maiores varejistas online do Brasil, escrevendo serviços em <strong>Go</strong> que processavam perto de um milhão de eventos por dia e ferramentas em <strong>Python</strong> que substituíram trabalho manual em planilhas. Estou concluindo a graduação em <strong>Ciência da Computação</strong> na Feevale e crio minhas próprias ferramentas — como o <strong>Domainbook</strong>, um sistema de documentação viva que uso em projetos como o <strong>Commander Playtester</strong>."
   },
   "skills": {
     "title": "Habilidades"
@@ -95,7 +95,7 @@
       "eyebrow": "~/bem-vindo",
       "title": "Bem-vindo ao meu Portfólio!",
       "intro": "Você iniciou meu portfólio — construído como um pequeno sistema operacional synthwave. Ele foi feito para ser explorado: abra os apps no dock, vasculhe os arquivos, rode meus projetos no Navegador ou brinque no Terminal.",
-      "meIntro": "Por trás de tudo isso: eu sou o <strong>Rafael</strong>, engenheiro de software que constrói plataformas web de ponta a ponta. A maior parte do meu tempo vai para back-end e full-stack — Node.js, Go e TypeScript — com um carinho especial por ferramentas que deixam o resto do time mais rápido.",
+      "meIntro": "Por trás de tudo isso: eu sou o <strong>Rafael</strong>, engenheiro de software que constrói plataformas web de ponta a ponta. A maior parte do meu tempo vai para back-end e full-stack — Node.js, Go e TypeScript. Dito isso, como você pode ver boa parte do meu tempo também é gasto com coisas peculiares, como esse projeto =D",
       "cta": "Saiba mais sobre mim",
       "hint": "Dica: tudo na área de trabalho é clicável."
     },
