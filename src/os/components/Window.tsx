@@ -1,16 +1,16 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { PointerEvent as ReactPointerEvent, ComponentType } from 'react';
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { Minus, Square, X } from 'lucide-react';
 import type { AppId, WindowInstance } from '../types';
 import { APPS } from '../registry';
 import { useOS } from '../osStore';
+import WelcomeApp from '../apps/WelcomeApp';
 import AboutApp from '../apps/AboutApp';
 import ExperienceApp from '../apps/ExperienceApp';
 import ContactApp from '../apps/ContactApp';
 import TerminalApp from '../apps/TerminalApp';
-import ProjectsApp from '../apps/ProjectsApp';
 import BrowserApp from '../apps/BrowserApp';
 import FilesApp from '../apps/FilesApp';
 import TextApp from '../apps/TextApp';
@@ -21,18 +21,35 @@ const MIN_W = 280;
 const MIN_H = 170;
 
 const APP_VIEWS: Record<AppId, ComponentType<{ win: WindowInstance }>> = {
+  welcome: WelcomeApp,
   about: AboutApp,
   experience: ExperienceApp,
   contact: ContactApp,
   terminal: TerminalApp,
-  projects: ProjectsApp,
   browser: BrowserApp,
   files: FilesApp,
   text: TextApp,
   music: MusicApp,
 };
 
-const Frame = styled.div<{ $active: boolean }>`
+type Anim = 'in' | 'out-close' | 'out-min' | 'idle';
+
+const winIn = keyframes`
+  from { opacity: 0; transform: scale(0.96) translateY(6px); }
+  to { opacity: 1; transform: none; }
+`;
+
+const winClose = keyframes`
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: scale(0.96) translateY(6px); }
+`;
+
+const winMin = keyframes`
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: scale(0.82) translateY(80px); }
+`;
+
+const Frame = styled.div<{ $active: boolean; $anim: Anim }>`
   position: absolute;
   pointer-events: auto;
   display: flex;
@@ -44,6 +61,15 @@ const Frame = styled.div<{ $active: boolean }>`
       ? '0 20px 50px rgba(0,0,0,.66), 0 0 0 1px rgba(1,251,251,.20), 0 0 26px rgba(1,251,251,.12)'
       : '0 16px 40px rgba(0,0,0,.6)'};
   overflow: hidden;
+  transform-origin: center top;
+  animation: ${({ $anim }) =>
+    $anim === 'in'
+      ? css`${winIn} 0.18s ease-out`
+      : $anim === 'out-close'
+        ? css`${winClose} 0.16s ease-in forwards`
+        : $anim === 'out-min'
+          ? css`${winMin} 0.18s ease-in forwards`
+          : 'none'};
 `;
 
 const Bar = styled.div<{ $active: boolean }>`
@@ -51,7 +77,7 @@ const Bar = styled.div<{ $active: boolean }>`
   align-items: center;
   gap: 8px;
   height: 27px;
-  padding: 0 6px 0 10px;
+  padding: 0 0 0 10px;
   flex: none;
   cursor: grab;
   user-select: none;
@@ -78,18 +104,21 @@ const Title = styled.span<{ $active: boolean }>`
 
 const Btns = styled.div`
   display: flex;
-  gap: 4px;
+  gap: 1px;
   flex: none;
 `;
 
 const WinBtn = styled.button<{ $danger?: boolean }>`
-  width: 16px;
-  height: 15px;
+  width: 22px;
+  height: 19px;
+  padding: 0;
   display: grid;
   place-items: center;
   border: 1px solid var(--line);
   background: var(--surface-2);
   color: var(--text-faint);
+  transition: background 0.12s ease, border-color 0.12s ease;
+  svg { display: block; }
   &:hover {
     color: #fff;
     background: ${({ $danger }) => ($danger ? 'var(--magenta-dim)' : 'var(--surface-3)')};
@@ -126,6 +155,32 @@ const Window = ({ win, active }: WindowProps) => {
   const dragState = useRef({ ox: 0, oy: 0 });
   const View = APP_VIEWS[win.appId];
   const title = win.title === APPS[win.appId].title ? t(`os.apps.${win.appId}`) : win.title;
+
+  const [anim, setAnim] = useState<Anim>('in');
+  const exitTimer = useRef<number | undefined>(undefined);
+  const prevMin = useRef(win.minimized);
+  useEffect(() => {
+    if (prevMin.current && !win.minimized) setAnim('in');
+    prevMin.current = win.minimized;
+  }, [win.minimized]);
+  useEffect(() => () => window.clearTimeout(exitTimer.current), []);
+
+  const requestMinimize = () => {
+    setAnim('out-min');
+    window.clearTimeout(exitTimer.current);
+    exitTimer.current = window.setTimeout(() => {
+      minimize(win.id);
+      setAnim('idle');
+    }, 180);
+  };
+
+  const requestClose = () => {
+    setAnim('out-close');
+    window.clearTimeout(exitTimer.current);
+    exitTimer.current = window.setTimeout(() => close(win.id), 160);
+  };
+
+  const hidden = win.minimized && anim !== 'out-min';
 
   const surfaceBounds = () => ({
     w: window.innerWidth,
@@ -176,13 +231,14 @@ const Window = ({ win, active }: WindowProps) => {
     <Frame
       className="os-window"
       $active={active}
+      $anim={anim}
       style={{
         left: win.x,
         top: win.y + BAR_H,
         width: win.w,
         height: win.h,
         zIndex: win.z,
-        display: win.minimized ? 'none' : 'flex',
+        display: hidden ? 'none' : 'flex',
       }}
       onPointerDown={() => focus(win.id)}
     >
@@ -193,14 +249,14 @@ const Window = ({ win, active }: WindowProps) => {
       >
         <Title $active={active}>{title}</Title>
         <Btns>
-          <WinBtn aria-label={t('os.window.minimize')} onClick={() => minimize(win.id)}>
-            <Minus size={9} />
+          <WinBtn aria-label={t('os.window.minimize')} onClick={requestMinimize}>
+            <Minus size={11} />
           </WinBtn>
           <WinBtn aria-label={t('os.window.maximize')} onClick={() => toggleMax(win.id, surfaceBounds())}>
-            <Square size={8} />
+            <Square size={9} />
           </WinBtn>
-          <WinBtn $danger aria-label={t('os.window.close')} onClick={() => close(win.id)}>
-            <X size={9} />
+          <WinBtn $danger aria-label={t('os.window.close')} onClick={requestClose}>
+            <X size={11} />
           </WinBtn>
         </Btns>
       </Bar>

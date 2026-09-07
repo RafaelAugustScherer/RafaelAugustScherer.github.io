@@ -77,7 +77,7 @@ const TerminalApp = () => {
     return `~/${parts.join('/')}`;
   };
 
-  const promptText = `${user}@arcade:${pathOf(cwd)}$`;
+  const promptText = `${user}@portfolio:${pathOf(cwd)}$`;
 
   useEffect(() => {
     scrollRef.current?.scrollTo(0, scrollRef.current.scrollHeight);
@@ -151,7 +151,7 @@ const TerminalApp = () => {
   ];
 
   const neofetchCmd = (): OutLine[] => [
-    { kind: 'out', text: `${user}@arcade` },
+    { kind: 'out', text: `${user}@portfolio` },
     { kind: 'out', text: 'os .....  web desktop' },
     { kind: 'out', text: 'host ...  GitHub Pages, static' },
     { kind: 'out', text: 'store ..  Worker + Durable Object' },

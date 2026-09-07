@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Power } from 'lucide-react';
+import { LogIn, Power } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { APPS } from '../registry';
 import { useOS } from '../osStore';
@@ -21,13 +21,6 @@ const Bar = styled.div`
   border-bottom: 1px solid var(--line-soft);
   font-family: var(--ui);
   font-size: 12.5px;
-`;
-
-const Logo = styled.span`
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--cyan);
-  text-shadow: 0 0 10px rgba(1, 251, 251, 0.55);
 `;
 
 const AppName = styled.span`
@@ -79,6 +72,19 @@ const PowerBtn = styled.button`
   &:hover { color: var(--magenta); }
 `;
 
+const SignInBtn = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  &:hover { color: var(--cyan); border-color: var(--cyan-dim); }
+`;
+
 const useClock = () => {
   const [time, setTime] = useState('');
   useEffect(() => {
@@ -93,9 +99,10 @@ const useClock = () => {
   return time;
 };
 
-const MenuBar = () => {
+const MenuBar = ({ onSignIn }: { onSignIn: () => void }) => {
   const { state, signOut } = useOS();
   const { t, i18n } = useTranslation();
+  const isGuest = state.user === 'guest';
   const time = useClock();
   const lang = i18n.resolvedLanguage === 'pt' ? 'pt' : 'en';
 
@@ -108,7 +115,6 @@ const MenuBar = () => {
 
   return (
     <Bar>
-      <Logo>Rafael Scherer</Logo>
       <AppName>{appName}</AppName>
       <Right>
         <Lang>
@@ -123,9 +129,15 @@ const MenuBar = () => {
           <Dot /> {state.user}
         </span>
         <span>{time}</span>
-        <PowerBtn aria-label={t('os.menu.logout')} title={t('os.menu.logout')} onClick={signOut}>
-          <Power size={14} />
-        </PowerBtn>
+        {isGuest ? (
+          <SignInBtn onClick={onSignIn}>
+            <LogIn size={12} /> {t('os.menu.signIn')}
+          </SignInBtn>
+        ) : (
+          <PowerBtn aria-label={t('os.menu.logout')} title={t('os.menu.logout')} onClick={signOut}>
+            <Power size={14} />
+          </PowerBtn>
+        )}
       </Right>
     </Bar>
   );

@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import { User, UserRound } from 'lucide-react';
+import { User, UserRound, X } from 'lucide-react';
 import { useOS } from '../osStore';
 
 const Overlay = styled.div`
@@ -11,6 +11,21 @@ const Overlay = styled.div`
   display: grid;
   place-items: center;
   padding: 22px;
+`;
+
+const CloseBtn = styled.button`
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 19px;
+  color: var(--text-faint);
+  &:hover {
+    color: #fff;
+  }
 `;
 
 const Scrim = styled.div`
@@ -216,32 +231,44 @@ const Btn = styled.button<{ $primary?: boolean }>`
   }
 `;
 
-const LoginScreen = () => {
+const LoginScreen = ({ onClose }: { onClose: () => void }) => {
   const { t } = useTranslation();
   const { signIn } = useOS();
   const [logon, setLogon] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
   const submitLogon = () => {
     void signIn(username.trim().toLowerCase() || 'user');
+    onClose();
   };
 
   return (
     <Overlay>
-      <Scrim />
+      <Scrim onClick={onClose} />
       <Panel>
+        <CloseBtn aria-label={t('os.login.close')} onClick={onClose}>
+          <X size={13} />
+        </CloseBtn>
         <ScanBar>{t('os.login.session')}</ScanBar>
         <Inner>
-          <Host>Rafael Augusto Scherer</Host>
+          <Host>{t('os.login.title')}</Host>
           <Rule />
-          <Sub>{t('os.login.prompt')}</Sub>
+          <Sub>{t('os.login.optionalNote')}</Sub>
           <Accounts>
-            <Account onClick={() => void signIn('guest')}>
+            <Account onClick={onClose}>
               <span className="tile">
                 <UserRound size={26} />
               </span>
-              <span className="name">{t('os.login.guest')}</span>
+              <span className="name">{t('os.login.stayGuest')}</span>
               <span className="role">{t('os.login.guestRole')}</span>
             </Account>
             <Account onClick={() => setLogon(true)}>

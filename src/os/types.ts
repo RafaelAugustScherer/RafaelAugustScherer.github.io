@@ -1,7 +1,7 @@
 export type AppId =
+  | 'welcome'
   | 'about'
   | 'experience'
-  | 'projects'
   | 'contact'
   | 'terminal'
   | 'browser'
@@ -9,7 +9,14 @@ export type AppId =
   | 'text'
   | 'music';
 
-export type Screen = 'privacy' | 'login' | 'desktop';
+export type Screen = 'boot' | 'desktop';
+
+export interface WindowBounds {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
 
 export interface WindowInstance {
   id: string;

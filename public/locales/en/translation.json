@@ -10,29 +10,26 @@
   },
   "about": {
     "title": "About",
-    "firstParagraph": "I'm a passionate <strong>IT Student and Tech Enthusiast</strong>. I love to use the concept of <i>Do It Yourself</i> (DIY) when dealing with hardware and software making. I live in a small countryside city in the state of Rio Grande do Sul, Brazil.",
-    "secondParagraph": "I've been in contact with technology since forever, as my dad was the owner of an Arcade / Internet Cafe and there I spent most of my childhood's time, playing videogames and helping when needed.",
-    "thirdParagraph": "I am currently working as Systems Analyst using stacks such as React, Python, Golang and even PHP. Always looking to learn new stuff and improve myself."
+    "firstParagraph": "I'm a <strong>software engineer</strong> with about four years building web platforms end to end. I work at <strong>Gupy</strong>, Brazil's largest HR-tech, on the Admission product — shipping full-stack features in <strong>Node.js and React</strong>, both in TypeScript.",
+    "secondParagraph": "I care about code that lasts and solutions that pull their weight. I lean on <strong>domain-driven design with unit and integration tests</strong>, and I like bringing a critical eye to a project — weighing alternatives that come out leaner and more efficient than the obvious one.",
+    "thirdParagraph": "Before Gupy I worked across the stack at <strong>MadeiraMadeira</strong>, one of Brazil's biggest online retailers, writing <strong>Go</strong> services that processed close to a million events a day and <strong>Python</strong> tooling that replaced manual spreadsheet work. I'm finishing a <strong>Computer Science</strong> degree at Feevale, and I build my own tools on the side — like <strong>Domainbook</strong>, a living-documentation system I use across projects such as <strong>Commander Playtester</strong>."
   },
   "skills": {
     "title": "Skills"
   },
   "projects": {
-    "title": "Projects",
-    "list": {
-      "spotrybe": "Spotrybe (Music Platform)",
-      "recipesApp": "Recipes App",
-      "falloutTimer": "Fallout Themed Timer"
-    },
-    "websiteBtn": "Website",
-    "repositoryBtn": "Repository"
+    "blurbs": {
+      "commander": "A browser tool that measures how strong a Magic: The Gathering Commander deck is — pilot or watch rules-accurate games against opponent decks (a Rust/WASM engine), or run a fast Monte-Carlo simulation for win rates.",
+      "domainbook": "Living documentation for codebases worked on by agents: git-versioned markdown, an explorable site, an MCP server, and a git hook that blocks changes without a matching doc update.",
+      "timer": "A Fallout Pip-Boy themed countdown timer with a built-in music player and a detonation sequence when it hits zero."
+    }
   },
   "experience": {
     "title": "Experience",
     "academic": {
       "title": "Academic Experience",
       "feevale": [
-        "Feevale is one of the biggest Universities in the state of Rio Grande do Sul.<strong> It has 3 campuses and a Tech-Park hosting more than 100 companies.</strong> There are more than 100 Undergraduate and Postgraduate  across multiple areas of expertise.",
+        "Feevale is a Brazilian university <strong>with 3 campuses and a Tech-Park hosting more than 100 companies.</strong> It offers over 100 undergraduate and postgraduate programs across many fields.",
         "I am taking an <strong>undegraduate degree in Computer Science</strong> at the institution. I hope to acquire a deeper technical knowledge related to my daily tasks as a Developer. I am also looking forward to <strong>an increase in my low-level computational expertise</strong> so I can set myself apart from other professionals."
       ],
       "trybe": [
@@ -41,33 +38,31 @@
         "I did the course to <strong>learn how to learn and to code.</strong> During the course, I acquired most of the technical knowledge I would need afterwards to work in the area."
       ],
       "ifsul": [
-        "Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grande (IFSul) is a federal institution of education in Brazil that offers great quality of education for high school students and also includes Integrated Technical Courses, such as <strong>Information Technology and Electronics Course.</strong>",
+        "IFSul is a <strong>federal institute of education</strong> in Brazil, offering high-quality integrated technical courses alongside high school — among them <strong>Information Technology and Electronics.</strong>",
         "There <strong>I graduated in high school</strong> along with the <strong>Information Technology Course.</strong> The Course went through a lot of content about Network, Programming, Operational Systems and Hardware Maintence. It added a lot to my academic experience and there <strong>I was inspired to do my first projects</strong> in the form of Mobile Apps with <strong>Bluetooth, Android Studio, Firebase and React Native integrations.</strong>"
       ],
       "successEnglish": [
-        "Success English is an English School institution with <strong>great prestige and recognition in my hometown.</strong> It uses the Top Notch Book Series and its tests to teach the students from Fundamentals to Advanced English. The course uses <strong>written and spoken tests</strong> to evaluate each student's performance.",
+        "Success English is a well-regarded <strong>English-language school.</strong> It uses the Top Notch book series and its tests to take students from fundamentals to advanced English. The course relies on <strong>written and spoken tests</strong> to evaluate each student's performance.",
         "The institution is recognized by their <strong>high-achieving students in the English Language</strong>, with a very effective method applied over the years. There I was able to learn most of what I currently know, and with the <strong>constant contact with the language</strong> I am able to keep a good English level overall."
       ]
     },
     "professional": {
       "title": "Professional Experience",
       "gupy": [
-        "Gupy is the <strong>biggest HRTech company in Brazil</strong> comfortably leading the market in HR solutions. The company started in 2015 with only 3 people. Now in 2024, it reached the milestone of <strong>2 million people hired by the platform.</strong>",
-        "As of now, Gupy offers a lineup including: Admission (Hiring Process), Corporate Education (Specialization for employees), Mood and Engagement (Employee feedback) and Performance Management.",
-        "Starting at Gupy marked a very welcome change of pace in my career, and to me it means a lot to continue maturing my Web Development knowledge, especially while applying consolidated design patterns like <strong>DDD in aggregation with Unit Tests and Integration Tests</strong>"
+        "Gupy is <strong>Brazil's largest HR-tech</strong>, leading the market in recruiting and HR software. I work on the <strong>Admission</strong> product — the flow that turns a hire into an onboarded employee.",
+        "I ship full-stack features here, mostly <strong>Node.js services and React front-ends, both in TypeScript</strong>. I reworked an internal validation step that was holding candidates and the team up, cutting the wait on both sides. I lean on <strong>domain-driven design with unit and integration tests</strong> to keep the product maintainable as it grows."
       ],
       "madeiraMadeira": [
-        "MadeiraMadeira is one of the <strong>biggest retail online stores in Brazil.</strong> It is 1 out of 19 unicorn companies in Brazil, with outsource investments treaspassing the <strong>billion</strong> mark. Created in 2009, it has seen a huge growth in sales during pandemic times",
-        "I started working there after I finished Trybe's Course and it is my first opportunity to work professionally with web development, using technologies such as React, Python and Go. It has been a great experience, especially considering the maturity of the company in dealing with the remote working model with <strong>lots of feedbacks and team alignments</strong>"
+        "MadeiraMadeira is one of <strong>Brazil's biggest online retailers</strong> and one of the country's unicorns. I worked on the <strong>back-office</strong> and on processes tied to <strong>carriers and shipping</strong>.",
+        "On the back end I wrote <strong>Go</strong> services that processed close to a million events a day, powering internal charging that prevented revenue leakage, plus <strong>Python</strong> tooling that replaced manual spreadsheet work. On the front end I built with <strong>React, NX, Jest and Cypress</strong>."
       ],
       "renovareTelecom": [
-        "Renovare Telecom is a <strong>Telecommunication Company</strong> from my hometown. The owners started the company in 2010 as a garage company and it grew very quickly as the biggest in town.</strong> It also operates in many other countryside cities.",
-        "I was hired by the company in the middle of the pandemic as an <strong>IT Intern</strong>. That opportunity was <strong>one of the best things that happened to me that year.</strong>",
-        "There I learned a lot about <strong>enterprise servers, cloning and fixing corrupted operational systems, file recovery and some Linux commands and processes.</strong> I was responsible for the installation and setup of OSs for each and every employee. Upgrades and replacements were often needed as well. Most of the things I learned <strong>I owe to my colleagues, with years of experience in IT.</strong>"
+        "Renovare Telecom is a <strong>telecommunications company</strong>. I joined as an <strong>IT Technician</strong>, responsible for installing and maintaining the company's computers.",
+        "I <strong>set up an internal ticketing system</strong> that streamlined the support workflow, and handled <strong>cloning and restoring operating systems</strong> across the fleet. It's where I got comfortable with enterprise servers and day-to-day Linux."
       ],
       "kundenSystems": [
-        "Kunden Systems is an <strong>Industrial & Comercial Enterprise Resource Planning (ERP) provider.</strong> It operates mainly in the <strong>south region of Brazil</strong>, but there are <strong>clients spread all over South America.</strong>",
-        "There I had <strong>my first professional experience</strong> in the Information Technology area and it was really <strong>important for me and my perception of myself.</strong> My capabilites were put to test and I <strong>learned a lot with the people around me.</strong> My work had a wide range: from opening notebooks to applying fixes in <strong>PL/SQL Production and Test Databases.</strong>"
+        "Kunden Systems is an <strong>ERP provider</strong> serving clients across South America. It was <strong>my first professional experience</strong> in IT.",
+        "I installed and maintained computers, <strong>managed local and remote servers</strong>, and applied fixes to <strong>PL/SQL test and production databases</strong>. It's where I learned the fundamentals from colleagues with years in the field."
       ]
     }
   },
@@ -83,9 +78,30 @@
     }
   },
   "os": {
+    "boot": {
+      "lines": [
+        "BIOS ............... <span class=\"ok\">OK</span>",
+        "MEMORY CHECK ....... <span class=\"ok\">OK</span>",
+        "GRAPHICS ........... synthwave",
+        "NETWORK ............ <span class=\"ok\">OK</span>",
+        "MOUNTING /home ..... <span class=\"ok\">OK</span>",
+        "STARTING SERVICES .. <span class=\"ok\">OK</span>",
+        "LOADING <span class=\"em\">Rafael Scherer</span> ..."
+      ],
+      "skip": "Skip",
+      "aria": "Starting the portfolio"
+    },
+    "welcome": {
+      "eyebrow": "~/welcome",
+      "title": "Welcome to my Portfolio!",
+      "intro": "You've booted into my portfolio — built as a small synthwave operating system. It's made to be explored: launch the apps in the dock, dig through the files, run my projects in the Browser, or poke around the Terminal.",
+      "meIntro": "Behind all of it: I'm <strong>Rafael</strong>, a software engineer who builds web platforms end to end. Most of my time goes to backend and full-stack work — Node.js, Go and TypeScript — with a soft spot for tools that make the rest of the team faster.",
+      "cta": "More about me",
+      "hint": "Tip: everything on the desktop is clickable."
+    },
     "apps": {
+      "welcome": "Welcome",
       "about": "About Me",
-      "projects": "Projects",
       "experience": "Experience",
       "contact": "Contact",
       "browser": "Browser",
@@ -96,7 +112,8 @@
     },
     "menu": {
       "desktop": "Desktop",
-      "logout": "Log out"
+      "logout": "Log out",
+      "signIn": "Sign in"
     },
     "window": {
       "minimize": "Minimize",
@@ -110,16 +127,12 @@
       "rename": "Rename",
       "delete": "Delete"
     },
-    "privacy": {
-      "title": "welcome",
-      "heading": "A quick note before you start",
-      "body": "This is a shared desktop. Anything you create is saved <strong>publicly</strong> and shown to anyone who signs in with the same name, so keep it to things you would post in the open.",
-      "noKeep": "No tracking, no cookies, no passwords kept.",
-      "ok": "OK",
-      "leave": "You can close this tab any time to leave."
-    },
     "login": {
       "session": "session",
+      "title": "Sign in",
+      "optionalNote": "You're browsing as a guest. Sign in with a name to keep a public space you can come back to.",
+      "stayGuest": "Stay as guest",
+      "close": "Close",
       "prompt": "select a user to sign in",
       "guest": "Guest",
       "guestRole": "no password",
@@ -185,10 +198,11 @@
       "isDir": "{{name}}: is a directory",
       "missingOperand": "{{cmd}}: missing operand",
       "exists": "{{name}}: already exists",
-      "motd": "Dad ran an arcade. This is what I remember of it."
+      "motd": "A portfolio disguised as an operating system. Type 'help' to get started."
     },
     "about": {
-      "subtitle": "Systems Analyst · Rio Grande do Sul, Brazil",
+      "subtitle": "Software Engineer @ Gupy",
+      "tagline": "I build web platforms with Node.js, Go and TypeScript.",
       "stack": "Stack",
       "interests": "Interests"
     },
@@ -197,10 +211,11 @@
       "academic": "Academic"
     },
     "projects": {
-      "hint": "double-click Run to launch in the Browser",
-      "run": "Run",
       "source": "Source",
-      "live": "Live"
+      "openWeb": "Open Web Page",
+      "noLive": "No web page — explore the code",
+      "prevShot": "Previous screenshot",
+      "nextShot": "Next screenshot"
     },
     "contact": {
       "location": "location"

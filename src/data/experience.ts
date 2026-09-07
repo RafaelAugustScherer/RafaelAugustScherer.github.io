@@ -28,7 +28,7 @@ const academicExperience: Experience[] = [
     icon: trybeIcon,
   },
   {
-    name: 'IFSul - Câmpus Sapiranga',
+    name: 'IFSul',
     tKey: 'academic.ifsul',
     date: '2017 - 2021',
     icon: ifsulIcon,

@@ -2,9 +2,34 @@ import { StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 
+const ColdBoot = () => (
+  <div
+    style={{
+      position: 'fixed',
+      inset: 0,
+      background: '#08061a',
+      display: 'grid',
+      placeItems: 'center',
+    }}
+  >
+    <div
+      style={{
+        fontFamily: "'Chakra Petch', system-ui, sans-serif",
+        fontWeight: 700,
+        fontSize: 20,
+        letterSpacing: '0.14em',
+        color: '#01fbfb',
+        textShadow: '0 0 16px rgba(1, 251, 251, 0.5)',
+      }}
+    >
+      Rafael Scherer
+    </div>
+  </div>
+);
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<ColdBoot />}>
       <App />
     </Suspense>
   </StrictMode>

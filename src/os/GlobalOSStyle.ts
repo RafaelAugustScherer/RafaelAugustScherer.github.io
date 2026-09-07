@@ -47,8 +47,6 @@ export const GlobalOSStyle = createGlobalStyle`
 
   button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
   input, textarea { font: inherit; }
-  a { color: var(--cyan); text-decoration: none; }
-  a:hover { text-decoration: underline; }
 
   :focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 

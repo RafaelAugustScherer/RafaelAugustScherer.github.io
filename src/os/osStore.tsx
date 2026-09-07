@@ -8,7 +8,7 @@ import {
   useRef,
 } from 'react';
 import type { ReactNode } from 'react';
-import type { AppId, FsNode, Screen, WindowInstance } from './types';
+import type { AppId, FsNode, Screen, WindowBounds, WindowInstance } from './types';
 import { APPS } from './registry';
 import { clearUser, loadUser, saveUser } from './storage';
 
@@ -25,19 +25,6 @@ const keyOf = (appId: AppId, props: Record<string, unknown>): string => {
 const seedNodes = (): FsNode[] => {
   const now = Date.now();
   return [
-    {
-      id: uid(),
-      name: 'welcome.txt',
-      type: 'file',
-      parentId: null,
-      content:
-        'Welcome.\n\n' +
-        'This is a public desktop. Anything you create here is saved and visible\n' +
-        'to anyone who signs in with the same name.\n\n' +
-        'Right-click the desktop to make a new file or folder.\n' +
-        'Open the Projects folder to run my work inside the Browser.',
-      createdAt: now,
-    },
     {
       id: uid(),
       name: 'Documents',
@@ -61,7 +48,7 @@ type Action =
   | { type: 'SET_SCREEN'; screen: Screen }
   | { type: 'LOGIN'; user: string; nodes: FsNode[] }
   | { type: 'LOGOUT' }
-  | { type: 'OPEN'; appId: AppId; title?: string; props?: Record<string, unknown> }
+  | { type: 'OPEN'; appId: AppId; title?: string; props?: Record<string, unknown>; bounds?: WindowBounds }
   | { type: 'CLOSE'; id: string }
   | { type: 'FOCUS'; id: string }
   | { type: 'MINIMIZE'; id: string }
@@ -75,7 +62,7 @@ type Action =
   | { type: 'FS_DELETE'; id: string };
 
 const initialState: State = {
-  screen: 'privacy',
+  screen: 'boot',
   user: null,
   windows: [],
   nodes: [],
@@ -114,17 +101,15 @@ const openWindow = (state: State, action: Extract<Action, { type: 'OPEN' }>): St
 
   const def = APPS[action.appId];
   const count = state.windows.length;
-  const w = def.defaultSize.w;
-  const h = def.defaultSize.h;
   const z = state.nextZ + 1;
   const win: WindowInstance = {
     id: uid(),
     appId: action.appId,
     title: action.title ?? def.title,
-    x: 120 + (count % 6) * 34,
-    y: 60 + (count % 6) * 28,
-    w,
-    h,
+    x: action.bounds ? action.bounds.x : 120 + (count % 6) * 34,
+    y: action.bounds ? action.bounds.y : 60 + (count % 6) * 28,
+    w: action.bounds ? action.bounds.w : def.defaultSize.w,
+    h: action.bounds ? action.bounds.h : def.defaultSize.h,
     z,
     minimized: false,
     maximized: false,
@@ -142,10 +127,11 @@ const reducer = (state: State, action: Action): State => {
         ...state,
         user: action.user,
         nodes: action.nodes,
+        windows: [],
         screen: 'desktop',
       };
     case 'LOGOUT':
-      return { ...state, user: null, windows: [], nodes: [], screen: 'login' };
+      return { ...state, user: null, windows: [], nodes: [], screen: 'boot' };
     case 'OPEN':
       return openWindow(state, action);
     case 'CLOSE':
@@ -241,7 +227,7 @@ interface OSContextValue {
   setScreen: (screen: Screen) => void;
   signIn: (user: string) => Promise<void>;
   signOut: () => void;
-  open: (appId: AppId, props?: Record<string, unknown>, title?: string) => void;
+  open: (appId: AppId, props?: Record<string, unknown>, title?: string, bounds?: WindowBounds) => void;
   openBrowser: (url: string) => void;
   close: (id: string) => void;
   focus: (id: string) => void;
@@ -309,7 +295,7 @@ export const OSProvider = ({ children }: { children: ReactNode }) => {
       setScreen: (screen) => dispatch({ type: 'SET_SCREEN', screen }),
       signIn,
       signOut: () => dispatch({ type: 'LOGOUT' }),
-      open: (appId, props, title) => dispatch({ type: 'OPEN', appId, props, title }),
+      open: (appId, props, title, bounds) => dispatch({ type: 'OPEN', appId, props, title, bounds }),
       openBrowser: (url) => dispatch({ type: 'OPEN', appId: 'browser', props: { url } }),
       close: (id) => dispatch({ type: 'CLOSE', id }),
       focus: (id) => dispatch({ type: 'FOCUS', id }),

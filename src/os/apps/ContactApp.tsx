@@ -30,16 +30,6 @@ const Value = styled.span`
   color: var(--text-dim);
 `;
 
-const Anchor = styled.a`
-  color: var(--text);
-  text-decoration: none;
-
-  &:hover {
-    color: var(--cyan);
-    text-decoration: underline;
-  }
-`;
-
 const ContactApp = () => {
   const { t } = useTranslation();
   return (
@@ -51,9 +41,9 @@ const ContactApp = () => {
       </IconCell>
       <Label>github</Label>
       <Value>
-        <Anchor href="https://github.com/RafaelAugustScherer" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/RafaelAugustScherer" target="_blank" rel="noopener noreferrer">
           RafaelAugustScherer
-        </Anchor>
+        </a>
       </Value>
 
       <IconCell>
@@ -61,13 +51,13 @@ const ContactApp = () => {
       </IconCell>
       <Label>linkedin</Label>
       <Value>
-        <Anchor
-          href="https://www.linkedin.com/in/rafael-augusto-scherer/"
+        <a
+          href="https://www.linkedin.com/in/rafaelaugustscherer/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          rafael-augusto-scherer
-        </Anchor>
+          rafaelaugustscherer
+        </a>
       </Value>
 
       <IconCell>
@@ -75,16 +65,14 @@ const ContactApp = () => {
       </IconCell>
       <Label>email</Label>
       <Value>
-        <Anchor href="mailto:rafaelaugustscherer@gmail.com" target="_blank" rel="noopener noreferrer">
-          rafaelaugustscherer@gmail.com
-        </Anchor>
+        <a href="mailto:rafaelaugustscherer@gmail.com">rafaelaugustscherer@gmail.com</a>
       </Value>
 
       <IconCell>
         <MapPin size={15} />
       </IconCell>
       <Label>{t('os.contact.location')}</Label>
-      <Value>Rio Grande do Sul, Brazil</Value>
+      <Value>Brazil</Value>
     </Grid>
   </AppScroll>
   );

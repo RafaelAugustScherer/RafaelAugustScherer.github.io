@@ -1,8 +1,18 @@
+import { useRef } from 'react';
+import type { PointerEvent as ReactPointerEvent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import type { AppId } from '../types';
 import { APPS, DOCK_APPS } from '../registry';
 import { useOS } from '../osStore';
+
+const MAGNIFY_RANGE = 96;
+const MAGNIFY_AMP = 0.34;
+const MAGNIFY_LIFT = 9;
+
+const prefersReducedMotion = () =>
+  typeof window !== 'undefined' &&
+  window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
 const Bar = styled.div`
   position: absolute;
@@ -11,10 +21,11 @@ const Bar = styled.div`
   transform: translateX(-50%);
   z-index: 300;
   display: flex;
+  align-items: flex-end;
   gap: 4px;
   padding: 6px;
   max-width: calc(100vw - 28px);
-  overflow-x: auto;
+  overflow: visible;
   background: rgba(28, 23, 52, 0.94);
   backdrop-filter: blur(11px);
   border: 1px solid var(--line);
@@ -30,6 +41,12 @@ const Btn = styled.button<{ $open: boolean }>`
   color: ${({ $open }) => ($open ? 'var(--cyan)' : '#c6bfe6')};
   border: 1px solid transparent;
   flex: none;
+  transform-origin: bottom center;
+  transition: transform 0.13s ease, background 0.13s ease, color 0.13s ease;
+  will-change: transform;
+  @media (prefers-reduced-motion: reduce) {
+    transition: background 0.13s ease, color 0.13s ease;
+  }
   &:hover { background: var(--surface-3); color: var(--cyan); border-color: var(--line); }
   &::after {
     content: '';
@@ -47,6 +64,27 @@ const Btn = styled.button<{ $open: boolean }>`
 const Dock = () => {
   const { t } = useTranslation();
   const { state, open, focus, minimize } = useOS();
+  const barRef = useRef<HTMLDivElement>(null);
+
+  const btnsOf = () =>
+    barRef.current ? Array.from(barRef.current.querySelectorAll<HTMLElement>('.dock-btn')) : [];
+
+  const onMove = (e: ReactPointerEvent) => {
+    if (prefersReducedMotion()) return;
+    const x = e.clientX;
+    btnsOf().forEach((btn) => {
+      const r = btn.getBoundingClientRect();
+      const dist = Math.abs(x - (r.left + r.width / 2));
+      const t = Math.max(0, 1 - dist / MAGNIFY_RANGE);
+      btn.style.transform = `translateY(${-MAGNIFY_LIFT * t}px) scale(${1 + MAGNIFY_AMP * t})`;
+    });
+  };
+
+  const onLeave = () => {
+    btnsOf().forEach((btn) => {
+      btn.style.transform = '';
+    });
+  };
 
   const windowsFor = (appId: AppId) => state.windows.filter((w) => w.appId === appId);
 
@@ -68,12 +106,13 @@ const Dock = () => {
   };
 
   return (
-    <Bar className="os-dock">
+    <Bar className="os-dock" ref={barRef} onPointerMove={onMove} onPointerLeave={onLeave}>
       {DOCK_APPS.map((appId) => {
         const Glyph = APPS[appId].icon;
         return (
           <Btn
             key={appId}
+            className="dock-btn"
             $open={windowsFor(appId).length > 0}
             title={t(`os.apps.${appId}`)}
             aria-label={t(`os.apps.${appId}`)}

@@ -4,8 +4,13 @@ import { ArrowLeft, ArrowRight, Compass, ExternalLink, Frown, Globe, Lock, Rotat
 import { useTranslation } from 'react-i18next';
 import type { WindowInstance } from '../types';
 import projectsData from '../../data/projects';
+import ProjectPage from './ProjectPage';
 
 const HOME = 'home';
+const LINKEDIN = 'https://www.linkedin.com/in/rafaelaugustscherer/';
+const PROJECT_PREFIX = 'ras://project/';
+const isProjectUrl = (url: string) => url.startsWith(PROJECT_PREFIX);
+const projectIdOf = (url: string) => url.slice(PROJECT_PREFIX.length);
 
 const Wrap = styled.div`
   display: flex;
@@ -170,7 +175,7 @@ const Tile = styled.button`
 const normalize = (raw: string): string => {
   const v = raw.trim();
   if (!v || v === HOME) return HOME;
-  if (/^https?:\/\//i.test(v)) return v;
+  if (/^(https?|ras):\/\//i.test(v)) return v;
   return `https://${v}`;
 };
 
@@ -279,9 +284,9 @@ const BrowserApp = ({ win }: { win: WindowInstance }) => {
   };
 
   const bookmarks = [
-    ...projects.map((p) => ({ label: p.name, url: p.website })),
-    { label: 'GitHub', url: 'https://github.com/RafaelAugustScherer' },
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/rafael-augusto-scherer/' },
+    ...projects.map((p) => ({ label: p.name, url: `${PROJECT_PREFIX}${p.id}`, sub: p.tech.join(' · ') })),
+    { label: 'GitHub', url: 'https://github.com/RafaelAugustScherer', sub: 'github.com' },
+    { label: 'LinkedIn', url: LINKEDIN, sub: 'linkedin.com' },
   ];
 
   return (
@@ -305,7 +310,11 @@ const BrowserApp = ({ win }: { win: WindowInstance }) => {
             go(draft);
           }}
         >
-          {current === HOME ? <Globe size={13} color="var(--text-faint)" /> : <Lock size={12} color="var(--green)" />}
+          {current === HOME || isProjectUrl(current) ? (
+            <Globe size={13} color="var(--text-faint)" />
+          ) : (
+            <Lock size={12} color="var(--green)" />
+          )}
           <input
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
@@ -320,7 +329,7 @@ const BrowserApp = ({ win }: { win: WindowInstance }) => {
             aria-label={t('os.browser.address')}
           />
         </Address>
-        {current !== HOME && (
+        {current !== HOME && !isProjectUrl(current) && (
           <NavBtn as="a" aria-label={t('os.browser.newtab')} href={current} target="_blank" rel="noopener noreferrer">
             <ExternalLink size={14} />
           </NavBtn>
@@ -334,11 +343,13 @@ const BrowserApp = ({ win }: { win: WindowInstance }) => {
               {bookmarks.map((b) => (
                 <Tile key={b.label} onClick={() => go(b.url)}>
                   <strong>{b.label}</strong>
-                  <span>{hostOf(b.url)}</span>
+                  <span>{b.sub}</span>
                 </Tile>
               ))}
             </Grid>
           </Start>
+        ) : isProjectUrl(current) ? (
+          <ProjectPage id={projectIdOf(current)} />
         ) : (
           <EmbedView key={`${current}-${reloadKey}`} url={current} title={win.title} onHome={() => go(HOME)} />
         )}
