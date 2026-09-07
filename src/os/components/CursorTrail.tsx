@@ -46,9 +46,11 @@ const CursorTrail = ({ paused = false }: { paused?: boolean }) => {
     if (!bctx) return;
 
     let raf = 0;
-    const dpr = window.devicePixelRatio || 1;
+    let running = false;
+    let dpr = window.devicePixelRatio || 1;
 
     const resize = () => {
+      dpr = window.devicePixelRatio || 1;
       const { width, height } = canvas.getBoundingClientRect();
       canvas.width = buffer.width = width * dpr;
       canvas.height = buffer.height = height * dpr;
@@ -60,17 +62,26 @@ const CursorTrail = ({ paused = false }: { paused?: boolean }) => {
       if (pausedRef.current || !isDesktop(e.target)) return;
       const rect = canvas.getBoundingClientRect();
       points.current.push({ x: e.clientX - rect.left, y: e.clientY - rect.top, t: performance.now() });
+      if (!running) {
+        running = true;
+        raf = requestAnimationFrame(draw);
+      }
     };
     window.addEventListener('pointermove', onMove);
 
     const draw = () => {
       const now = performance.now();
-      points.current = points.current.filter((p) => now - p.t < LIFESPAN);
+      if (pausedRef.current) points.current.length = 0;
+      else points.current = points.current.filter((p) => now - p.t < LIFESPAN);
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       bctx.clearRect(0, 0, buffer.width, buffer.height);
 
       const pts = points.current;
+      if (pts.length === 0) {
+        running = false;
+        return;
+      }
       if (pts.length > 1) {
         bctx.lineCap = 'round';
         bctx.lineJoin = 'round';
@@ -97,7 +108,6 @@ const CursorTrail = ({ paused = false }: { paused?: boolean }) => {
       }
       raf = requestAnimationFrame(draw);
     };
-    raf = requestAnimationFrame(draw);
 
     return () => {
       cancelAnimationFrame(raf);

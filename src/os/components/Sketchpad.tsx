@@ -124,6 +124,7 @@ const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => vo
   const shapesRef = useRef<Shape[]>([]);
   const pendingRef = useRef<Pt | null>(null);
   const cursorRef = useRef({ x: 0, y: 0, inside: false });
+  const startLoopRef = useRef<() => void>(() => {});
 
   const chooseTool = (t: Tool) => {
     toolRef.current = t;
@@ -131,18 +132,19 @@ const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => vo
     setTool(t);
   };
 
-  const pressLine = () => {
+  const pressShape = (t: 'line' | 'circle') => {
     const c = cursorRef.current;
-    const start = c.inside ? { x: c.x, y: c.y } : null;
-    if (toolRef.current !== 'line') {
-      toolRef.current = 'line';
-      setTool('line');
-      pendingRef.current = start;
+    const at = c.inside ? { x: c.x, y: c.y } : null;
+    if (toolRef.current !== t) {
+      toolRef.current = t;
+      setTool(t);
+      pendingRef.current = at;
     } else if (!pendingRef.current) {
-      pendingRef.current = start;
-    } else if (start) {
+      pendingRef.current = at;
+    } else if (at) {
       const p = pendingRef.current;
-      shapesRef.current.push({ kind: 'line', x1: p.x, y1: p.y, x2: start.x, y2: start.y });
+      if (t === 'line') shapesRef.current.push({ kind: 'line', x1: p.x, y1: p.y, x2: at.x, y2: at.y });
+      else shapesRef.current.push({ kind: 'circle', cx: p.x, cy: p.y, r: Math.hypot(at.x - p.x, at.y - p.y) });
       pendingRef.current = null;
     }
   };
@@ -170,9 +172,11 @@ const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => vo
     if (!bctx) return;
 
     let raf = 0;
-    const dpr = window.devicePixelRatio || 1;
+    let running = false;
+    let dpr = window.devicePixelRatio || 1;
 
     const resize = () => {
+      dpr = window.devicePixelRatio || 1;
       const { width, height } = canvas.getBoundingClientRect();
       canvas.width = buffer.width = width * dpr;
       canvas.height = buffer.height = height * dpr;
@@ -217,9 +221,12 @@ const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => vo
     };
 
     const draw = () => {
-      raf = requestAnimationFrame(draw);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      if (!activeRef.current) return;
+      if (!activeRef.current) {
+        running = false;
+        return;
+      }
+      raf = requestAnimationFrame(draw);
 
       bctx.clearRect(0, 0, buffer.width, buffer.height);
       bctx.lineCap = 'round';
@@ -252,7 +259,11 @@ const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => vo
       ctx.globalAlpha = 1;
       ctx.shadowBlur = 0;
     };
-    raf = requestAnimationFrame(draw);
+    startLoopRef.current = () => {
+      if (running) return;
+      running = true;
+      raf = requestAnimationFrame(draw);
+    };
 
     return () => {
       cancelAnimationFrame(raf);
@@ -262,7 +273,8 @@ const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => vo
 
   useEffect(() => {
     const onDown = (e: PointerEvent) => {
-      if (activeRef.current || !e.ctrlKey || e.button !== 0 || !isDesktop(e.target)) return;
+      if (activeRef.current || !e.ctrlKey || (e.button !== 0 && e.button !== 2) || !isDesktop(e.target))
+        return;
       const canvas = canvasRef.current;
       if (!canvas) return;
       e.preventDefault();
@@ -278,9 +290,10 @@ const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => vo
       setTool('point');
       setActive(true);
       onActiveChange(true);
+      startLoopRef.current();
     };
     const onCtx = (e: MouseEvent) => {
-      if (activeRef.current || e.ctrlKey) {
+      if (activeRef.current || (e.ctrlKey && isDesktop(e.target))) {
         e.preventDefault();
         e.stopPropagation();
       }
@@ -299,8 +312,8 @@ const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => vo
       const k = e.key.toLowerCase();
       if (e.key === 'Escape') exit();
       else if (k === 'p') chooseTool('point');
-      else if (k === 'l') pressLine();
-      else if (k === 'c') chooseTool('circle');
+      else if (k === 'l') pressShape('line');
+      else if (k === 'c') pressShape('circle');
       else if (k === 'e') clearShapes();
       else return;
       e.preventDefault();
