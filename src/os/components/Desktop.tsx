@@ -189,7 +189,7 @@ const Desktop = () => {
       {state.screen === 'desktop' && (
         <>
           <MenuBar onSignIn={() => setSignInOpen(true)} />
-          <Surface onContextMenu={onSurfaceContext}>
+          <Surface className="os-surface" onContextMenu={onSurfaceContext}>
             <CursorTrail paused={sketchActive} />
             <Sketchpad onActiveChange={setSketchActive} />
             <Identity aria-hidden>

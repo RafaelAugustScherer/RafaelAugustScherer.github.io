@@ -89,6 +89,14 @@ const Cell = styled.div`
   }
 `;
 
+const Marquee = styled.div`
+  position: absolute;
+  z-index: 55;
+  border: 1px solid var(--cyan);
+  background: rgba(1, 251, 251, 0.12);
+  pointer-events: none;
+`;
+
 type IconItem =
   | { key: string; kind: 'app'; appId: AppId }
   | { key: string; kind: 'node'; node: FsNode };
@@ -144,7 +152,9 @@ const DesktopIcons = ({
   const layerRef = useRef<HTMLDivElement>(null);
   const [geom, setGeom] = useState(initialGeom);
   const [slots, setSlots] = useState<Record<string, number>>({});
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<Set<string>>(() => new Set());
+  const [marquee, setMarquee] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
+  const marqueeRef = useRef<{ sx: number; sy: number; active: boolean } | null>(null);
   const [drag, setDrag] = useState<{ key: string; dx: number; dy: number } | null>(null);
   const dragRef = useRef<{
     key: string;
@@ -185,11 +195,68 @@ const DesktopIcons = ({
   }, [itemsKey]);
 
   useEffect(() => {
+    const hitTest = (sx: number, sy: number, ex: number, ey: number) => {
+      const left = Math.min(sx, ex);
+      const right = Math.max(sx, ex);
+      const top = Math.min(sy, ey);
+      const bottom = Math.max(sy, ey);
+      const hits = new Set<string>();
+      layerRef.current?.querySelectorAll<HTMLElement>('.os-icon').forEach((el) => {
+        const key = el.dataset.key;
+        if (!key) return;
+        const r = el.getBoundingClientRect();
+        if (r.left < right && r.right > left && r.top < bottom && r.bottom > top) hits.add(key);
+      });
+      setSelected(hits);
+    };
+
+    const onMove = (e: globalThis.PointerEvent) => {
+      const m = marqueeRef.current;
+      if (!m) return;
+      const dx = e.clientX - m.sx;
+      const dy = e.clientY - m.sy;
+      if (!m.active) {
+        if (Math.hypot(dx, dy) < DRAG_THRESHOLD) return;
+        m.active = true;
+      }
+      const layer = layerRef.current?.getBoundingClientRect();
+      if (layer) {
+        setMarquee({
+          x: Math.min(m.sx, e.clientX) - layer.left,
+          y: Math.min(m.sy, e.clientY) - layer.top,
+          w: Math.abs(dx),
+          h: Math.abs(dy),
+        });
+      }
+      hitTest(m.sx, m.sy, e.clientX, e.clientY);
+    };
+    const onUp = () => {
+      const m = marqueeRef.current;
+      marqueeRef.current = null;
+      setMarquee(null);
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      if (m && !m.active) setSelected(new Set());
+    };
     const onDown = (e: globalThis.PointerEvent) => {
-      if (!(e.target as HTMLElement).closest('.os-icon')) setSelected(null);
+      const t = e.target as HTMLElement;
+      const interactive =
+        t.closest('.os-icon') ||
+        t.closest('.os-widget') ||
+        t.closest('.os-window') ||
+        t.closest('.os-dock') ||
+        t.closest('.os-sketch-tools');
+      if (e.button !== 0 || !t.closest('.os-surface') || interactive) return;
+      marqueeRef.current = { sx: e.clientX, sy: e.clientY, active: false };
+      window.addEventListener('pointermove', onMove);
+      window.addEventListener('pointerup', onUp);
     };
     window.addEventListener('pointerdown', onDown);
-    return () => window.removeEventListener('pointerdown', onDown);
+    return () => {
+      window.removeEventListener('pointerdown', onDown);
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+    };
   }, []);
 
   useEffect(() => {
@@ -231,7 +298,7 @@ const DesktopIcons = ({
 
   const onPointerDown = (e: PointerEvent, key: string) => {
     if ((e.target as HTMLElement).tagName === 'INPUT') return;
-    setSelected(key);
+    setSelected(new Set([key]));
     if (e.button !== 0) return;
     if (key === `node:${editingId}`) return;
     const { x, y } = slotXY(slots[key] ?? 0);
@@ -328,6 +395,11 @@ const DesktopIcons = ({
 
   return (
     <Layer ref={layerRef}>
+      {marquee && (
+        <Marquee
+          style={{ left: marquee.x, top: marquee.y, width: marquee.w, height: marquee.h }}
+        />
+      )}
       {items.map((item) => {
         const { x, y } = slotXY(slots[item.key] ?? 0);
         const isDragging = drag?.key === item.key;
@@ -336,8 +408,9 @@ const DesktopIcons = ({
         const title = item.kind === 'app' ? t(`os.apps.${item.appId}`) : item.node.name;
         return (
           <Cell
-            className={`os-icon${selected === item.key ? ' selected' : ''}${isDragging ? ' dragging' : ''}`}
+            className={`os-icon${selected.has(item.key) ? ' selected' : ''}${isDragging ? ' dragging' : ''}`}
             key={item.key}
+            data-key={item.key}
             style={{ transform: `translate(${tx}px, ${ty}px)` }}
             title={title}
             onPointerDown={(e) => onPointerDown(e, item.key)}
