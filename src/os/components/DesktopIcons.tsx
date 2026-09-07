@@ -37,6 +37,11 @@ const Cell = styled.div`
   touch-action: none;
   transition: transform 0.16s cubic-bezier(0.2, 0.8, 0.2, 1);
   &:hover { background: rgba(1, 251, 251, 0.09); border-color: var(--line); }
+  &.selected {
+    background: rgba(1, 251, 251, 0.16);
+    border-color: var(--cyan);
+    box-shadow: inset 0 0 16px rgba(1, 251, 251, 0.12);
+  }
   &.dragging {
     transition: none;
     z-index: 60;
@@ -139,6 +144,7 @@ const DesktopIcons = ({
   const layerRef = useRef<HTMLDivElement>(null);
   const [geom, setGeom] = useState(initialGeom);
   const [slots, setSlots] = useState<Record<string, number>>({});
+  const [selected, setSelected] = useState<string | null>(null);
   const [drag, setDrag] = useState<{ key: string; dx: number; dy: number } | null>(null);
   const dragRef = useRef<{
     key: string;
@@ -179,6 +185,14 @@ const DesktopIcons = ({
   }, [itemsKey]);
 
   useEffect(() => {
+    const onDown = (e: globalThis.PointerEvent) => {
+      if (!(e.target as HTMLElement).closest('.os-icon')) setSelected(null);
+    };
+    window.addEventListener('pointerdown', onDown);
+    return () => window.removeEventListener('pointerdown', onDown);
+  }, []);
+
+  useEffect(() => {
     const el = layerRef.current;
     if (!el) return;
     const measure = () => {
@@ -216,8 +230,9 @@ const DesktopIcons = ({
   };
 
   const onPointerDown = (e: PointerEvent, key: string) => {
-    if (e.button !== 0) return;
     if ((e.target as HTMLElement).tagName === 'INPUT') return;
+    setSelected(key);
+    if (e.button !== 0) return;
     if (key === `node:${editingId}`) return;
     const { x, y } = slotXY(slots[key] ?? 0);
     dragRef.current = {
@@ -321,7 +336,7 @@ const DesktopIcons = ({
         const title = item.kind === 'app' ? t(`os.apps.${item.appId}`) : item.node.name;
         return (
           <Cell
-            className={`os-icon${isDragging ? ' dragging' : ''}`}
+            className={`os-icon${selected === item.key ? ' selected' : ''}${isDragging ? ' dragging' : ''}`}
             key={item.key}
             style={{ transform: `translate(${tx}px, ${ty}px)` }}
             title={title}
