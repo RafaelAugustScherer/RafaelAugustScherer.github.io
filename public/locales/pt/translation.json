@@ -1,33 +1,35 @@
 {
   "header": {
     "text": "Olá, meu nome é Rafael e eu sou um",
-    "movingText": ["Desenvolvedor", "Estudante", "Gamer", "Entusiasta"]
+    "movingText": [
+      "Desenvolvedor",
+      "Estudante",
+      "Gamer",
+      "Entusiasta"
+    ]
   },
   "about": {
     "title": "Sobre",
-    "firstParagraph": "Sou um <strong>Estudante e Entusiasta de TI</strong>. Gosto de usar o conceito de <i>Faça você mesmo</i> (DIY) em aplicações que envolvam hardware e software. Moro em uma pequena cidade localizada no interior do Rio Grande do Sul, Brasil.",
-    "secondParagraph": "Estive em contato com a tecnologia desde sempre! Meu pai era dono de um Fliperama / Lan House e lá eu passei boa parte da minha infância, jogando videogames e ajudando quando necessário.",
-    "thirdParagraph": "Hoje estou em busca de uma oportunidade para atuar com Desenvolvimento Full-stack, Back-end ou Front-end."
+    "firstParagraph": "Sou <strong>engenheiro de software</strong>, com cerca de quatro anos construindo plataformas web de ponta a ponta. Trabalho na <strong>Gupy</strong>, a maior HR-tech do Brasil, no produto de Admissão — entregando funcionalidades full-stack em <strong>Node.js e React</strong>, ambos em TypeScript.",
+    "secondParagraph": "Me importo com código de fácil manutenção e escalável, feito para durar. Tendo a usar <strong>domain-driven design</strong> na construção de soluções, e gosto de trazer um olhar crítico ao projeto — pesando alternativas mais enxutas e eficientes que a óbvia.",
+    "thirdParagraph": "Antes da Gupy, atuei como full-stack na <strong>MadeiraMadeira</strong>, uma das maiores varejistas online do Brasil, escrevendo serviços em <strong>Go</strong> que processavam perto de um milhão de eventos por dia e ferramentas em <strong>Python</strong> que substituíram trabalho manual em planilhas. Estou concluindo a graduação em <strong>Ciência da Computação</strong> na Feevale e crio minhas próprias ferramentas — como o <strong>Domainbook</strong>, um sistema de documentação viva que uso em projetos como o <strong>Commander Playtester</strong>."
   },
   "skills": {
     "title": "Habilidades"
   },
   "projects": {
-    "title": "Projetos",
-    "list": {
-      "spotrybe": "Spotrybe (Plataforma de música)",
-      "recipesApp": "App de Receitas",
-      "falloutTimer": "Temporizador Temático Fallout"
-    },
-    "websiteBtn": "Website",
-    "repositoryBtn": "Repositório"
+    "blurbs": {
+      "commander": "Uma ferramenta no navegador que mede quão forte é um deck de Commander (Magic) — pilote ou assista partidas fiéis às regras contra decks adversários (motor em Rust/WASM), ou rode uma simulação Monte-Carlo para taxas de vitória.",
+      "domainbook": "Documentação viva para bases de código tocadas por agentes: markdown versionado em git, site explorável, servidor MCP e um git hook que bloqueia mudanças sem atualizar os docs.",
+      "timer": "Um timer temático do Pip-Boy (Fallout) com player de música embutido e uma sequência de detonação ao chegar a zero."
+    }
   },
   "experience": {
     "title": "Experiência",
     "academic": {
       "title": "Experiência Acadêmica",
       "feevale": [
-        "A Feevale é uma das maiores Universidades do Rio Grande do Sul, conta com <strong>3 Câmpus e um Tech-Park com mais de 100 empresas.</strong> São mais de 100 cursos de Graduação e Pós-Graduação nas mais diversas áreas de atuação.",
+        "A Feevale é uma universidade brasileira <strong>com 3 câmpus e um Tech-Park com mais de 100 empresas.</strong> Oferece mais de 100 cursos de graduação e pós-graduação nas mais diversas áreas de atuação.",
         "Estou realizando o <strong>Curso de Graduação em Ciência da Computação</strong> pela Instituição. Espero adquirir um conhecimento técnico mais aprofundado sobre as atividades que realizo no dia-a-dia, e um <strong>expertise voltado ao baixo nível computacional</strong> que possa me diferenciar de outros profissionais da área."
       ],
       "trybe": [
@@ -36,33 +38,31 @@
         "Fiz o curso para <strong>aprender a aprender e a codar.</strong> Consegui adquirir muito do conhecimento técnico necessário para que pudesse posteriormente atuar na área."
       ],
       "ifsul": [
-        "Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grande (IFSul) é uma instituição federal de educação no Brasil que oferece uma qualidade elevada para estudantes de ensino médio além de Cursos Técnicos Integrados, sendo eles <strong>Tecnologia da Informação e Eletroeletrônica.</strong>",
+        "O IFSul é um <strong>instituto federal de educação</strong> no Brasil, que oferece cursos técnicos integrados de alta qualidade junto ao ensino médio — entre eles <strong>Tecnologia da Informação e Eletroeletrônica.</strong>",
         "Na instituição <strong>me graduei no ensino médio</strong> junto do <strong>Curso de Tecnologia da Informação.</strong> O curso conta com muito conteúdo a respeito de Redes, Programação, Sistemas Operacionais e Manutenção de Hardware. O curso foi muito benéfico para minha experiência acadêmica, lá <strong>fui inspirado a fazer meus primeiros projetos</strong> na forma de Aplicativos Mobile com o uso de <strong>Bluetooth, Android Studio, Firebase e integrações com React Native.</strong>"
       ],
       "successEnglish": [
-        "Success English é uma Escola de Ensino da Língua Inglesa com <strong>grande prestígio e reconhecimento na minha cidade natal.</strong> O curso usa da Top Notch Book Series e seus testes para ensinar os estudantes dos Fundamentos ao Inglês Avançado. O curso usa de <strong>testes escritos e orais</strong> para avaliar o desempenho de cada estudante.",
+        "Success English é uma <strong>escola de língua inglesa</strong> de grande prestígio. Usa a Top Notch Book Series e seus testes para levar os estudantes dos fundamentos ao inglês avançado. O curso usa <strong>testes escritos e orais</strong> para avaliar o desempenho de cada estudante.",
         "A instituição é reconhecida por seus <strong>estudantes e conquistas na Língua Inglesa</strong>, com o uso de um método efetivo ao longo dos anos. Durante o período que estive na instituição, fui capaz de aprender a maior parte do que sei, e com <strong>o contato constante com a língua</strong> fui capaz de manter um bom nível de inglês no geral."
       ]
     },
     "professional": {
       "title": "Experiência Profissional",
       "gupy": [
-        "Gupy é a <strong>maior empresa HRTech no Brasil</strong> liderando confortavelmente o mercado em soluções de RH. A empresa começou em 2015 com apenas 3 pessoas. Agora em 2024, chegou a marca de <strong>2 milhões de pessoas contratadas pela plataforma.</strong>",
-        "Até o momento, a Gupy oferece os produtos: Admissão (Processo de Contratação), Educação Coporativa (Especialização para Colaboradores), Clima e Engajamento (Feedback do Colaborador) e Gestão de Desempenho.",
-        "Começar na Gupy marcou uma virada de chave importante na minha carreira, e para mim é muito importante continuar o maturamento em Desenvolvimento Web, especialmente enquanto aplicando padrões consolidados como <strong>DDD em conjunto com Testes Unitários e de Integração.</strong>"
+        "A Gupy é a <strong>maior HR-tech do Brasil</strong>, líder do mercado em software de recrutamento e RH. Atuo no produto de <strong>Admissão</strong> — o fluxo que transforma uma contratação em um colaborador integrado.",
+        "Aqui entrego funcionalidades full-stack, principalmente <strong>serviços em Node.js e front-ends em React, ambos em TypeScript</strong>. Reformulei uma etapa interna de validação que travava candidatos e o time, reduzindo a espera dos dois lados. Apoio-me em <strong>domain-driven design com testes de unidade e integração</strong> para manter o produto sustentável conforme cresce."
       ],
       "madeiraMadeira": [
-        "MadeiraMadeira é uma das <strong>maiores varejistas online no Brasil.</strong> Ela é uma de 19 empresas unicórnios no Brasil, com rodadas de investimento ultrapassando a marca do <strong>bilhão</strong>. Fundada em 2009, teve um grande crescimento em vendas durante os tempos de pandemia.",
-        "Comecei a trabalhar na empresa após terminar o Curso da Trybe. É minha primeira oportunidade de trabalhar com desenvolvimento web, usando tecnologias como React, Python e Go. Tem sido uma ótima experiência até agora, especialmente considerando o modelo de trabalho remoto usado, com muitos <strong>feedbacks e alinhamentos constantes de entregas.</strong>"
+        "A MadeiraMadeira é uma das <strong>maiores varejistas online do Brasil</strong> e uma das unicórnios do país. Atuei no <strong>back-office</strong> e em processos ligados a <strong>transportadoras e logística</strong>.",
+        "No back-end, escrevi serviços em <strong>Go</strong> que processavam perto de um milhão de eventos por dia, sustentando uma cobrança interna que evitava perdas de receita, além de ferramentas em <strong>Python</strong> que substituíram trabalho manual em planilhas. No front-end, construí com <strong>React, NX, Jest e Cypress</strong>."
       ],
       "renovareTelecom": [
-        "Renovare Telecom é uma <strong>Empresa de Telecomunicações</strong> da minha cidade natal. Os donos iniciaram a operação em 2010 e <strong>após 10 anos ela é considerada a maior da cidade na área.</strong> Ela também opera em muitas outras cidades do interior do estado.",
-        "Eu fui contratado pela empresa no meio da pandemia como um <strong>Estagiário de TI</strong>. A oportunidade foi <strong>uma das melhores coisas que me aconteceram naquele ano.</strong>",
-        "Lá eu aprendi a respeito de <strong>servidores empresariais, clonagem e reparo de sistemas operacionais corrompidos, recuperação de arquivos e alguns comandos e processos de Linux.</strong> Eu fui responsável pela instalação e configuração de sistemas operacionais de todos os novos colaboradores. Upgrades e reposições eram frequentemente necessários. A maioria das coisas que aprendi <strong>devo aos meus colegas de trabalho, com anos de experiência em TI.</strong>"
+        "A Renovare Telecom é uma <strong>empresa de telecomunicações</strong>. Entrei como <strong>Técnico de TI</strong>, responsável pela instalação e manutenção dos computadores da empresa.",
+        "<strong>Implementei um sistema interno de tickets</strong> que agilizou o fluxo de suporte e cuidei da <strong>clonagem e restauração de sistemas operacionais</strong> em todo o parque de máquinas. Foi onde me familiarizei com servidores empresariais e com o Linux do dia a dia."
       ],
       "kundenSystems": [
-        "Kunden Systems é um <strong>fornecedor de Sistemas Enterprise Resource Planning (ERP).</strong> Ela opera principalmente na <strong>região sul do Brasil</strong>, mas conta com <strong>clientes em toda a América do Sul.</strong>",
-        "Na empresa tive <strong>minha primeira experiência profissional</strong> na área de Tecnologia da Informação e foi muito <strong>importante para mim e minha percepção de mim mesmo.</strong> Minhas capacidades foram postas a teste e eu <strong>aprendi muito com as pessoas à minha volta.</strong> Desde abrir notebooks até aplicar correções em <strong>Banco de Dados de Teste e Produção PL/SQL.</strong>"
+        "A Kunden Systems é uma <strong>fornecedora de ERP</strong> com clientes por toda a América do Sul. Foi <strong>minha primeira experiência profissional</strong> em TI.",
+        "Instalei e mantive computadores, <strong>gerenciei servidores locais e externos</strong> e apliquei correções em <strong>bancos de dados PL/SQL de teste e produção</strong>. Foi onde aprendi os fundamentos com colegas de anos de experiência."
       ]
     }
   },
@@ -75,6 +75,158 @@
       "projectsBackground": "Background de Projetos",
       "aboutExperienceBackground": "Background de Sobre/Experiência",
       "playlist": "Playlist"
+    }
+  },
+  "os": {
+    "boot": {
+      "lines": [
+        "BIOS ............... <span class=\"ok\">OK</span>",
+        "TESTE DE MEMÓRIA ... <span class=\"ok\">OK</span>",
+        "GRÁFICOS ........... synthwave",
+        "REDE ............... <span class=\"ok\">OK</span>",
+        "MONTANDO /home ..... <span class=\"ok\">OK</span>",
+        "INICIANDO SERVIÇOS . <span class=\"ok\">OK</span>",
+        "CARREGANDO <span class=\"em\">Rafael Scherer</span> ..."
+      ],
+      "skip": "Pular",
+      "aria": "Iniciando o portfólio"
+    },
+    "welcome": {
+      "eyebrow": "~/bem-vindo",
+      "title": "Bem-vindo ao meu Portfólio!",
+      "intro": "Você iniciou meu portfólio — construído como um pequeno sistema operacional synthwave. Ele foi feito para ser explorado: abra os apps no dock, vasculhe os arquivos, rode meus projetos no Navegador ou brinque no Terminal.",
+      "meIntro": "Por trás de tudo isso: eu sou o <strong>Rafael</strong>, engenheiro de software que constrói plataformas web de ponta a ponta. A maior parte do meu tempo vai para back-end e full-stack — Node.js, Go e TypeScript. Dito isso, como você pode ver boa parte do meu tempo também é gasto com coisas peculiares, como esse projeto =D",
+      "cta": "Saiba mais sobre mim",
+      "hint": "Dica: tudo na área de trabalho é clicável."
+    },
+    "apps": {
+      "welcome": "Bem-vindo",
+      "about": "Sobre Mim",
+      "experience": "Experiência",
+      "contact": "Contato",
+      "browser": "Navegador",
+      "terminal": "Terminal",
+      "files": "Início",
+      "music": "Música",
+      "text": "Editor de Texto"
+    },
+    "menu": {
+      "desktop": "Área de Trabalho",
+      "logout": "Sair",
+      "signIn": "Entrar"
+    },
+    "window": {
+      "minimize": "Minimizar",
+      "maximize": "Maximizar",
+      "close": "Fechar"
+    },
+    "context": {
+      "newFile": "Novo Arquivo de Texto",
+      "newFolder": "Nova Pasta",
+      "open": "Abrir",
+      "rename": "Renomear",
+      "delete": "Excluir"
+    },
+    "sketchpad": {
+      "title": "Sketchpad",
+      "point": "Ponto",
+      "line": "Linha",
+      "circle": "Círculo",
+      "clear": "Limpar",
+      "exit": "Sair"
+    },
+    "login": {
+      "session": "sessão",
+      "title": "Entrar",
+      "optionalNote": "Você está navegando como convidado. Entre com um nome para manter um espaço público ao qual você pode voltar.",
+      "stayGuest": "Ficar como convidado",
+      "close": "Fechar",
+      "prompt": "selecione um usuário para entrar",
+      "guest": "Convidado",
+      "guestRole": "sem senha",
+      "user": "Usuário",
+      "userRole": "entrar",
+      "logon": "entrar",
+      "signIn": "Entrar",
+      "signInHint": "Seus arquivos ficam sob o nome que você escolher.",
+      "username": "usuário",
+      "password": "senha",
+      "cancel": "Cancelar",
+      "fine": "Os arquivos são compartilhados por nome. Qualquer pessoa que entre com o mesmo nome vê e pode alterar esses arquivos, então mantenha apenas coisas que você publicaria abertamente. Feche esta aba a qualquer momento para sair."
+    },
+    "files": {
+      "file": "Arquivo",
+      "folder": "Pasta",
+      "items_one": "{{count}} item",
+      "items_other": "{{count}} itens",
+      "public": "público",
+      "synced": "sincronizado · worker",
+      "local": "local · este navegador",
+      "newFolder": "Nova Pasta",
+      "newFile": "Novo Arquivo.txt"
+    },
+    "text": {
+      "public": "público",
+      "placeholder": "Digite aqui. Tudo o que você escrever é público.",
+      "missing": "Este arquivo não existe mais."
+    },
+    "browser": {
+      "title": "NAVEGADOR",
+      "address": "Pesquise ou digite uma URL",
+      "back": "Voltar",
+      "forward": "Avançar",
+      "reload": "Recarregar",
+      "start": "Página inicial",
+      "newtab": "Abrir em nova aba",
+      "oopsTitle": "Ops…",
+      "oopsBody": "não pode ser exibido aqui. O site não permite ser incorporado.",
+      "oopsOpen": "Abrir {{host}} em uma nova aba",
+      "oopsBack": "Voltar à página inicial"
+    },
+    "terminal": {
+      "help": {
+        "title": "Comandos disponíveis:",
+        "ls": "lista o conteúdo do diretório",
+        "cd": "muda de diretório",
+        "pwd": "mostra o diretório atual",
+        "cat": "mostra o conteúdo de um arquivo",
+        "mkdir": "cria um diretório",
+        "touch": "cria um arquivo vazio",
+        "rm": "remove um arquivo ou diretório",
+        "echo": "exibe uma linha de texto",
+        "clear": "limpa a tela",
+        "whoami": "mostra o usuário atual",
+        "date": "mostra a data e a hora",
+        "neofetch": "mostra informações do sistema",
+        "help": "mostra esta ajuda"
+      },
+      "notFound": "{{cmd}}: comando não encontrado",
+      "noSuchFile": "{{name}}: arquivo ou diretório não encontrado",
+      "notDir": "{{name}}: não é um diretório",
+      "isDir": "{{name}}: é um diretório",
+      "missingOperand": "{{cmd}}: operando ausente",
+      "exists": "{{name}}: já existe",
+      "motd": "Um portfólio disfarçado de sistema operacional. Digite 'help' para começar."
+    },
+    "about": {
+      "subtitle": "Engenheiro de Software @ Gupy",
+      "tagline": "Construo plataformas web com Node.js, Go e TypeScript.",
+      "stack": "Stack",
+      "interests": "Interesses"
+    },
+    "experience": {
+      "professional": "Profissional",
+      "academic": "Acadêmica"
+    },
+    "projects": {
+      "source": "Código",
+      "openWeb": "Abrir página",
+      "noLive": "Sem página web — veja o código",
+      "prevShot": "Captura anterior",
+      "nextShot": "Próxima captura"
+    },
+    "contact": {
+      "location": "localização"
     }
   }
 }
