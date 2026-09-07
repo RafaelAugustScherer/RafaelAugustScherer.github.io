@@ -127,6 +127,14 @@
       "rename": "Rename",
       "delete": "Delete"
     },
+    "sketchpad": {
+      "title": "Sketchpad",
+      "point": "Point",
+      "line": "Line",
+      "circle": "Circle",
+      "clear": "Clear",
+      "exit": "Exit"
+    },
     "login": {
       "session": "session",
       "title": "Sign in",

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { ComponentType } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { Circle as CircleIcon, Dot, Eraser, Slash, X } from 'lucide-react';
 
 const NEON = '146, 228, 46';
@@ -103,18 +104,18 @@ const ToolBtn = styled.button<{ $on?: boolean; $danger?: boolean }>`
 
 interface ToolDef {
   id: Tool;
-  label: string;
   key: string;
   icon: ComponentType<{ size?: number | string }>;
 }
 
 const TOOLS: ToolDef[] = [
-  { id: 'point', label: 'Point', key: 'P', icon: Dot },
-  { id: 'line', label: 'Line', key: 'L', icon: Slash },
-  { id: 'circle', label: 'Circle', key: 'C', icon: CircleIcon },
+  { id: 'point', key: 'P', icon: Dot },
+  { id: 'line', key: 'L', icon: Slash },
+  { id: 'circle', key: 'C', icon: CircleIcon },
 ];
 
 const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => void }) => {
+  const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [active, setActive] = useState(false);
   const [tool, setTool] = useState<Tool>('point');
@@ -366,28 +367,31 @@ const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => vo
         onPointerDown={active ? onDown : undefined}
       />
       {active && (
-        <Tools className="os-sketch-tools" role="toolbar" aria-label="Sketchpad">
-          <Head>Sketchpad</Head>
-          {TOOLS.map((td) => (
-            <ToolBtn
-              key={td.id}
-              $on={tool === td.id}
-              onClick={() => chooseTool(td.id)}
-              title={`${td.label} (${td.key})`}
-            >
-              <td.icon size={15} />
-              <span className="label">{td.label}</span>
-              <span className="key">{td.key}</span>
-            </ToolBtn>
-          ))}
-          <ToolBtn onClick={clearShapes} title="Clear (E)">
+        <Tools className="os-sketch-tools" role="toolbar" aria-label={t('os.sketchpad.title')}>
+          <Head>{t('os.sketchpad.title')}</Head>
+          {TOOLS.map((td) => {
+            const label = t(`os.sketchpad.${td.id}`);
+            return (
+              <ToolBtn
+                key={td.id}
+                $on={tool === td.id}
+                onClick={() => chooseTool(td.id)}
+                title={`${label} (${td.key})`}
+              >
+                <td.icon size={15} />
+                <span className="label">{label}</span>
+                <span className="key">{td.key}</span>
+              </ToolBtn>
+            );
+          })}
+          <ToolBtn onClick={clearShapes} title={`${t('os.sketchpad.clear')} (E)`}>
             <Eraser size={15} />
-            <span className="label">Clear</span>
+            <span className="label">{t('os.sketchpad.clear')}</span>
             <span className="key">E</span>
           </ToolBtn>
-          <ToolBtn $danger onClick={exit} title="Exit (Esc)">
+          <ToolBtn $danger onClick={exit} title={`${t('os.sketchpad.exit')} (Esc)`}>
             <X size={15} />
-            <span className="label">Exit</span>
+            <span className="label">{t('os.sketchpad.exit')}</span>
             <span className="key">Esc</span>
           </ToolBtn>
         </Tools>
