@@ -53,4 +53,12 @@ export const saveUser = async (user: string, nodes: FsNode[]): Promise<void> => 
   }
 };
 
+export const clearUser = (user: string): void => {
+  try {
+    localStorage.removeItem(cacheKey(user));
+  } catch {
+    /* private mode: nothing to clear */
+  }
+};
+
 export const storageMode = (): 'worker' | 'local' => (BASE ? 'worker' : 'local');

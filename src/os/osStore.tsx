@@ -10,7 +10,7 @@ import {
 import type { ReactNode } from 'react';
 import type { AppId, FsNode, Screen, WindowInstance } from './types';
 import { APPS } from './registry';
-import { loadUser, saveUser } from './storage';
+import { clearUser, loadUser, saveUser } from './storage';
 
 const uid = () => crypto.randomUUID();
 
@@ -266,12 +266,17 @@ export const OSProvider = ({ children }: { children: ReactNode }) => {
   const dirty = useRef(false);
 
   const signIn = useCallback(async (user: string) => {
+    if (user === 'guest') {
+      clearUser('guest');
+      dispatch({ type: 'LOGIN', user, nodes: seedNodes() });
+      return;
+    }
     const loaded = await loadUser(user);
     dispatch({ type: 'LOGIN', user, nodes: loaded ?? seedNodes() });
   }, []);
 
   useEffect(() => {
-    if (!state.user || !dirty.current) return;
+    if (!state.user || state.user === 'guest' || !dirty.current) return;
     window.clearTimeout(saveTimer.current);
     const user = state.user;
     const nodes = state.nodes;
