@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { MouseEvent, PointerEvent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
@@ -123,6 +123,13 @@ const DesktopIcons = ({
   onContextNode,
 }: DesktopIconsProps) => {
   const { t } = useTranslation();
+
+  const focusRename = useCallback((el: HTMLInputElement | null) => {
+    if (!el) return;
+    el.focus();
+    const dot = el.value.lastIndexOf('.');
+    el.setSelectionRange(0, dot > 0 ? dot : el.value.length);
+  }, []);
 
   const items: IconItem[] = [
     ...DESKTOP_APPS.map((appId) => ({ key: `app:${appId}`, kind: 'app' as const, appId })),
@@ -282,7 +289,7 @@ const DesktopIcons = ({
         </span>
         {editingId === node.id ? (
           <input
-            autoFocus
+            ref={focusRename}
             value={draft}
             onChange={(e) => onDraft(e.target.value)}
             onBlur={onCommit}

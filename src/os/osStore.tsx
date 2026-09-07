@@ -236,7 +236,7 @@ interface OSContextValue {
   move: (id: string, x: number, y: number) => void;
   resize: (id: string, w: number, h: number) => void;
   setProps: (id: string, props: Record<string, unknown>, title?: string) => void;
-  createNode: (type: FsNode['type'], parentId: string | null, name?: string) => string;
+  createNode: (type: FsNode['type'], parentId: string | null, name?: string) => FsNode;
   renameNode: (id: string, name: string) => void;
   writeNode: (id: string, content: string) => void;
   deleteNode: (id: string) => void;
@@ -320,7 +320,7 @@ export const OSProvider = ({ children }: { children: ReactNode }) => {
           createdAt: Date.now(),
         };
         dispatch({ type: 'FS_ADD', node });
-        return node.id;
+        return node;
       },
       renameNode: (id, name) => {
         markDirty();

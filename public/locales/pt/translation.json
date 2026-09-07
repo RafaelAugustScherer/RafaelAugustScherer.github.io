@@ -121,7 +121,7 @@
       "close": "Fechar"
     },
     "context": {
-      "newFile": "Novo Arquivo",
+      "newFile": "Novo Arquivo de Texto",
       "newFolder": "Nova Pasta",
       "open": "Abrir",
       "rename": "Renomear",

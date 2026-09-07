@@ -130,8 +130,8 @@ const FilesApp = ({ win }: { win: WindowInstance }) => {
   };
 
   const create = (type: 'file' | 'dir') => {
-    const id = createNode(type, dirId);
-    startEdit(id, type === 'dir' ? t('os.files.newFolder') : t('os.files.newFile'));
+    const node = createNode(type, dirId);
+    startEdit(node.id, type === 'dir' ? t('os.files.newFolder') : t('os.files.newFile'));
   };
 
   return (

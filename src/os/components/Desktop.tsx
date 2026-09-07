@@ -126,11 +126,9 @@ const Desktop = () => {
   const openProject = (project: Project) =>
     open('browser', { url: `ras://project/${project.id}` }, project.name);
 
-  const beginRename = (id: string) => {
-    const node = nodeById(id);
-    if (!node) return;
+  const beginRename = (node: FsNode) => {
     setDraft(node.name);
-    setEditingId(id);
+    setEditingId(node.id);
   };
   const commitRename = () => {
     if (editingId && draft.trim()) renameNode(editingId, draft.trim());
@@ -138,8 +136,7 @@ const Desktop = () => {
   };
 
   const makeNode = (type: FsNode['type']) => {
-    const id = createNode(type, null);
-    beginRename(id);
+    beginRename(createNode(type, null));
   };
 
   const openNode = (node: FsNode) => {
@@ -177,7 +174,7 @@ const Desktop = () => {
       y: e.clientY,
       items: [
         { label: t('os.context.open'), icon: SquareArrowOutUpRight, onClick: () => openNode(node) },
-        { label: t('os.context.rename'), icon: Pencil, onClick: () => beginRename(nodeId) },
+        { label: t('os.context.rename'), icon: Pencil, onClick: () => beginRename(node) },
         { label: t('os.context.delete'), icon: Trash2, danger: true, onClick: () => deleteNode(nodeId), separator: false },
       ],
     });

@@ -121,7 +121,7 @@
       "close": "Close"
     },
     "context": {
-      "newFile": "New File",
+      "newFile": "New Text File",
       "newFolder": "New Folder",
       "open": "Open",
       "rename": "Rename",
