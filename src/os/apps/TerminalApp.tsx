@@ -3,7 +3,7 @@ import type { KeyboardEvent as ReactKeyboardEvent } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import type { FsNode } from '../types';
-import { useOS } from '../osStore';
+import { useOS } from '../osContext';
 
 const Screen = styled.div`
   height: 100%;

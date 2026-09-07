@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { FilePlus2, FolderPlus, Pencil, SquareArrowOutUpRight, Trash2 } from 'lucide-react';
 import type { AppId, FsNode } from '../types';
-import { useOS } from '../osStore';
+import { useOS } from '../osContext';
 import projectsData from '../../data/projects';
 import type { Project } from '../../data/projects';
 import Wallpaper from './Wallpaper';

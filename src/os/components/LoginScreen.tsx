@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { User, UserRound, X } from 'lucide-react';
-import { useOS } from '../osStore';
+import { useOS } from '../osContext';
 
 const Overlay = styled.div`
   position: absolute;

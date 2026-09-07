@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { LogIn, Power } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { APPS } from '../registry';
-import { useOS } from '../osStore';
+import { useOS } from '../osContext';
 
 const Bar = styled.div`
   position: absolute;

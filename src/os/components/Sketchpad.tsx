@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ComponentType } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
@@ -132,13 +132,13 @@ const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => vo
   const cursorRef = useRef({ x: 0, y: 0, inside: false });
   const startLoopRef = useRef<() => void>(() => {});
 
-  const chooseTool = (t: Tool) => {
+  const chooseTool = useCallback((t: Tool) => {
     toolRef.current = t;
     pendingRef.current = null;
     setTool(t);
-  };
+  }, []);
 
-  const pressShape = (t: 'line' | 'circle') => {
+  const pressShape = useCallback((t: 'line' | 'circle') => {
     const c = cursorRef.current;
     const at = c.inside ? { x: c.x, y: c.y } : null;
     if (toolRef.current !== t) {
@@ -153,20 +153,20 @@ const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => vo
       else shapesRef.current.push({ kind: 'circle', cx: p.x, cy: p.y, r: Math.hypot(at.x - p.x, at.y - p.y) });
       pendingRef.current = null;
     }
-  };
+  }, []);
 
-  const clearShapes = () => {
+  const clearShapes = useCallback(() => {
     shapesRef.current = [];
     pendingRef.current = null;
-  };
+  }, []);
 
-  const exit = () => {
+  const exit = useCallback(() => {
     activeRef.current = false;
     clearShapes();
     cursorRef.current.inside = false;
     setActive(false);
     onActiveChange(false);
-  };
+  }, [clearShapes, onActiveChange]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -327,7 +327,7 @@ const Sketchpad = ({ onActiveChange }: { onActiveChange: (active: boolean) => vo
     };
     window.addEventListener('keydown', onKey, true);
     return () => window.removeEventListener('keydown', onKey, true);
-  }, [active]);
+  }, [active, exit, chooseTool, pressShape, clearShapes]);
 
   const onMove = (e: React.PointerEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();

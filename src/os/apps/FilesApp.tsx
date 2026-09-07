@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { CornerLeftUp, FilePlus2, FileText, Folder, FolderPlus, Pencil, Trash2 } from 'lucide-react';
 import type { WindowInstance } from '../types';
-import { useOS } from '../osStore';
+import { useOS } from '../osContext';
 import { APPS } from '../registry';
 import { storageMode } from '../storage';
 

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Minus, Square, X } from 'lucide-react';
 import type { AppId, WindowInstance } from '../types';
 import { APPS } from '../registry';
-import { useOS } from '../osStore';
+import { useOS } from '../osContext';
 import WelcomeApp from '../apps/WelcomeApp';
 import AboutApp from '../apps/AboutApp';
 import ExperienceApp from '../apps/ExperienceApp';

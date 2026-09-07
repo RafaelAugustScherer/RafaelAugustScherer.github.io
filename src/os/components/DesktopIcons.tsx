@@ -167,8 +167,9 @@ const DesktopIcons = ({
   } | null>(null);
 
   const itemsKey = items.map((i) => i.key).join('|');
-
-  useEffect(() => {
+  const [prevItemsKey, setPrevItemsKey] = useState(itemsKey);
+  if (itemsKey !== prevItemsKey) {
+    setPrevItemsKey(itemsKey);
     const keys = items.map((i) => i.key);
     setSlots((prev) => {
       const used = new Set<number>();
@@ -191,8 +192,7 @@ const DesktopIcons = ({
         Object.keys(prev).length === keys.length && keys.every((k) => prev[k] === next[k]);
       return same ? prev : next;
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [itemsKey]);
+  }
 
   useEffect(() => {
     const hitTest = (sx: number, sy: number, ex: number, ey: number) => {

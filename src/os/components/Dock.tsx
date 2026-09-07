@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import type { AppId } from '../types';
 import { APPS, DOCK_APPS } from '../registry';
-import { useOS } from '../osStore';
+import { useOS } from '../osContext';
 
 const MAGNIFY_RANGE = 96;
 const MAGNIFY_AMP = 0.34;

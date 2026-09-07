@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { Globe } from 'lucide-react';
 import type { WindowInstance } from '../types';
-import { useOS } from '../osStore';
+import { useOS } from '../osContext';
 
 const Wrap = styled.div`
   display: flex;

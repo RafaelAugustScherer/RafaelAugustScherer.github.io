@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import { useOS } from '../osStore';
+import { useOS } from '../osContext';
 import { AppScroll, Eyebrow, AppTitle, Prose } from './appkit';
 import RichText from './RichText';
 
