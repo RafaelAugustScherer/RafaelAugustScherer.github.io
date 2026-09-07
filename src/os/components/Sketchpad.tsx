@@ -67,6 +67,12 @@ const Head = styled.p`
   margin: 0 2px 4px;
 `;
 
+const toolColor = ($on?: boolean, $danger?: boolean) => {
+  if ($danger) return 'var(--magenta)';
+  if ($on) return 'var(--green)';
+  return 'var(--text-dim)';
+};
+
 const ToolBtn = styled.button<{ $on?: boolean; $danger?: boolean }>`
   display: flex;
   align-items: center;
@@ -77,8 +83,7 @@ const ToolBtn = styled.button<{ $on?: boolean; $danger?: boolean }>`
   background: ${({ $on }) => ($on ? 'rgba(146, 228, 46, 0.12)' : 'none')};
   font-family: var(--mono);
   font-size: 11.5px;
-  color: ${({ $on, $danger }) =>
-    $danger ? 'var(--magenta)' : $on ? 'var(--green)' : 'var(--text-dim)'};
+  color: ${({ $on, $danger }) => toolColor($on, $danger)};
   text-align: left;
   transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
   svg {

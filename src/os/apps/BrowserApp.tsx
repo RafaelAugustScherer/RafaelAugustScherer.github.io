@@ -289,6 +289,12 @@ const BrowserApp = ({ win }: { win: WindowInstance }) => {
     { label: 'LinkedIn', url: LINKEDIN, sub: 'linkedin.com' },
   ];
 
+  const nonHomeScreen = isProjectUrl(current) ? (
+    <ProjectPage id={projectIdOf(current)} />
+  ) : (
+    <EmbedView key={`${current}-${reloadKey}`} url={current} title={win.title} onHome={() => go(HOME)} />
+  );
+
   return (
     <Wrap>
       <Toolbar>
@@ -348,10 +354,8 @@ const BrowserApp = ({ win }: { win: WindowInstance }) => {
               ))}
             </Grid>
           </Start>
-        ) : isProjectUrl(current) ? (
-          <ProjectPage id={projectIdOf(current)} />
         ) : (
-          <EmbedView key={`${current}-${reloadKey}`} url={current} title={win.title} onHome={() => go(HOME)} />
+          nonHomeScreen
         )}
       </Screen>
     </Wrap>

@@ -49,6 +49,13 @@ const winMin = keyframes`
   to { opacity: 0; transform: scale(0.82) translateY(80px); }
 `;
 
+const animFor = ($anim: Anim) => {
+  if ($anim === 'in') return css`${winIn} 0.18s ease-out`;
+  if ($anim === 'out-close') return css`${winClose} 0.16s ease-in forwards`;
+  if ($anim === 'out-min') return css`${winMin} 0.18s ease-in forwards`;
+  return 'none';
+};
+
 const Frame = styled.div<{ $active: boolean; $anim: Anim }>`
   position: absolute;
   pointer-events: auto;
@@ -62,14 +69,7 @@ const Frame = styled.div<{ $active: boolean; $anim: Anim }>`
       : '0 16px 40px rgba(0,0,0,.6)'};
   overflow: hidden;
   transform-origin: center top;
-  animation: ${({ $anim }) =>
-    $anim === 'in'
-      ? css`${winIn} 0.18s ease-out`
-      : $anim === 'out-close'
-        ? css`${winClose} 0.16s ease-in forwards`
-        : $anim === 'out-min'
-          ? css`${winMin} 0.18s ease-in forwards`
-          : 'none'};
+  animation: ${({ $anim }) => animFor($anim)};
 `;
 
 const Bar = styled.div<{ $active: boolean }>`
