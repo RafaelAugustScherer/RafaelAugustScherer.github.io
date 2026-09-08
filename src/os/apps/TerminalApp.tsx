@@ -202,9 +202,41 @@ const TerminalApp = () => {
     setInput('');
   };
 
+  const complete = () => {
+    const lastSpace = input.lastIndexOf(' ');
+    const token = input.slice(lastSpace + 1);
+    const before = input.slice(0, lastSpace + 1);
+    const names = before.trim()
+      ? childrenOf(cwd).map((n) => n.name)
+      : Object.keys(handlers);
+    const matches = names.filter((n) => n.startsWith(token));
+    if (!matches.length) return;
+    if (matches.length === 1) {
+      setInput(`${before}${matches[0]} `);
+      return;
+    }
+    const common = matches.reduce((acc, n) => {
+      let i = 0;
+      while (i < acc.length && i < n.length && acc[i] === n[i]) i += 1;
+      return acc.slice(0, i);
+    });
+    if (common.length > token.length) {
+      setInput(`${before}${common}`);
+    } else {
+      setLines((prev) => [
+        ...prev,
+        { kind: 'in', text: `${promptText} ${input}` },
+        { kind: 'out', text: [...matches].sort().join('   ') },
+      ]);
+    }
+  };
+
   const onKeyDown = (e: ReactKeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       submit();
+    } else if (e.key === 'Tab') {
+      e.preventDefault();
+      complete();
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       if (!history.length) return;
