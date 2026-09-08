@@ -1,7 +1,7 @@
 {
-  "short_name": "R. Scherer",
-  "name": "Rafael Augusto Scherer — Web Portfolio",
-  "description": "Web portfolio of Rafael Augusto Scherer — Systems Analyst and Developer.",
+  "short_name": "Rafael Scherer",
+  "name": "RafaelAugustScherer",
+  "description": "Software engineer building web platforms with Node.js, Go and TypeScript.",
   "lang": "en",
   "icons": [
     {
@@ -22,6 +22,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#202020",
-  "background_color": "#202020"
+  "theme_color": "#0b0912",
+  "background_color": "#0b0912"
 }
