@@ -160,6 +160,7 @@ const DesktopIcons = ({
   const [drag, setDrag] = useState<{ key: string; dx: number; dy: number } | null>(null);
   const dragRef = useRef<{
     key: string;
+    el: HTMLElement;
     startX: number;
     startY: number;
     baseX: number;
@@ -167,6 +168,18 @@ const DesktopIcons = ({
     pointerId: number;
     active: boolean;
   } | null>(null);
+
+  const cancelIconDrag = useCallback(() => {
+    const ds = dragRef.current;
+    if (!ds) return;
+    try {
+      ds.el.releasePointerCapture(ds.pointerId);
+    } catch {
+      /* release is best-effort */
+    }
+    dragRef.current = null;
+    setDrag(null);
+  }, []);
 
   const itemsKey = items.map((i) => i.key).join('|');
   const [prevItemsKey, setPrevItemsKey] = useState(itemsKey);
@@ -242,10 +255,14 @@ const DesktopIcons = ({
     };
     const onDown = (e: globalThis.PointerEvent) => {
       const t = e.target as HTMLElement;
+      if (t.closest('.os-window')) {
+        cancelIconDrag();
+        setSelected(new Set());
+        return;
+      }
       const interactive =
         t.closest('.os-icon') ||
         t.closest('.os-widget') ||
-        t.closest('.os-window') ||
         t.closest('.os-dock') ||
         t.closest('.os-sketch-tools');
       if (e.button !== 0 || !t.closest('.os-surface') || interactive) return;
@@ -259,7 +276,7 @@ const DesktopIcons = ({
       window.removeEventListener('pointermove', onMove);
       window.removeEventListener('pointerup', onUp);
     };
-  }, []);
+  }, [cancelIconDrag]);
 
   useEffect(() => {
     const el = layerRef.current;
@@ -306,6 +323,7 @@ const DesktopIcons = ({
     const { x, y } = slotXY(slots[key] ?? 0);
     dragRef.current = {
       key,
+      el: e.currentTarget as HTMLElement,
       startX: e.clientX,
       startY: e.clientY,
       baseX: x,
@@ -391,6 +409,8 @@ const DesktopIcons = ({
   };
 
   const openItem = (item: IconItem) => {
+    cancelIconDrag();
+    setSelected(new Set());
     if (item.kind === 'app') onOpenApp(item.appId);
     else if (editingId !== item.node.id) onOpenNode(item.node);
   };
