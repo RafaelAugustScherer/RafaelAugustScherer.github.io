@@ -198,8 +198,26 @@ const blocksEmbed = (url: string): boolean => {
   }
 };
 
+const sameOrigin = (url: string): boolean => {
+  try {
+    return new URL(url).origin === window.location.origin;
+  } catch {
+    return false;
+  }
+};
+
+const nestToken = () => `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`;
+
+const embedSrcOf = (url: string): string => {
+  if (!sameOrigin(url)) return url;
+  const u = new URL(url);
+  u.searchParams.set('__nest', nestToken());
+  return u.toString();
+};
+
 const EmbedView = ({ url, title, onHome }: { url: string; title: string; onHome: () => void }) => {
   const { t } = useTranslation();
+  const embedSrc = useMemo(() => embedSrcOf(url), [url]);
   const [status, setStatus] = useState<'loading' | 'ok' | 'blocked'>(() =>
     blocksEmbed(url) ? 'blocked' : 'loading'
   );
@@ -233,7 +251,7 @@ const EmbedView = ({ url, title, onHome }: { url: string; title: string; onHome:
 
   return (
     <iframe
-      src={url}
+      src={embedSrc}
       title={title}
       sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
       referrerPolicy="no-referrer"
